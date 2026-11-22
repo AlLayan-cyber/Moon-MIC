@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106 106" width="106" height="106">
+  <!-- MOON AUDIO logo, vector redraw of moon_audio_logo_source.png (190x147 raster).
+       Bars are cut out of the disc, so the logo works on any background.
+       Disc colour = currentColor (set by the UI theme). -->
+  <defs>
+    <mask id="moon-audio-cut">
+      <rect width="106" height="106" fill="#fff"/>
+      <rect x="29.5" y="25.5" width="10" height="55" rx="5" fill="#000"/>
+      <rect x="48"   y="38.5" width="10" height="29" rx="5" fill="#000"/>
+      <rect x="66.5" y="11.5" width="10" height="83" rx="5" fill="#000"/>
+    </mask>
+  </defs>
+  <circle cx="53" cy="53" r="53" fill="currentColor" mask="url(#moon-audio-cut)"/>
+</svg>

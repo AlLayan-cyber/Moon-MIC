@@ -29,3 +29,6 @@ Thumbs.db
 docs/papers/
 docs/preamp_schematics/
 docs/research/*.pdf
+
+# Downloaded third-party tools
+tools/external/
