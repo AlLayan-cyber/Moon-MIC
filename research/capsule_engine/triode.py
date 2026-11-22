@@ -41,6 +41,24 @@ class KorenTriode:
         e1 = vpk / self.kp * (np.logaddexp(0.0, z))      # ln(1 + e^z), overflow-safe
         return float(e1 ** self.ex / self.kg1) if e1 > 0.0 else 0.0
 
+    def ip_partials(self, vgk: float, vpk: float) -> tuple[float, float, float]:
+        """(Ip, dIp/dVgk, dIp/dVpk), analytic."""
+        if vpk <= 0.0:
+            return 0.0, 0.0, 0.0
+        q = self.kvb + vpk * vpk
+        sq = np.sqrt(q)
+        z = self.kp * (1.0 / self.mu + vgk / sq)
+        sp = float(np.logaddexp(0.0, z))
+        sig = 0.5 * (1.0 + np.tanh(0.5 * z))
+        e1 = vpk / self.kp * sp
+        if e1 <= 0.0:
+            return 0.0, 0.0, 0.0
+        de_dg = vpk * sig / sq
+        de_dp = sp / self.kp - sig * vgk * vpk * vpk / (q * sq)
+        ip = e1 ** self.ex / self.kg1
+        k = self.ex * ip / e1
+        return float(ip), float(k * de_dg), float(k * de_dp)
+
 
 # TEST-ONLY: Koren's published 12AX7 constants (a different tube). Used solely to verify numerics.
 TEST_ONLY_12AX7 = KorenTriode(mu=100.0, ex=1.4, kg1=1060.0, kp=600.0, kvb=300.0,
@@ -88,33 +106,42 @@ class CommonCathodeStage:
             vp, vk = nodes(ip)
             return ip - self.t.ip(vg - vk, vp - vk)
 
-        lo, hi = 0.0, c.b_plus / c.ra + abs(gb * vc_hist) / 1.0 + 1e-3
+        def resid_d(ip):
+            vp, vk = nodes(ip)
+            f, fg, fp = self.t.ip_partials(vg - vk, vp - vk)
+            return ip - f, 1.0 + fg / ak + fp * (1.0 / ap + 1.0 / ak)
+
+        lo, hi = 0.0, c.b_plus / c.ra + abs(gb * vc_hist) + 1e-3
+        self.iterations = 0
         if resid(lo) >= 0.0:                    # tube cut off
             vp, vk = nodes(0.0)
             return 0.0, vp, vk
-        while resid(hi) <= 0.0:                 # widen (never more than a few steps in practice)
+        for _ in range(8):                      # widen (never needed with the C-800G values)
+            if resid(hi) > 0.0:
+                break
             hi *= 2.0
-        x = 0.5 * (lo + hi)
+        x = self.ip_guess if lo < self.ip_guess < hi else 0.5 * (lo + hi)   # warm start: previous sample
         for _ in range(self.MAX_ITER):
-            r = resid(x)
+            self.iterations += 1
+            r, d = resid_d(x)
             if r > 0.0:
                 hi = x
             else:
                 lo = x
-            h = 1e-9 * max(1e-6, x)
-            d = (resid(x + h) - r) / h
             xn = x - r / d if d > 0.0 else 0.5 * (lo + hi)
+            if abs(xn - x) <= 1e-12 * max(x, 1e-6):    # converged (checked before the bracket guard:
+                x = xn                                 # an exact root sits on a bracket end)
+                break
             if not (lo < xn < hi):
                 xn = 0.5 * (lo + hi)
-            if abs(xn - x) < 1e-13:
-                x = xn
-                break
             x = xn
+        self.ip_guess = x
         vp, vk = nodes(x)
         return x, vp, vk
 
     def reset(self) -> None:
         """DC operating point (capacitors open)."""
+        self.ip_guess = -1.0
         ip, vp, vk = self._solve(self.grid_dc, 0.0, 0.0, 0.0, 0.0)
         self.ip0, self.vp0, self.vk0 = ip, vp, vk
         self.vk, self.ick = vk, 0.0             # cathode capacitor: voltage, current
