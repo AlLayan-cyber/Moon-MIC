@@ -61,8 +61,11 @@ class StageCircuit:
 class CommonCathodeStage:
     MAX_ITER = 40
 
-    def __init__(self, tube: KorenTriode, circuit: StageCircuit, fs: float):
+    def __init__(self, tube: KorenTriode, circuit: StageCircuit, fs: float, grid_dc: float = 0.0):
+        """grid_dc: DC grid potential (V). 0 = ideal grid leak; a negative value represents contact-potential
+        self-bias through the 500 MOhm leak (not measured for the C-800G; used only as a sensitivity case)."""
         self.t, self.c, self.fs = tube, circuit, float(fs)
+        self.grid_dc = float(grid_dc)
         T = 1.0 / self.fs
         self.gk = 2.0 * circuit.ck / T          # cathode capacitor companion conductance
         self.rc = T / (2.0 * circuit.cc)        # coupling capacitor companion resistance
@@ -112,7 +115,7 @@ class CommonCathodeStage:
 
     def reset(self) -> None:
         """DC operating point (capacitors open)."""
-        ip, vp, vk = self._solve(0.0, 0.0, 0.0, 0.0, 0.0)
+        ip, vp, vk = self._solve(self.grid_dc, 0.0, 0.0, 0.0, 0.0)
         self.ip0, self.vp0, self.vk0 = ip, vp, vk
         self.vk, self.ick = vk, 0.0             # cathode capacitor: voltage, current
         self.vc, self.ib = vp, 0.0              # coupling capacitor voltage (plate side minus load side), branch current
@@ -129,7 +132,7 @@ class CommonCathodeStage:
         for n, g in enumerate(vg):
             jk = self.gk * self.vk + self.ick                  # trapezoid history, cathode capacitor
             vc_hist = self.vc + self.rc * self.ib              # coupling capacitor history
-            ip, vp, vk = self._solve(float(g), jk, self.gk, vc_hist, gb)
+            ip, vp, vk = self._solve(float(g) + self.grid_dc, jk, self.gk, vc_hist, gb)
             ib = gb * (vp - vc_hist)
             self.ick = self.gk * vk - jk
             self.vk = vk
@@ -141,7 +144,7 @@ class CommonCathodeStage:
     def small_signal_gain(self) -> float:
         """Analytic mid-band gain (bypassed cathode, coupling C short): -gm (ra_ || rp)."""
         h = 1e-6
-        f, vg0, vpk0 = self.t.ip, -self.vk0, self.vp0 - self.vk0      # operating point: Vgk = -Vk (grid at 0 V DC)
+        f, vg0, vpk0 = self.t.ip, self.grid_dc - self.vk0, self.vp0 - self.vk0      # operating point Vgk
         gm = (f(vg0 + h, vpk0) - f(vg0 - h, vpk0)) / (2 * h)
         gp = (f(vg0, vpk0 + h) - f(vg0, vpk0 - h)) / (2 * h)
         r_ac = 1.0 / (1.0 / self.c.ra + 1.0 / self.c.r_load)

@@ -1,0 +1,211 @@
+{
+ "published_max_spl_dB": 131.0,
+ "cases": [
+  {
+   "tube": "full_fit",
+   "grid_dc_V": 0.0,
+   "R_L_kOhm": 49.0,
+   "Ip_mA": 1.543,
+   "Vp_V": 75.7,
+   "Vk_V": 1.543,
+   "gain_grid_to_xlr_dB": 11.4,
+   "grid_mV_per_Pa": 6.76,
+   "thd_pct": {
+    "118": 0.596,
+    "124": 1.189,
+    "131": 2.674
+   },
+   "spl_at_1pct_dB": 122.5
+  },
+  {
+   "tube": "full_fit",
+   "grid_dc_V": 0.0,
+   "R_L_kOhm": 100.0,
+   "Ip_mA": 1.543,
+   "Vp_V": 75.7,
+   "Vk_V": 1.543,
+   "gain_grid_to_xlr_dB": 12.2,
+   "grid_mV_per_Pa": 6.16,
+   "thd_pct": {
+    "118": 0.41,
+    "124": 0.817,
+    "131": 1.816
+   },
+   "spl_at_1pct_dB": 125.8
+  },
+  {
+   "tube": "full_fit",
+   "grid_dc_V": 0.0,
+   "R_L_kOhm": 1000.0,
+   "Ip_mA": 1.543,
+   "Vp_V": 75.7,
+   "Vk_V": 1.543,
+   "gain_grid_to_xlr_dB": 12.96,
+   "grid_mV_per_Pa": 5.65,
+   "thd_pct": {
+    "118": 0.275,
+    "124": 0.548,
+    "131": 1.214
+   },
+   "spl_at_1pct_dB": 129.3
+  },
+  {
+   "tube": "full_fit",
+   "grid_dc_V": -0.61,
+   "R_L_kOhm": 49.0,
+   "Ip_mA": 1.4,
+   "Vp_V": 90.0,
+   "Vk_V": 1.4,
+   "gain_grid_to_xlr_dB": 10.93,
+   "grid_mV_per_Pa": 7.14,
+   "thd_pct": {
+    "118": 0.721,
+    "124": 1.442,
+    "131": 3.274
+   },
+   "spl_at_1pct_dB": 120.8
+  },
+  {
+   "tube": "full_fit",
+   "grid_dc_V": -0.61,
+   "R_L_kOhm": 100.0,
+   "Ip_mA": 1.4,
+   "Vp_V": 90.0,
+   "Vk_V": 1.4,
+   "gain_grid_to_xlr_dB": 11.79,
+   "grid_mV_per_Pa": 6.47,
+   "thd_pct": {
+    "118": 0.476,
+    "124": 0.95,
+    "131": 2.132
+   },
+   "spl_at_1pct_dB": 124.4
+  },
+  {
+   "tube": "full_fit",
+   "grid_dc_V": -0.61,
+   "R_L_kOhm": 1000.0,
+   "Ip_mA": 1.4,
+   "Vp_V": 90.0,
+   "Vk_V": 1.4,
+   "gain_grid_to_xlr_dB": 12.6,
+   "grid_mV_per_Pa": 5.89,
+   "thd_pct": {
+    "118": 0.298,
+    "124": 0.594,
+    "131": 1.329
+   },
+   "spl_at_1pct_dB": 128.5
+  },
+  {
+   "tube": "low_current_fit",
+   "grid_dc_V": 0.0,
+   "R_L_kOhm": 49.0,
+   "Ip_mA": 1.544,
+   "Vp_V": 75.6,
+   "Vk_V": 1.544,
+   "gain_grid_to_xlr_dB": 11.35,
+   "grid_mV_per_Pa": 6.8,
+   "thd_pct": {
+    "118": 0.637,
+    "124": 1.273,
+    "131": 2.868
+   },
+   "spl_at_1pct_dB": 121.9
+  },
+  {
+   "tube": "low_current_fit",
+   "grid_dc_V": 0.0,
+   "R_L_kOhm": 100.0,
+   "Ip_mA": 1.544,
+   "Vp_V": 75.6,
+   "Vk_V": 1.544,
+   "gain_grid_to_xlr_dB": 12.18,
+   "grid_mV_per_Pa": 6.18,
+   "thd_pct": {
+    "118": 0.443,
+    "124": 0.884,
+    "131": 1.973
+   },
+   "spl_at_1pct_dB": 125.1
+  },
+  {
+   "tube": "low_current_fit",
+   "grid_dc_V": 0.0,
+   "R_L_kOhm": 1000.0,
+   "Ip_mA": 1.544,
+   "Vp_V": 75.6,
+   "Vk_V": 1.544,
+   "gain_grid_to_xlr_dB": 12.97,
+   "grid_mV_per_Pa": 5.64,
+   "thd_pct": {
+    "118": 0.297,
+    "124": 0.592,
+    "131": 1.319
+   },
+   "spl_at_1pct_dB": 128.6
+  },
+  {
+   "tube": "low_current_fit",
+   "grid_dc_V": -0.61,
+   "R_L_kOhm": 49.0,
+   "Ip_mA": 1.401,
+   "Vp_V": 89.9,
+   "Vk_V": 1.401,
+   "gain_grid_to_xlr_dB": 10.84,
+   "grid_mV_per_Pa": 7.21,
+   "thd_pct": {
+    "118": 0.764,
+    "124": 1.527,
+    "131": 3.466
+   },
+   "spl_at_1pct_dB": 120.3
+  },
+  {
+   "tube": "low_current_fit",
+   "grid_dc_V": -0.61,
+   "R_L_kOhm": 100.0,
+   "Ip_mA": 1.401,
+   "Vp_V": 89.9,
+   "Vk_V": 1.401,
+   "gain_grid_to_xlr_dB": 11.74,
+   "grid_mV_per_Pa": 6.5,
+   "thd_pct": {
+    "118": 0.507,
+    "124": 1.013,
+    "131": 2.275
+   },
+   "spl_at_1pct_dB": 123.9
+  },
+  {
+   "tube": "low_current_fit",
+   "grid_dc_V": -0.61,
+   "R_L_kOhm": 1000.0,
+   "Ip_mA": 1.401,
+   "Vp_V": 89.9,
+   "Vk_V": 1.401,
+   "gain_grid_to_xlr_dB": 12.59,
+   "grid_mV_per_Pa": 5.89,
+   "thd_pct": {
+    "118": 0.317,
+    "124": 0.632,
+    "131": 1.414
+   },
+   "spl_at_1pct_dB": 128.0
+  }
+ ],
+ "full_fit": {
+  "mu": 37.69414562041952,
+  "ex": 1.2716812556403965,
+  "kg1": 276.91811448694085,
+  "kp": 249.79360560139938,
+  "kvb": 222.64561898588695
+ },
+ "low_current_fit": {
+  "mu": 38.504301888351044,
+  "ex": 1.1231043993793521,
+  "kg1": 271.59810802396254,
+  "kp": 253.7683180977457,
+  "kvb": 96.82716139317603
+ }
+}

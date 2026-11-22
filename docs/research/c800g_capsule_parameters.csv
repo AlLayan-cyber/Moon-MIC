@@ -40,3 +40,4 @@ Electronics input impedance,,,ohm,,,unknown,,Keep separate from capsule mechanic
 6AU6A triode Koren kP,kp,249.8,,fit,same,inferred,same,
 6AU6A triode Koren kVB,kvb,222.6,,fit,same,inferred,same,
 6AU6A triode typical operation,,"Eb 250 V, Rk 330 Ohm: mu 36, gm 4800 umho, Ib 12.2 mA",,,GE ET-T916A p.2,confirmed,,Used as independent check of the fit
+Transformer primary load (reflected),R_L,,ohm,49 k ... 1 M (preamp 1 kOhm ... unloaded),Stage 3 study (research/reports/PHYSICAL_CAPSULE_ENGINE_STAGE3.md),unknown,tie to preamp input impedance,Dominant parameter for max SPL: 7-8 dB spread
