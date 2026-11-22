@@ -34,14 +34,16 @@ struct KorenTriode
         const double q = kvb + vpk * vpk;
         const double sq = std::sqrt (q);
         const double z = kp * (1.0 / mu + vgk / sq);
-        const double sp = z > 0.0 ? z + std::log1p (std::exp (-z)) : std::log1p (std::exp (z));
-        const double sig = 0.5 * (1.0 + std::tanh (0.5 * z));
+        // one exp for softplus and logistic: z > 0 -> e = exp(-z); else e = exp(z)
+        const double e = std::exp (-std::abs (z));
+        const double sp = (z > 0.0 ? z : 0.0) + std::log1p (e);
+        const double sig = z > 0.0 ? 1.0 / (1.0 + e) : e / (1.0 + e);
         const double e1 = vpk / kp * sp;
         if (e1 <= 0.0)
             return;
         const double deg = vpk * sig / sq;
         const double dep = sp / kp - sig * vgk * vpk * vpk / (q * sq);
-        ip = std::pow (e1, ex) / kg1;
+        ip = std::exp (ex * std::log (e1)) / kg1;
         const double k = ex * ip / e1;
         dg = k * deg;
         dp = k * dep;
@@ -65,7 +67,9 @@ struct StageCircuit
 class CommonCathodeStage
 {
 public:
-    static constexpr int maxIter = 40;
+    static constexpr int maxIter = 40;       // bracketed fallback
+    static constexpr int maxFastIter = 6;    // warm-started Newton
+    static constexpr double fastTol = 1e-10; // relative step; -200 dB re the plate current
 
     void prepare (const KorenTriode& t, const StageCircuit& c, double sampleRate, double gridDc = 0.0) noexcept
     {
@@ -124,17 +128,45 @@ private:
             return ip - tube.ip (vg - vkk, vp - vkk);
         };
 
-        double lo = 0.0, hi = circ.bPlus / circ.ra + std::abs (gbIn * vcHist) + 1e-3;
         iterations = 0;
+        const double invAk = 1.0 / ak, dConst = 1.0 / ap + invAk;
+
+        // fast path: plain Newton from the previous sample's solution (typically 2-3 iterations).
+        // r(ip) is strictly increasing; any step that leaves ip > 0 or stalls falls back to the bracket.
+        if (ipGuess > 0.0)
+        {
+            double x = ipGuess;
+            for (int k = 0; k < maxFastIter; ++k)
+            {
+                ++iterations;
+                double vp, vkk, f, fg, fp;
+                nodes (x, vp, vkk);
+                tube.ipPartials (vg - vkk, vp - vkk, f, fg, fp);
+                const double d = 1.0 + fg * invAk + fp * dConst;
+                const double xn = x - (x - f) / d;
+                if (! (xn > 0.0) || ! (d > 0.0))
+                    break;
+                if (std::abs (xn - x) <= fastTol * xn)
+                {
+                    ipGuess = ipOut = xn;
+                    nodes (xn, vpOut, vkOut);
+                    return;
+                }
+                x = xn;
+            }
+        }
+
+        double lo = 0.0, hi = circ.bPlus / circ.ra + std::abs (gbIn * vcHist) + 1e-3;
         if (resid (lo) >= 0.0)
         {
+            ipGuess = -1.0;                       // cut off: next sample starts from the bracket again
             ipOut = 0.0; nodes (0.0, vpOut, vkOut);
             return;
         }
         for (int k = 0; k < 8 && resid (hi) <= 0.0; ++k)
             hi *= 2.0;
 
-        double x = (ipGuess > lo && ipGuess < hi) ? ipGuess : 0.5 * (lo + hi);   // warm start
+        double x = 0.5 * (lo + hi);
         for (int k = 0; k < maxIter; ++k)
         {
             ++iterations;
@@ -142,7 +174,7 @@ private:
             nodes (x, vp, vkk);
             tube.ipPartials (vg - vkk, vp - vkk, f, fg, fp);
             const double r = x - f;
-            const double d = 1.0 + fg / ak + fp * (1.0 / ap + 1.0 / ak);
+            const double d = 1.0 + fg * invAk + fp * dConst;
             if (r > 0.0) hi = x; else lo = x;
             double xn = d > 0.0 ? x - r / d : 0.5 * (lo + hi);
             if (std::abs (xn - x) <= 1e-12 * std::max (x, 1e-6)) { x = xn; break; }   // before the bracket guard

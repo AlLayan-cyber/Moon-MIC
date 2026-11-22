@@ -114,8 +114,8 @@ int main (int argc, char** argv)
         (void) g48;
     }
 
-    // CPU: 10 s of a loud 1 kHz sine at 48 kHz and at 192 kHz (= 4x oversampled 48 kHz)
-    for (double fs : { 48000.0, 192000.0 })
+    // CPU: 10 s of a loud 1 kHz sine at 48 kHz, 96 kHz (= 2x of 48 kHz, chosen) and 192 kHz (= 4x)
+    for (double fs : { 48000.0, 96000.0, 192000.0 })
     {
         CommonCathodeStage st; st.prepare (tube6AU6A(), StageCircuit {}, fs);
         const int n = (int) (10.0 * fs);

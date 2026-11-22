@@ -1,5 +1,5 @@
 Started validating: C:\AI_BRAIN\MOON_MIC\plugin\build\MoonMic_artefacts\Release\VST3\MOON MIC.vst3
-Random seed: 0x6d1fc6a
+Random seed: 0x7f2d8ef
 Validation started
 Strictness level: 10
 -----------------------------------------------------------------
