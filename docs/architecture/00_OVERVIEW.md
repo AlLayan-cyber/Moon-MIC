@@ -27,11 +27,11 @@ SIGNATURE — полноценный режим, а не упрощённый. T
 
 ## 3. Объём
 
-**Микрофоны (15):** Neumann U87 Ai, Neumann U47 FET, Neumann U67, AKG C414 B-XLS, Sony C-800G, AKG C12, RØDE K2, Shure SM7B, Audio-Technica AT5040, RØDE NT1 5th Gen, Telefunken ELA M 251E, **Royer R-121** (возвращён в объём 2026-11-22, решение D-009), **Shure SM58, Electro-Voice RE20, RØDE NT2-A** (добавлены 2026-11-22, решение D-010).
+**Микрофоны (14):** Neumann U87 Ai, Neumann U47 FET, Neumann U67, AKG C414 B-XLS, Sony C-800G, AKG C12, RØDE K2, Shure SM7B, Audio-Technica AT5040, RØDE NT1 5th Gen, Telefunken ELA M 251E, **Royer R-121** (возвращён в объём 2026-11-22, решение D-009), **Shure SM58, RØDE NT2-A** (добавлены 2026-11-22, решение D-010).
 
 **Предусилители:** Neve 1073, Tube-Tech MP1A — **отдельный этап** после микрофонного ядра (решение D-004).
 
-**Исключены:** Avalon VT-737sp.
+**Исключены:** Avalon VT-737sp, Electro-Voice RE20 (удалён 2026-11-22, решение D-011).
 
 ## 4. Теги достоверности
 - **VERIFIED** — прямо подтверждено источником или нашим измерением.

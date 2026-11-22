@@ -9,6 +9,7 @@ packaging==26.3
 pillow==13.0.0
 pycparser==3.12
 pyparsing==3.3.3
+pypdfium2==5.15.2
 python-dateutil==4.0.0
 scipy==1.18.1
 soundfile==0.14.0

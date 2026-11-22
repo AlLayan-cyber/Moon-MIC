@@ -67,7 +67,6 @@ SETS = [
     ("RodeK2", "Bidirect", "k2_figure8", "K2 — Figure-8"),
     ("RoyerR121", "fixed", "r121", "R-121"),
     ("ShureSM58", "fixed", "sm58", "SM58"),
-    ("ElectroVoiceRE20", "fixed", "re20", "RE20"),
     ("RodeNT2A", "Cardioid", "nt2a_cardioid", "NT2-A — Cardioid"),
     ("RodeNT2A", "Omni", "nt2a_omni", "NT2-A — Omni"),
     ("RodeNT2A", "Bidirect", "nt2a_figure8", "NT2-A — Figure-8"),
@@ -93,6 +92,72 @@ def to_grid(f_src, H, fg, lf_limit):
     return m, p
 
 
+# ---- Manufacturer anchoring outside the measured band (decision D-013) ------------------------
+MFR_JSON = ROOT / "data" / "manufacturer" / "frequency_responses.json"
+# Hand-read points from stylised raster graphs whose frequency axis is not reliably logarithmic
+# (low confidence; only the band edges are used). Sources: docs/manufacturer_data/*.
+MFR_MANUAL = {
+    "sm58_manual": {"source": "Shure SM58 user guide, typical frequency response (hand-read, low confidence)",
+                    "freq_hz": [50, 60, 70, 80, 100, 10000, 15000],
+                    "level_db": [-8.0, -5.9, -4.1, -2.6, 0.0, 4.0, -6.5]},
+    "r121_manual": {"source": "Royer R-121 manual, frequency response (hand-read, low confidence)",
+                    "freq_hz": [20, 30, 40, 50, 60, 15000, 18000, 20000],
+                    "level_db": [-4.5, -2.0, -0.5, 1.5, 1.5, -3.0, -3.0, -1.0]},
+}
+# model set id -> manufacturer curve id (None: no manufacturer data -> hold, documented)
+MFR_MAP = {
+    "u87ai_cardioid": "u87ai_cardioid", "u87ai_omni": "u87ai_omni", "u87ai_figure8": "u87ai_figure8",
+    "k2_cardioid": "k2_cardioid", "k2_omni": "k2_omni",
+    "nt2a_cardioid": "nt2a_cardioid", "nt2a_omni": "nt2a_omni",
+    "sm58": "sm58_manual", "r121": "r121_manual",
+}
+
+
+def load_mfr_curves() -> dict:
+    curves = dict(MFR_MANUAL)
+    if MFR_JSON.exists():
+        curves.update(json.loads(MFR_JSON.read_text(encoding="utf-8")))
+    return curves
+
+
+def mfr_level(curve: dict, f: np.ndarray) -> np.ndarray:
+    """Manufacturer level (dB) at f; outside the curve: linear in log f with the end-segment slope."""
+    x, y = np.log2(np.asarray(curve["freq_hz"], float)), np.asarray(curve["level_db"], float)
+    xf = np.log2(np.maximum(f, 1.0))
+    out = np.interp(xf, x, y)
+    lo_slope = (y[1] - y[0]) / (x[1] - x[0])
+    hi_slope = (y[-1] - y[-2]) / (x[-1] - x[-2])
+    out = np.where(xf < x[0], y[0] + (xf - x[0]) * lo_slope, out)
+    return np.where(xf > x[-1], y[-1] + (xf - x[-1]) * hi_slope, out)
+
+
+def anchor_to_manufacturer(mag, ph, b, fg, lf, curve):
+    """Replace the held values below lf / above F_HOLD_HI by the measured edge value shaped with the
+    manufacturer's on-axis curve. Done in the far-field basis so that proximity stays physical:
+        H_r0 = a + b_r0 cos,  b_r0 = b_ff G(r0);  a and b_ff follow the manufacturer shape R(f)."""
+    H = 10 ** (mag / 20) * np.exp(1j * ph)
+    cos = np.cos(THETA)[:, None]
+    M = mfr_level(curve, fg)
+    k_lf = int(np.argmin(np.abs(fg - lf)))
+    k_hf = int(np.argmin(np.abs(fg - F_HOLD_HI)))
+    Hn, bn = H.copy(), b.copy()
+    # low end (far-field basis)
+    g_lf = G(fg[k_lf], R0)
+    b_ff_lf = b[k_lf] / g_lf
+    a_lf = H[:, k_lf] - b[k_lf] * np.cos(THETA)
+    lo = fg < fg[k_lf]
+    R_lo = 10 ** ((M[lo] - M[k_lf]) / 20)
+    g = G(fg[lo], R0)
+    bn[lo] = b_ff_lf * R_lo * g
+    Hn[:, lo] = a_lf[:, None] * R_lo[None, :] + cos * bn[None, lo]
+    # high end (G ~ 1)
+    hi = fg > fg[k_hf]
+    R_hi = 10 ** ((M[hi] - M[k_hf]) / 20)
+    bn[hi] = b[k_hf] * R_hi
+    Hn[:, hi] = H[:, k_hf][:, None] * R_hi[None, :]
+    return 20 * np.log10(np.abs(Hn) + 1e-12), np.unwrap(np.angle(Hn), axis=-1), bn
+
+
 def model_response(mag_db, ph, b, fg, angle_deg, r):
     """Reference implementation of the runtime synthesis (target magnitude, before min-phase)."""
     H = 10 ** (mag_db / 20) * np.exp(1j * ph)
@@ -115,6 +180,7 @@ def main() -> int:
     blob += b"MMIC" + struct.pack("<IIIIff", 1, len(SETS), len(fg), 72, R0, C_SOUND)
     blob += fg.astype("<f4").tobytes() + np.arange(0, 360, 5).astype("<f4").tobytes()
     meta, refs = [], []
+    curves = load_mfr_curves()
     for model, pattern, sid, disp in SETS:
         src = FR / f"{model}_{pattern}_0.5m.npz"
         d = np.load(src)
@@ -124,6 +190,12 @@ def main() -> int:
         mag, ph = to_grid(f, H, fg, lf)
         fq = np.clip(fg, lf, F_HOLD_HI)
         b_g = np.interp(fq, f, b.real) + 1j * np.interp(fq, f, b.imag)
+        mfr_id = MFR_MAP.get(sid)
+        if mfr_id and mfr_id in curves:
+            mag, ph, b_g = anchor_to_manufacturer(mag, ph, b_g, fg, lf, curves[mfr_id])
+            edge = {"method": "manufacturer-anchored (D-013)", "curve": mfr_id, "source": curves[mfr_id]["source"]}
+        else:
+            edge = {"method": "hold (no manufacturer data yet)"}
         for s in (sid, disp, pattern):
             e = s.encode("utf-8")
             blob += struct.pack("<I", len(e)) + e
@@ -131,7 +203,8 @@ def main() -> int:
         blob += mag.astype("<f4").tobytes() + ph.astype("<f4").tobytes()
         blob += b_g.real.astype("<f4").tobytes() + b_g.imag.astype("<f4").tobytes()
         meta.append({"id": sid, "display": disp, "surrey_model": model, "pattern": pattern,
-                     "r0_m": R0, "lf_limit_hz": lf, "source_file": src.relative_to(ROOT).as_posix(),
+                     "r0_m": R0, "lf_limit_hz": lf, "band_edges": edge,
+                     "source_file": src.relative_to(ROOT).as_posix(),
                      "source_sha256": hashlib.sha256(src.read_bytes()).hexdigest()})
         # reference vectors (float32-rounded inputs, same as the plugin will see)
         m32, p32 = mag.astype(np.float32).astype(float), ph.astype(np.float32).astype(float)

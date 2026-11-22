@@ -32,3 +32,6 @@ docs/research/*.pdf
 
 # Downloaded third-party tools
 tools/external/
+
+# Manufacturer datasheets (copyrighted; kept on disk, not in git)
+docs/manufacturer_data/*/

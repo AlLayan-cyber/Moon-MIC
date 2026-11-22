@@ -44,7 +44,7 @@ int main()
     std::string err;
     check (lib.loadEmbedded (err), "model data loads (" + juce::String (err) + ")");
     if (lib.numSets() == 0) return 1;
-    check (lib.numSets() == 19, "19 microphone sets, got " + juce::String (lib.numSets()));
+    check (lib.numSets() == 18, "18 microphone sets, got " + juce::String (lib.numSets()));
     check (lib.numAngles() == 72, "72 angles");
 
     // FFT round trip
@@ -88,7 +88,7 @@ int main()
     juce::String worstWhere;
     for (auto cs : { Case { "u87ai_cardioid", 0.0f, 0.5f }, Case { "u87ai_figure8", 0.0f, 0.1f },
                      Case { "r121", 30.0f, 0.15f }, Case { "sm58", 0.0f, 1.25f },
-                     Case { "c414bxls_omni", 90.0f, 0.5f }, Case { "re20", 180.0f, 0.3f } })
+                     Case { "c414bxls_omni", 90.0f, 0.5f }, Case { "k2_cardioid", 180.0f, 0.3f } })
     {
         const int idx = lib.indexOf (cs.id);
         const auto r = SignatureDesigner::design (lib, idx, cs.angle, cs.dist);

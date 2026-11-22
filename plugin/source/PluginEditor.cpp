@@ -7,7 +7,6 @@ namespace moonmic
 namespace
 {
     constexpr int headerH = 58, footerH = 30, margin = 18;
-    constexpr float measuredMinCm = 50.0f, measuredMaxCm = 125.0f; // Surrey distances used / validated
 }
 
 //==============================================================================
@@ -130,34 +129,13 @@ void MoonMicEditor::timerCallback()
         plot.setCurve (std::move (curve));
     }
 
-    const int mic = micBox.getSelectedItemIndex();
-    if (processor.isLibraryValid() && mic >= 0 && mic < processor.getLibrary().numSets())
-        plot.setLfHoldBelow (processor.getLibrary().set (mic).lfLimitHz);
-
-    juce::String status;
-    juce::Colour colour = theme::muted;
+    // Decision D-012: no explanatory texts about measurement limits in the UI (they live in the docs).
+    // Only a genuine failure is shown.
     if (! processor.isLibraryValid())
     {
-        status = "Model data failed to load: " + processor.getLibraryError();
-        colour = theme::warning;
+        statusLabel.setText ("Model data failed to load: " + processor.getLibraryError(), juce::dontSendNotification);
+        statusLabel.setColour (juce::Label::textColourId, theme::warning);
     }
-    else
-    {
-        const auto cm = (float) distanceKnob.getValue();
-        if (cm < measuredMinCm)
-        {
-            status = "Distance below the measured range (50-125 cm): proximity is extrapolated by the "
-                     "physical model and not yet validated.";
-            colour = theme::warning;
-        }
-        else if (cm <= measuredMaxCm)
-        {
-            status = "Within the measured range (50-125 cm).";
-        }
-        status << "\nBelow the shaded LF limit the measurement is held; the real LF roll-off is unknown.";
-    }
-    statusLabel.setText (status, juce::dontSendNotification);
-    statusLabel.setColour (juce::Label::textColourId, colour);
 }
 
 void MoonMicEditor::paint (juce::Graphics& g)
