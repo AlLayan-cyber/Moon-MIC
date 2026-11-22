@@ -1,0 +1,16 @@
+﻿parameter,symbol,value,unit,uncertainty_or_range,source_url_or_reference,confidence,calibration_method,notes
+Capsule diameter,D,,mm,,,unknown,,Verify exact definition and source
+Membrane polymer,,,,,,unknown,,Do not infer from repair anecdote
+Membrane thickness,t,,m,,,unknown,,
+Membrane areal mass,mu,,kg/m^2,,,unknown,,May be derived only if material/thickness known
+Gold layer thickness,,,m,,,unknown,,
+Membrane tension,T,,N/m,,,unknown,,
+Initial gap,d0,,m,,,unknown,,Check whether uniform
+Backplate hole geometry,,,,,,unknown,,
+Modal frequency,fn,,Hz,,,unknown,,Measured or fitted
+Modal damping,zeta_n,,,,,unknown,,
+Polarization voltage,Vbias,,V,,,unknown,,Verify actual capsule voltage
+Capsule capacitance,C0,,F,,,unknown,,
+Acoustic cavity compliance,,,,,,unknown,,
+Acoustic resistance,,,,,,unknown,,
+Electronics input impedance,,,ohm,,,unknown,,Keep separate from capsule mechanics

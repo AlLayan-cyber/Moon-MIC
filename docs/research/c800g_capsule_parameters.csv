@@ -1,0 +1,42 @@
+parameter,symbol,value,unit,uncertainty_or_range,source_url_or_reference,confidence,calibration_method,notes
+Diaphragm diameter,D,34,mm,definition not stated (membrane vs active area),"JAS Journal Vol.54 No.3, p.33 §4 (docs/manufacturer_data/sony_c800g/c800g_jas_journal_vol54_no3.pdf)",confirmed,,"Text: φ34mm dual diaphragm"
+Capsule construction,,dual diaphragm,,,"JAS p.33 §4; service manual schematic 3-2 (three-electrode capsule CO101)",confirmed,,
+Pattern switching,,electrical (Uni / Omni),,,"JAS p.33 §4; schematic switch S101",confirmed,,Which diaphragm is re-biased: inferred from schematic scan
+Diaphragm metallisation,,gold evaporated film,,,"JAS p.34 §4 (金蒸着膜)",confirmed,,Thickness unknown
+Gap adjustment process,,polishing equipment adjustable at ~1 µm order,µm,,"JAS p.34 §4",confirmed,,"This is process resolution for the gap between gold film and insulating material, to hold sensitivity and fo constant. NOT the nominal gap value"
+Diaphragm adhesive,,thermosetting special adhesive,,,JAS p.34 §4,confirmed,,
+Acoustic impedance of capsule,,"""lowered"" to reduce acoustic load on diaphragm",,qualitative only,JAS p.34 §4,reported,,No numbers
+Membrane polymer,,,,,,unknown,,"Forum repair anecdote (Mylar as for K67) is not a factory spec"
+Membrane thickness,t,,m,,,unknown,,
+Membrane areal mass,mu,,kg/m^2,,,unknown,,
+Gold layer thickness,,,m,,,unknown,,
+Membrane tension,T,,N/m,,,unknown,,
+Nominal gap,d0,,m,,,unknown,,
+Backplate hole geometry,,,,,,unknown,,
+Diaphragm resonance,fo,,Hz,,,unknown,"fit to response (non-unique)","JAS confirms fo is a controlled production parameter, value not given"
+Modal damping,zeta_n,,,,,unknown,,
+Capsule bias node voltage,Vbias,47,V,"""about""; scan",Service manual schematic 3-2 (R101 180k / R102 47k divider from 230 V),confirmed,,Node voltage on schematic
+Capsule polarisation (effective),,47 (Omni) / per diaphragm switched,V,,Schematic 3-2 topology,inferred,,"Reading of the 3-electrode wiring from a scan; verify on a clearer copy"
+Capsule capacitance,C0,,F,,,unknown,,
+Grid leak resistor,R103,500,MΩ,,Schematic 3-2,confirmed,,
+Tube,,6AU6A triode-connected,,,"JAS p.33 §3; schematic 3-2",confirmed,,Common-cathode
+Stage gain,,17,dB,,JAS p.33 §3,confirmed,,
+B+ at board,,230,V,about,Schematic 3-2,confirmed,,JAS: ~220 V on plate side
+Plate voltage,,90,V,about,Schematic 3-2,confirmed,,
+Plate load,R104,100,kΩ,,Schematic 3-2,confirmed,,
+Plate current,,1.4,mA,about,Schematic 3-2,confirmed,,
+Cathode voltage / resistor,R105,1.4 V / 1 kΩ (bypassed 330 µF),,,Schematic 3-2,confirmed,,
+Heater,,5.7 V / 280 mA,,,"JAS p.33 §3; schematic 3-2",confirmed,,
+Coupling capacitor,C104,1,µF,250 V,Schematic 3-2,confirmed,,
+Output transformer,T101,"Arnold permalloy EI-35 core, ratio 7:1",,,JAS p.34 §5,confirmed,,Primary/secondary orientation of 7:1 assumed step-down; winding details unknown
+Tube cooling,,Peltier; tube ~75 °C -> ~10-something °C,,,JAS p.34-35 §6; schematic (Peltier ~1.2 A),confirmed,,JAS figs 4/5 show reduced harmonics after cooling (low resolution)
+Sensitivity,,-32 (Uni) / -35 (Omni),dB re 1 V/Pa,,Sell sheet A-1164-A p.3; service manual,confirmed,,
+Max SPL (1% THD),,131 (Uni) / 134 (Omni),dB SPL,,Sell sheet A-1164-A p.3,confirmed,,Constraint for the nonlinear model
+Self-noise,,18 (Uni) / 21 (Omni),dB(A),,Sell sheet A-1164-A p.3,confirmed,,
+Electronics input impedance,,,ohm,,,unknown,,Keep separate from capsule mechanics
+6AU6A triode Koren mu,mu,37.69,,fit; published typical mu 36,"GE ET-T916A p.4 triode curves (docs/manufacturer_data/tube_6au6a), fit in research/capsule_engine/fit_6au6a.py",inferred,least-squares fit to digitised curves,Plate-voltage RMS error 3.9 V
+6AU6A triode Koren ex,ex,1.272,,fit,same,inferred,same,
+6AU6A triode Koren kG1,kg1,276.9,,fit,same,inferred,same,
+6AU6A triode Koren kP,kp,249.8,,fit,same,inferred,same,
+6AU6A triode Koren kVB,kvb,222.6,,fit,same,inferred,same,
+6AU6A triode typical operation,,"Eb 250 V, Rk 330 Ohm: mu 36, gm 4800 umho, Ib 12.2 mA",,,GE ET-T916A p.2,confirmed,,Used as independent check of the fit
