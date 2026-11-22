@@ -73,7 +73,7 @@ Out-of-scope note: the Royer R-121 is in the dataset but excluded from MOON MIC 
 | Digital gain | Preamp gain **re-adjusted for every mic and rotation** so the signal reached −15 dBFS ± 1 dB | VERIFIED | p.6 [887] |
 | Consequence | Raw IRs do **not** preserve absolute mic sensitivity across mics. Within one rotation the gain is fixed, so the relative angle levels are preserved | INFERRED |
 | "Normalised" set | `contents.txt`: normalised to −1 dBFS peak | VERIFIED |
-| Normalisation scope (archive check) | U87Ai Cardioid 125 cm, 32-bit: Normalised 0° peak = −1.00 dBFS, 90° = −11.49, 180° = −10.53. Raw is −25.50 / −35.99 / −35.03. Constant 24.5 dB offset, so normalisation is **per rotation set, keyed to 0°**, not per file. Angle-relative levels are preserved | VERIFIED for this set only. Other sets need checking |
+| Normalisation scope (archive check) | U87Ai Cardioid 125 cm, 32-bit: Normalised 0° peak = −1.00 dBFS, 90° = −11.49, 180° = −10.53. Raw is −25.50 / −35.99 / −35.03. Constant 24.5 dB offset, so normalisation is **per rotation set, keyed to 0°**, not per file. Angle-relative levels are preserved | VERIFIED on all 60 sets in Phase 1 QC: the offset is constant across the 72 angles in every set. Exceptions: four Omni sets not keyed to 0°, and K2 Omni 5 m, where Raw = Normalised (§7 item 9) |
 | Loudspeaker / chain compensation | The paper describes **no** correction for the Genelec 8040 response, the preamp or the interface. The IRs contain the mic **plus** the loudspeaker and electronics | INFERRED (absent from text) |
 | Reference mic | NTi M2211 (Class-1) measured in the dataset "for possible future use as a reference" (p.4). It could be used to estimate the loudspeaker+room-window response for deconvolving it out | VERIFIED presence; use is INFERRED |
 
@@ -91,6 +91,14 @@ Out-of-scope note: the Royer R-121 is in the dataset but excluded from MOON MIC 
    - Extra `IRs/` sub-folders exist in `ShureSM58_125cm` and `SonyECM670_125cm` (Normalised and Raw). They hold 288 files total with no bit-depth suffix.
    - 116 folders per variant (39 at 125 cm and 5 m, 38 at 50 cm), against the paper's 38 per distance. The Schoeps CMC6 with and without KA40 are separate folders, and the AKG C414 Hyper set is not in Table 1.
    - Totals: 16,848 Normalised and 16,776 Raw WAVs.
+9. Additional anomalies found in Phase 1 QC (2026-11-22; 60 sets = 9 in-scope mics + NTi M2211; VERIFIED, archive check; details in `research/reports/PHASE1_SURREY_PIPELINE_REPORT.md` §2):
+   - **Clipped 24-bit renders.** Some angles peak above 0 dBFS in the 32-bit float files (up to +1.31 dBFS: U47 FET, C800 Omni, U87 Ai Bidirect 5 m, M2211 0.5 m, among others). The 24-bit versions of those files are clipped (checked: U47 FET 1.25 m, 350°: float peak 1.163, 24-bit 1.000). **Rule: use the 32-bit files only.**
+   - `Raw_IRs` RØDE K2 Omni 5 m is identical to the Normalised set (0.0 dB offset), so the "raw" set is actually normalised.
+   - RØDE K2 Bidirect 5 m: the 24-bit and 32-bit files differ at 0° (−14.9 dB).
+   - K2 Omni 0.5 m / 5 m and NT2-A Omni 0.5 m / 5 m: 0° is not at −1 dBFS (−1.04 to −2.28), so these sets were not normalised to 0°.
+   - All U47 FET file names contain a typo (`NeumanU47FET_…`); the folder names are correct.
+   - AKG D12 0.5 m uses `24bps`/`32bps` folder names (out of scope).
+   - Extra `IRs/` folders (SM58 and ECM-670 at 1.25 m) hold 16-bit files.
 
 ## 8. Relevance to MOON MIC
 - 5 of 11 target mics have angle- and distance-resolved IRs suitable for linear (FIR) modelling of on- and off-axis response and proximity trends above about 60 Hz (INFERRED).
@@ -102,6 +110,6 @@ Out-of-scope note: the Royer R-121 is in the dataset but excluded from MOON MIC 
 | Area | Confidence |
 |------|-----------|
 | Methodology, geometry, stimulus, windowing | High (peer-reviewed article) |
-| Normalisation behaviour | Medium (verified on one set; generalisation unchecked) |
+| Normalisation behaviour | High (verified on all 60 in-scope sets; exceptions listed) |
 | Chain compensation status | Medium (inferred from absence) |
 | Model identity (C800 vs C-800G) | Low |

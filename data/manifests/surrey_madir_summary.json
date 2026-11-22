@@ -1,0 +1,52 @@
+{
+  "source": "Surrey MADIR, Zenodo 10.5281/zenodo.4633508 (CC BY)",
+  "archive": {
+    "path": "data/raw/surrey_madir/original_zip/Microphone_Impulse_Responses.zip",
+    "size_bytes": 1485159533,
+    "sha256": "54867941ca51bc256535ff8bd47ef80c3e13325f171c7f75ca776bc730781dd7"
+  },
+  "wav_count": 33624,
+  "by_variant": {
+    "Normalised_IRs": 16848,
+    "Raw_IRs": 16776
+  },
+  "by_flag": {
+    "ok": 32976,
+    "dir_name_variant": 288,
+    "misfiled_bitdepth": 72,
+    "extra_dir": 288
+  },
+  "samplerates": {
+    "48000": 33624
+  },
+  "subtypes": {
+    "PCM_24": 16632,
+    "FLOAT": 16704,
+    "PCM_16": 288
+  },
+  "frames": {
+    "480000": 33624
+  },
+  "in_scope_models": [
+    "AKGC414",
+    "ElectroVoiceRE20",
+    "NeumannU47FET",
+    "NeumannU87Ai",
+    "RodeK2",
+    "RodeNT2A",
+    "RoyerR121",
+    "ShureSM58",
+    "SonyC800"
+  ],
+  "incomplete_sets": [
+    {
+      "variant": "Raw_IRs",
+      "model": "Coles4038",
+      "pattern": "fixed",
+      "distance_m": 5.0,
+      "bits": "24bit",
+      "angles": 0
+    }
+  ],
+  "anomalies": []
+}

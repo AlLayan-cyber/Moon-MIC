@@ -1,0 +1,1982 @@
+[
+  {
+    "label": "AKGC414_Bidirect_0.5m",
+    "model": "AKGC414",
+    "pattern": "Bidirect",
+    "distance_m": 0.5,
+    "moonmic_id": "akg_c414bxls",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1373,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      221
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.96,
+    "norm_minus_raw_db": [
+      23.519,
+      23.519
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "AKGC414_Bidirect_1.25m",
+    "model": "AKGC414",
+    "pattern": "Bidirect",
+    "distance_m": 1.25,
+    "moonmic_id": "akg_c414bxls",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1385,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      26
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.143,
+    "norm_minus_raw_db": [
+      26.065,
+      26.065
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "AKGC414_Bidirect_5m",
+    "model": "AKGC414",
+    "pattern": "Bidirect",
+    "distance_m": 5.0,
+    "moonmic_id": "akg_c414bxls",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.728,
+    "norm_minus_raw_db": [
+      29.783,
+      29.783
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "AKGC414_Cardioid_0.5m",
+    "model": "AKGC414",
+    "pattern": "Cardioid",
+    "distance_m": 0.5,
+    "moonmic_id": "akg_c414bxls",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1373,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      221
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      23.359,
+      23.359
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "AKGC414_Cardioid_1.25m",
+    "model": "AKGC414",
+    "pattern": "Cardioid",
+    "distance_m": 1.25,
+    "moonmic_id": "akg_c414bxls",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1387,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      24
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      23.841,
+      23.841
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "AKGC414_Cardioid_5m",
+    "model": "AKGC414",
+    "pattern": "Cardioid",
+    "distance_m": 5.0,
+    "moonmic_id": "akg_c414bxls",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": 0.159,
+    "norm_minus_raw_db": [
+      33.525,
+      33.525
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "AKGC414_Hyper_0.5m",
+    "model": "AKGC414",
+    "pattern": "Hyper",
+    "distance_m": 0.5,
+    "moonmic_id": "akg_c414bxls",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1373,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      221
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      23.078,
+      23.078
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "AKGC414_Hyper_1.25m",
+    "model": "AKGC414",
+    "pattern": "Hyper",
+    "distance_m": 1.25,
+    "moonmic_id": "akg_c414bxls",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1385,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      26
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      23.972,
+      23.972
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "AKGC414_Hyper_5m",
+    "model": "AKGC414",
+    "pattern": "Hyper",
+    "distance_m": 5.0,
+    "moonmic_id": "akg_c414bxls",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      30.493,
+      30.493
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "AKGC414_Omni_0.5m",
+    "model": "AKGC414",
+    "pattern": "Omni",
+    "distance_m": 0.5,
+    "moonmic_id": "akg_c414bxls",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1373,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      221
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.83,
+    "norm_minus_raw_db": [
+      23.343,
+      23.343
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "AKGC414_Omni_1.25m",
+    "model": "AKGC414",
+    "pattern": "Omni",
+    "distance_m": 1.25,
+    "moonmic_id": "akg_c414bxls",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1386,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      25
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      27.75,
+      27.75
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "AKGC414_Omni_5m",
+    "model": "AKGC414",
+    "pattern": "Omni",
+    "distance_m": 5.0,
+    "moonmic_id": "akg_c414bxls",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.863,
+    "norm_minus_raw_db": [
+      37.579,
+      37.579
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "ElectroVoiceRE20_fixed_0.5m",
+    "model": "ElectroVoiceRE20",
+    "pattern": "fixed",
+    "distance_m": 0.5,
+    "moonmic_id": "ev_re20",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1370,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      224
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.668,
+    "norm_minus_raw_db": [
+      28.751,
+      28.751
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "ElectroVoiceRE20_fixed_1.25m",
+    "model": "ElectroVoiceRE20",
+    "pattern": "fixed",
+    "distance_m": 1.25,
+    "moonmic_id": "ev_re20",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1383,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      28
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.587,
+    "norm_minus_raw_db": [
+      33.305,
+      33.305
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "ElectroVoiceRE20_fixed_5m",
+    "model": "ElectroVoiceRE20",
+    "pattern": "fixed",
+    "distance_m": 5.0,
+    "moonmic_id": "ev_re20",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.9,
+    "norm_minus_raw_db": [
+      43.367,
+      43.367
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NTiM2211_fixed_0.5m",
+    "model": "NTiM2211",
+    "pattern": "fixed",
+    "distance_m": 0.5,
+    "moonmic_id": "reference",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1378,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      216
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": 0.162,
+    "norm_minus_raw_db": [
+      23.653,
+      23.653
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NTiM2211_fixed_1.25m",
+    "model": "NTiM2211",
+    "pattern": "fixed",
+    "distance_m": 1.25,
+    "moonmic_id": "reference",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1383,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      28
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.728,
+    "norm_minus_raw_db": [
+      26.374,
+      26.374
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NTiM2211_fixed_5m",
+    "model": "NTiM2211",
+    "pattern": "fixed",
+    "distance_m": 5.0,
+    "moonmic_id": "reference",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.772,
+    "norm_minus_raw_db": [
+      36.764,
+      36.764
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NeumannU47FET_fixed_0.5m",
+    "model": "NeumannU47FET",
+    "pattern": "fixed",
+    "distance_m": 0.5,
+    "moonmic_id": "neumann_u47fet",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1379,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      215
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": 0.298,
+    "norm_minus_raw_db": [
+      22.497,
+      22.497
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NeumannU47FET_fixed_1.25m",
+    "model": "NeumannU47FET",
+    "pattern": "fixed",
+    "distance_m": 1.25,
+    "moonmic_id": "neumann_u47fet",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1388,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      23
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": 1.311,
+    "norm_minus_raw_db": [
+      27.968,
+      27.968
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NeumannU47FET_fixed_5m",
+    "model": "NeumannU47FET",
+    "pattern": "fixed",
+    "distance_m": 5.0,
+    "moonmic_id": "neumann_u47fet",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": 0.429,
+    "norm_minus_raw_db": [
+      31.784,
+      31.784
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NeumannU87Ai_Bidirect_0.5m",
+    "model": "NeumannU87Ai",
+    "pattern": "Bidirect",
+    "distance_m": 0.5,
+    "moonmic_id": "neumann_u87ai",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1369,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      225
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      24.472,
+      24.472
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NeumannU87Ai_Bidirect_1.25m",
+    "model": "NeumannU87Ai",
+    "pattern": "Bidirect",
+    "distance_m": 1.25,
+    "moonmic_id": "neumann_u87ai",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1381,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      30
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      25.754,
+      25.754
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NeumannU87Ai_Bidirect_5m",
+    "model": "NeumannU87Ai",
+    "pattern": "Bidirect",
+    "distance_m": 5.0,
+    "moonmic_id": "neumann_u87ai",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": 0.773,
+    "norm_minus_raw_db": [
+      33.296,
+      33.296
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NeumannU87Ai_Cardioid_0.5m",
+    "model": "NeumannU87Ai",
+    "pattern": "Cardioid",
+    "distance_m": 0.5,
+    "moonmic_id": "neumann_u87ai",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1369,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      225
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      22.927,
+      22.927
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NeumannU87Ai_Cardioid_1.25m",
+    "model": "NeumannU87Ai",
+    "pattern": "Cardioid",
+    "distance_m": 1.25,
+    "moonmic_id": "neumann_u87ai",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1380,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      31
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      24.499,
+      24.499
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NeumannU87Ai_Cardioid_5m",
+    "model": "NeumannU87Ai",
+    "pattern": "Cardioid",
+    "distance_m": 5.0,
+    "moonmic_id": "neumann_u87ai",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.794,
+    "norm_minus_raw_db": [
+      32.727,
+      32.727
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NeumannU87Ai_Omni_0.5m",
+    "model": "NeumannU87Ai",
+    "pattern": "Omni",
+    "distance_m": 0.5,
+    "moonmic_id": "neumann_u87ai",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1371,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      223
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.821,
+    "norm_minus_raw_db": [
+      24.281,
+      24.281
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NeumannU87Ai_Omni_1.25m",
+    "model": "NeumannU87Ai",
+    "pattern": "Omni",
+    "distance_m": 1.25,
+    "moonmic_id": "neumann_u87ai",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1383,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      28
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      27.987,
+      27.987
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "NeumannU87Ai_Omni_5m",
+    "model": "NeumannU87Ai",
+    "pattern": "Omni",
+    "distance_m": 5.0,
+    "moonmic_id": "neumann_u87ai",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.673,
+    "norm_minus_raw_db": [
+      38.651,
+      38.651
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeK2_Bidirect_0.5m",
+    "model": "RodeK2",
+    "pattern": "Bidirect",
+    "distance_m": 0.5,
+    "moonmic_id": "rode_k2",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1373,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      221
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": 0.265,
+    "norm_minus_raw_db": [
+      24.427,
+      24.427
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeK2_Bidirect_1.25m",
+    "model": "RodeK2",
+    "pattern": "Bidirect",
+    "distance_m": 1.25,
+    "moonmic_id": "rode_k2",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1378,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      33
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      24.364,
+      24.364
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeK2_Bidirect_5m",
+    "model": "RodeK2",
+    "pattern": "Bidirect",
+    "distance_m": 5.0,
+    "moonmic_id": "rode_k2",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.653,
+    "norm_minus_raw_db": [
+      29.331,
+      29.331
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -14.9
+  },
+  {
+    "label": "RodeK2_Cardioid_0.5m",
+    "model": "RodeK2",
+    "pattern": "Cardioid",
+    "distance_m": 0.5,
+    "moonmic_id": "rode_k2",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1374,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      220
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.864,
+    "norm_minus_raw_db": [
+      21.696,
+      21.696
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeK2_Cardioid_1.25m",
+    "model": "RodeK2",
+    "pattern": "Cardioid",
+    "distance_m": 1.25,
+    "moonmic_id": "rode_k2",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1379,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      32
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      23.781,
+      23.781
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeK2_Cardioid_5m",
+    "model": "RodeK2",
+    "pattern": "Cardioid",
+    "distance_m": 5.0,
+    "moonmic_id": "rode_k2",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      33.498,
+      33.498
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeK2_Omni_0.5m",
+    "model": "RodeK2",
+    "pattern": "Omni",
+    "distance_m": 0.5,
+    "moonmic_id": "rode_k2",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1374,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      220
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.042,
+    "peak_max_dbfs": -0.106,
+    "norm_minus_raw_db": [
+      22.216,
+      22.216
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.4
+  },
+  {
+    "label": "RodeK2_Omni_1.25m",
+    "model": "RodeK2",
+    "pattern": "Omni",
+    "distance_m": 1.25,
+    "moonmic_id": "rode_k2",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1380,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      31
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      23.762,
+      23.762
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeK2_Omni_5m",
+    "model": "RodeK2",
+    "pattern": "Omni",
+    "distance_m": 5.0,
+    "moonmic_id": "rode_k2",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -2.045,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      0.0,
+      0.0
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -136.4
+  },
+  {
+    "label": "RodeNT2A_Bidirect_0.5m",
+    "model": "RodeNT2A",
+    "pattern": "Bidirect",
+    "distance_m": 0.5,
+    "moonmic_id": "rode_nt2a",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1377,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      217
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.108,
+    "norm_minus_raw_db": [
+      25.036,
+      25.036
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeNT2A_Bidirect_1.25m",
+    "model": "RodeNT2A",
+    "pattern": "Bidirect",
+    "distance_m": 1.25,
+    "moonmic_id": "rode_nt2a",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1382,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      29
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.632,
+    "norm_minus_raw_db": [
+      24.752,
+      24.752
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeNT2A_Bidirect_5m",
+    "model": "RodeNT2A",
+    "pattern": "Bidirect",
+    "distance_m": 5.0,
+    "moonmic_id": "rode_nt2a",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.559,
+    "norm_minus_raw_db": [
+      30.625,
+      30.625
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeNT2A_Cardioid_0.5m",
+    "model": "RodeNT2A",
+    "pattern": "Cardioid",
+    "distance_m": 0.5,
+    "moonmic_id": "rode_nt2a",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1378,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      216
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.794,
+    "norm_minus_raw_db": [
+      23.959,
+      23.959
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeNT2A_Cardioid_1.25m",
+    "model": "RodeNT2A",
+    "pattern": "Cardioid",
+    "distance_m": 1.25,
+    "moonmic_id": "rode_nt2a",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1382,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      29
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.237,
+    "norm_minus_raw_db": [
+      24.776,
+      24.776
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeNT2A_Cardioid_5m",
+    "model": "RodeNT2A",
+    "pattern": "Cardioid",
+    "distance_m": 5.0,
+    "moonmic_id": "rode_nt2a",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.536,
+    "norm_minus_raw_db": [
+      32.468,
+      32.468
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeNT2A_Omni_0.5m",
+    "model": "RodeNT2A",
+    "pattern": "Omni",
+    "distance_m": 0.5,
+    "moonmic_id": "rode_nt2a",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1378,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      216
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -2.281,
+    "peak_max_dbfs": -0.976,
+    "norm_minus_raw_db": [
+      23.635,
+      23.635
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -136.2
+  },
+  {
+    "label": "RodeNT2A_Omni_1.25m",
+    "model": "RodeNT2A",
+    "pattern": "Omni",
+    "distance_m": 1.25,
+    "moonmic_id": "rode_nt2a",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1380,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      31
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.737,
+    "norm_minus_raw_db": [
+      23.595,
+      23.595
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RodeNT2A_Omni_5m",
+    "model": "RodeNT2A",
+    "pattern": "Omni",
+    "distance_m": 5.0,
+    "moonmic_id": "rode_nt2a",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.834,
+    "peak_max_dbfs": -0.68,
+    "norm_minus_raw_db": [
+      38.893,
+      38.893
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -136.6
+  },
+  {
+    "label": "RoyerR121_fixed_0.5m",
+    "model": "RoyerR121",
+    "pattern": "fixed",
+    "distance_m": 0.5,
+    "moonmic_id": "royer_r121",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1374,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      220
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.334,
+    "norm_minus_raw_db": [
+      37.896,
+      37.896
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RoyerR121_fixed_1.25m",
+    "model": "RoyerR121",
+    "pattern": "fixed",
+    "distance_m": 1.25,
+    "moonmic_id": "royer_r121",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1388,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      23
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.824,
+    "norm_minus_raw_db": [
+      35.288,
+      35.288
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "RoyerR121_fixed_5m",
+    "model": "RoyerR121",
+    "pattern": "fixed",
+    "distance_m": 5.0,
+    "moonmic_id": "royer_r121",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.923,
+    "norm_minus_raw_db": [
+      37.156,
+      37.156
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "ShureSM58_fixed_0.5m",
+    "model": "ShureSM58",
+    "pattern": "fixed",
+    "distance_m": 0.5,
+    "moonmic_id": "shure_sm58",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1381,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      213
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.966,
+    "norm_minus_raw_db": [
+      29.656,
+      29.656
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "ShureSM58_fixed_1.25m",
+    "model": "ShureSM58",
+    "pattern": "fixed",
+    "distance_m": 1.25,
+    "moonmic_id": "shure_sm58",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1386,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      25
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.827,
+    "norm_minus_raw_db": [
+      30.936,
+      30.936
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "ShureSM58_fixed_5m",
+    "model": "ShureSM58",
+    "pattern": "fixed",
+    "distance_m": 5.0,
+    "moonmic_id": "shure_sm58",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.887,
+    "norm_minus_raw_db": [
+      34.037,
+      34.037
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "SonyC800_Cardioid_0.5m",
+    "model": "SonyC800",
+    "pattern": "Cardioid",
+    "distance_m": 0.5,
+    "moonmic_id": "sony_c800",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1378,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      216
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.851,
+    "norm_minus_raw_db": [
+      25.677,
+      25.677
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "SonyC800_Cardioid_1.25m",
+    "model": "SonyC800",
+    "pattern": "Cardioid",
+    "distance_m": 1.25,
+    "moonmic_id": "sony_c800",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1387,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      24
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -0.797,
+    "norm_minus_raw_db": [
+      26.678,
+      26.678
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "SonyC800_Cardioid_5m",
+    "model": "SonyC800",
+    "pattern": "Cardioid",
+    "distance_m": 5.0,
+    "moonmic_id": "sony_c800",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      35.306,
+      35.306
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "SonyC800_Omni_0.5m",
+    "model": "SonyC800",
+    "pattern": "Omni",
+    "distance_m": 0.5,
+    "moonmic_id": "sony_c800",
+    "window_samples_expected": 1593.6,
+    "window_samples_observed": [
+      1381,
+      1593
+    ],
+    "first_nonzero_range": [
+      1,
+      213
+    ],
+    "last_nonzero_range": [
+      1593,
+      1593
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      796,
+      797
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": 1.167,
+    "norm_minus_raw_db": [
+      26.22,
+      26.22
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "SonyC800_Omni_1.25m",
+    "model": "SonyC800",
+    "pattern": "Omni",
+    "distance_m": 1.25,
+    "moonmic_id": "sony_c800",
+    "window_samples_expected": 1411.2,
+    "window_samples_observed": [
+      1385,
+      1410
+    ],
+    "first_nonzero_range": [
+      1,
+      26
+    ],
+    "last_nonzero_range": [
+      1410,
+      1410
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      705,
+      706
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": 0.202,
+    "norm_minus_raw_db": [
+      28.991,
+      28.991
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  },
+  {
+    "label": "SonyC800_Omni_5m",
+    "model": "SonyC800",
+    "pattern": "Omni",
+    "distance_m": 5.0,
+    "moonmic_id": "sony_c800",
+    "window_samples_expected": 768.0,
+    "window_samples_observed": [
+      767,
+      767
+    ],
+    "first_nonzero_range": [
+      1,
+      1
+    ],
+    "last_nonzero_range": [
+      767,
+      767
+    ],
+    "data_beyond_crop": false,
+    "peak_index_range": [
+      384,
+      384
+    ],
+    "peak_0deg_dbfs": -1.0,
+    "peak_max_dbfs": -1.0,
+    "norm_minus_raw_db": [
+      37.825,
+      37.825
+    ],
+    "raw_angles_available": 72,
+    "err_24_vs_32_db": -137.5
+  }
+]
