@@ -110,6 +110,10 @@ MFR_MAP = {
     "k2_cardioid": "k2_cardioid", "k2_omni": "k2_omni",
     "nt2a_cardioid": "nt2a_cardioid", "nt2a_omni": "nt2a_omni",
     "sm58": "sm58_manual", "r121": "r121_manual",
+    "u47fet": "u47fet",
+    "c414bxls_cardioid": "c414bxls_cardioid", "c414bxls_hyper": "c414bxls_hyper",
+    "c414bxls_omni": "c414bxls_omni", "c414bxls_figure8": "c414bxls_figure8",
+    "c800_cardioid": "c800g_cardioid", "c800_omni": "c800g_omni",   # c800g_omni: low end only ("bands")
 }
 
 
@@ -121,12 +125,15 @@ def load_mfr_curves() -> dict:
 
 
 def mfr_level(curve: dict, f: np.ndarray) -> np.ndarray:
-    """Manufacturer level (dB) at f; outside the curve: linear in log f with the end-segment slope."""
+    """Manufacturer level (dB) at f; outside the curve: linear in log f with the end-segment slope
+    (upper end: falling slope only)."""
     x, y = np.log2(np.asarray(curve["freq_hz"], float)), np.asarray(curve["level_db"], float)
     xf = np.log2(np.maximum(f, 1.0))
     out = np.interp(xf, x, y)
     lo_slope = (y[1] - y[0]) / (x[1] - x[0])
-    hi_slope = (y[-1] - y[-2]) / (x[-1] - x[-2])
+    # above the last published point only a falling trend is continued; a rising end segment
+    # (e.g. a ripple at 20 kHz) is held flat rather than extrapolated upwards
+    hi_slope = min((y[-1] - y[-2]) / (x[-1] - x[-2]), 0.0)
     out = np.where(xf < x[0], y[0] + (xf - x[0]) * lo_slope, out)
     return np.where(xf > x[-1], y[-1] + (xf - x[-1]) * hi_slope, out)
 
@@ -150,7 +157,9 @@ def anchor_to_manufacturer(mag, ph, b, fg, lf, curve):
     g = G(fg[lo], R0)
     bn[lo] = b_ff_lf * R_lo * g
     Hn[:, lo] = a_lf[:, None] * R_lo[None, :] + cos * bn[None, lo]
-    # high end (G ~ 1)
+    # high end (G ~ 1); skipped when the curve is only valid at the low end (curve["bands"] == ["lf"])
+    if "hf" not in curve.get("bands", ("lf", "hf")):
+        return 20 * np.log10(np.abs(Hn) + 1e-12), np.unwrap(np.angle(Hn), axis=-1), bn
     hi = fg > fg[k_hf]
     R_hi = 10 ** ((M[hi] - M[k_hf]) / 20)
     bn[hi] = b[k_hf] * R_hi
@@ -193,7 +202,8 @@ def main() -> int:
         mfr_id = MFR_MAP.get(sid)
         if mfr_id and mfr_id in curves:
             mag, ph, b_g = anchor_to_manufacturer(mag, ph, b_g, fg, lf, curves[mfr_id])
-            edge = {"method": "manufacturer-anchored (D-013)", "curve": mfr_id, "source": curves[mfr_id]["source"]}
+            edge = {"method": "manufacturer-anchored (D-013)", "curve": mfr_id, "source": curves[mfr_id]["source"],
+                    "bands": curves[mfr_id].get("bands", ["lf", "hf"])}
         else:
             edge = {"method": "hold (no manufacturer data yet)"}
         for s in (sid, disp, pattern):

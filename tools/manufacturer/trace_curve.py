@@ -22,12 +22,17 @@ def snap_row(gray: np.ndarray, y_guess: int, x0: int, x1: int, win: int = 8) -> 
 
 def trace(png: str, fx: tuple[float, float], px: tuple[int, int], dby: tuple[float, float], py: tuple[int, int],
           colour: str = "dark", y_limits: tuple[int, int] | None = None, overlay: str | None = None,
-          f_range: tuple[float, float] = (20.0, 20000.0)) -> tuple[np.ndarray, np.ndarray]:
+          f_range: tuple[float, float] = (20.0, 20000.0), min_run: int = 1, snap: bool = True,
+          skip_vertical: bool = False) -> tuple[np.ndarray, np.ndarray]:
+    """min_run: ignore dark runs thinner than this (thin black grid lines, thin dashed tolerance curves).
+    snap: snap the dB calibration rows to grid lines (disable on textured backgrounds).
+    skip_vertical: skip columns occupied by a black vertical grid line."""
     im = Image.open(png).convert("RGB")
     rgb = np.asarray(im).astype(int)
     gray = rgb.mean(axis=2)
-    x0, x1 = min(px), max(px)
-    py = (snap_row(gray, py[0], x0, x1), snap_row(gray, py[1], x0, x1))
+    x0, x1 = int(round(min(px))), int(round(max(px)))
+    if snap:
+        py = (snap_row(gray, py[0], x0, x1), snap_row(gray, py[1], x0, x1))
     if colour == "dark":
         mask = gray < 90
     elif colour == "red":
@@ -44,13 +49,17 @@ def trace(png: str, fx: tuple[float, float], px: tuple[int, int], dby: tuple[flo
 
     fs, ds = [], []
     for x in range(x0, x1 + 1):
-        col = np.flatnonzero(mask[ylo:yhi, x])
+        colmask = mask[ylo:yhi, x]
+        if skip_vertical and colmask.mean() > 0.5:
+            continue
+        col = np.flatnonzero(colmask)
         if col.size == 0:
             continue
-        top = col[0]
-        run = top
-        while run + 1 < col.size + top and (run + 1 - top) < col.size and col[run + 1 - top] == run + 1:
-            run += 1
+        runs = np.split(col, np.flatnonzero(np.diff(col) > 1) + 1)
+        runs = [r for r in runs if r.size >= min_run]
+        if not runs:
+            continue
+        top, run = runs[0][0], runs[0][-1]
         y = ylo + 0.5 * (top + run)      # centre of the topmost run
         f = x_to_f(x)
         if f_range[0] <= f <= f_range[1]:

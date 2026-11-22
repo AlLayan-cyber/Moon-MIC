@@ -8,7 +8,7 @@
   "hold_hi_hz": 18000.0,
   "level": "0 dB at 1 kHz on axis (relative; absolute sensitivity UNKNOWN)",
   "source": "Surrey MADIR (CC BY), Zenodo 10.5281/zenodo.4633508, Normalised 32-bit, chain-compensated by NTi M2211 at same distance",
-  "bin_sha256": "c419e7f53e314aff6b76230caa813f0f535eda526fab0a9b4ade36e8e47e2533",
+  "bin_sha256": "20dd52059e534b24bd8d288d46ddbf50c5a6391eda37cb5ed11f26c7f18ae34a",
   "sets": [
     {
       "id": "u87ai_cardioid",
@@ -20,7 +20,11 @@
       "band_edges": {
         "method": "manufacturer-anchored (D-013)",
         "curve": "u87ai_cardioid",
-        "source": "docs/manufacturer_data/neumann_u87ai/u87ai_operating_manual_opin0134.pdf, p.31 (PDF page 16)"
+        "source": "docs/manufacturer_data/neumann_u87ai/u87ai_operating_manual_opin0134.pdf, p.31 (PDF page 16)",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/NeumannU87Ai_Cardioid_0.5m.npz",
       "source_sha256": "103692527d18ab9186398d27cd2e0ff1313bbc3e59d14cbb65f974b0da72540e"
@@ -35,7 +39,11 @@
       "band_edges": {
         "method": "manufacturer-anchored (D-013)",
         "curve": "u87ai_omni",
-        "source": "docs/manufacturer_data/neumann_u87ai/u87ai_operating_manual_opin0134.pdf, p.31 (PDF page 16)"
+        "source": "docs/manufacturer_data/neumann_u87ai/u87ai_operating_manual_opin0134.pdf, p.31 (PDF page 16)",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/NeumannU87Ai_Omni_0.5m.npz",
       "source_sha256": "14634397c16f8e891c95fc67c1c2378cc31951033ecf750dcc64e310bb321850"
@@ -50,7 +58,11 @@
       "band_edges": {
         "method": "manufacturer-anchored (D-013)",
         "curve": "u87ai_figure8",
-        "source": "docs/manufacturer_data/neumann_u87ai/u87ai_operating_manual_opin0134.pdf, p.31 (PDF page 16)"
+        "source": "docs/manufacturer_data/neumann_u87ai/u87ai_operating_manual_opin0134.pdf, p.31 (PDF page 16)",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/NeumannU87Ai_Bidirect_0.5m.npz",
       "source_sha256": "e3d40dac2022ab04d92adc2638a396e7668629bb97686ba09c55836cc9c85b67"
@@ -63,7 +75,13 @@
       "r0_m": 0.5,
       "lf_limit_hz": 60.2,
       "band_edges": {
-        "method": "hold (no manufacturer data yet)"
+        "method": "manufacturer-anchored (D-013)",
+        "curve": "u47fet",
+        "source": "docs/manufacturer_data/neumann_u47fet/u47fet_operating_manual.pdf, p.14 (free field, IEC 60268-4)",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/NeumannU47FET_fixed_0.5m.npz",
       "source_sha256": "fe2e2f64f628eaf6ff8b0b3cc30899c1e4db5aea87d0e827c8a0a4bb90915efc"
@@ -76,7 +94,13 @@
       "r0_m": 0.5,
       "lf_limit_hz": 60.2,
       "band_edges": {
-        "method": "hold (no manufacturer data yet)"
+        "method": "manufacturer-anchored (D-013)",
+        "curve": "c414bxls_cardioid",
+        "source": "docs/manufacturer_data/akg_c414bxls/c414bxls_manual.pdf, p.29 (C 414 B-XLS column)",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/AKGC414_Cardioid_0.5m.npz",
       "source_sha256": "a98a68335bd1fee323865fe07dc8c1bddae551b2039c2e6d80a8a5c71f1641bd"
@@ -89,7 +113,13 @@
       "r0_m": 0.5,
       "lf_limit_hz": 60.2,
       "band_edges": {
-        "method": "hold (no manufacturer data yet)"
+        "method": "manufacturer-anchored (D-013)",
+        "curve": "c414bxls_hyper",
+        "source": "docs/manufacturer_data/akg_c414bxls/c414bxls_manual.pdf, p.29 (C 414 B-XLS column)",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/AKGC414_Hyper_0.5m.npz",
       "source_sha256": "248c6a3467f461960aceaa60c3fb1a49758c9e5088be69d205296fdb74a04427"
@@ -102,7 +132,13 @@
       "r0_m": 0.5,
       "lf_limit_hz": 60.2,
       "band_edges": {
-        "method": "hold (no manufacturer data yet)"
+        "method": "manufacturer-anchored (D-013)",
+        "curve": "c414bxls_omni",
+        "source": "docs/manufacturer_data/akg_c414bxls/c414bxls_manual.pdf, p.29 (C 414 B-XLS column)",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/AKGC414_Omni_0.5m.npz",
       "source_sha256": "643acb138773a207b2d69b6e2317ec6cee3985da3598fb676843496dcc63cbc7"
@@ -115,7 +151,13 @@
       "r0_m": 0.5,
       "lf_limit_hz": 60.2,
       "band_edges": {
-        "method": "hold (no manufacturer data yet)"
+        "method": "manufacturer-anchored (D-013)",
+        "curve": "c414bxls_figure8",
+        "source": "docs/manufacturer_data/akg_c414bxls/c414bxls_manual.pdf, p.29 (C 414 B-XLS column)",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/AKGC414_Bidirect_0.5m.npz",
       "source_sha256": "c09ab946665823e7227be36c1f42556b4e8ae13aba8fec633acfe5197059e445"
@@ -128,7 +170,13 @@
       "r0_m": 0.5,
       "lf_limit_hz": 60.2,
       "band_edges": {
-        "method": "hold (no manufacturer data yet)"
+        "method": "manufacturer-anchored (D-013)",
+        "curve": "c800g_cardioid",
+        "source": "docs/manufacturer_data/sony_c800g/c800g_service_manual_manualslib.pdf, p.6 (service manual p.1-3, 0 deg curve)",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/SonyC800_Cardioid_0.5m.npz",
       "source_sha256": "589798ab737b26fdac581de53566ef87cde052f225dfdaa554466c5aa978f9d7"
@@ -141,7 +189,12 @@
       "r0_m": 0.5,
       "lf_limit_hz": 60.2,
       "band_edges": {
-        "method": "hold (no manufacturer data yet)"
+        "method": "manufacturer-anchored (D-013)",
+        "curve": "c800g_omni",
+        "source": "docs/manufacturer_data/sony_c800g/c800g_service_manual_manualslib.pdf, p.6 (service manual p.1-3, 0 deg curve)",
+        "bands": [
+          "lf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/SonyC800_Omni_0.5m.npz",
       "source_sha256": "25c1722c7075ca70a6ca0887d028903065d13465f69fab00e1600bb641a62959"
@@ -156,7 +209,11 @@
       "band_edges": {
         "method": "manufacturer-anchored (D-013)",
         "curve": "k2_cardioid",
-        "source": "docs/manufacturer_data/rode_k2/k2_datasheet_v4.pdf, p.2"
+        "source": "docs/manufacturer_data/rode_k2/k2_datasheet_v4.pdf, p.2",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/RodeK2_Cardioid_0.5m.npz",
       "source_sha256": "bc1d6b2c955185b064ced2301938721e4c370156d00fcd5f2f7fdc48a3ac56b2"
@@ -171,7 +228,11 @@
       "band_edges": {
         "method": "manufacturer-anchored (D-013)",
         "curve": "k2_omni",
-        "source": "docs/manufacturer_data/rode_k2/k2_datasheet_v4.pdf, p.2"
+        "source": "docs/manufacturer_data/rode_k2/k2_datasheet_v4.pdf, p.2",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/RodeK2_Omni_0.5m.npz",
       "source_sha256": "9a9d05a15286b7e6a1895da25bf2a17c4d6004ee3a549c82ded775128a3771cd"
@@ -199,7 +260,11 @@
       "band_edges": {
         "method": "manufacturer-anchored (D-013)",
         "curve": "r121_manual",
-        "source": "Royer R-121 manual, frequency response (hand-read, low confidence)"
+        "source": "Royer R-121 manual, frequency response (hand-read, low confidence)",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/RoyerR121_fixed_0.5m.npz",
       "source_sha256": "9226a51345207bb6bf1b559cfad8181ac121149f35379413694cc5f55a5c6f60"
@@ -214,7 +279,11 @@
       "band_edges": {
         "method": "manufacturer-anchored (D-013)",
         "curve": "sm58_manual",
-        "source": "Shure SM58 user guide, typical frequency response (hand-read, low confidence)"
+        "source": "Shure SM58 user guide, typical frequency response (hand-read, low confidence)",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/ShureSM58_fixed_0.5m.npz",
       "source_sha256": "1aa0f9722bbad8c4d9d59eb37574c937d3f8eb0646db7d400ea67ee8be8ea4fd"
@@ -229,7 +298,11 @@
       "band_edges": {
         "method": "manufacturer-anchored (D-013)",
         "curve": "nt2a_cardioid",
-        "source": "docs/manufacturer_data/rode_nt2a/nt2a_datasheet.pdf, p.2"
+        "source": "docs/manufacturer_data/rode_nt2a/nt2a_datasheet.pdf, p.2",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/RodeNT2A_Cardioid_0.5m.npz",
       "source_sha256": "708825d65164608920613a31ffc3a2e9f2e84ad9705020f45516234d5f773700"
@@ -244,7 +317,11 @@
       "band_edges": {
         "method": "manufacturer-anchored (D-013)",
         "curve": "nt2a_omni",
-        "source": "docs/manufacturer_data/rode_nt2a/nt2a_datasheet.pdf, p.2"
+        "source": "docs/manufacturer_data/rode_nt2a/nt2a_datasheet.pdf, p.2",
+        "bands": [
+          "lf",
+          "hf"
+        ]
       },
       "source_file": "data/processed/frequency_responses/RodeNT2A_Omni_0.5m.npz",
       "source_sha256": "e68fad85501b443fc8e07aab8767ba1995f387a51b099844afd3cc85e3a6847b"
