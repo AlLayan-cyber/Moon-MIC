@@ -11,6 +11,21 @@ cmake --build plugin/build --config Release --target MoonMic_VST3 MoonMicTests M
 ```
 The VST3 ends up in `plugin/build/MoonMic_artefacts/Release/VST3/MOON MIC.vst3`.
 The build does not copy it into the system VST3 folder (`COPY_PLUGIN_AFTER_BUILD FALSE`).
+To use it in a DAW, copy the `MOON MIC.vst3` folder to `C:\Program Files\Common Files\VST3\`.
+
+## Build (macOS: VST3 + AU, universal arm64 + x86_64)
+Requirements: Xcode (or Command Line Tools: `xcode-select --install`), CMake >= 3.22 (`brew install cmake`), git.
+```
+git clone --branch 9.0.4 --depth 1 https://github.com/juce-framework/JUCE.git ~/JUCE
+cmake -S plugin -B plugin/build -G Xcode -DJUCE_DIR=$HOME/JUCE \
+      -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64" -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0
+cmake --build plugin/build --config Release --target MoonMic_VST3 MoonMic_AU MoonMicTests MoonMicProcessorTests --parallel
+```
+Results: `plugin/build/MoonMic_artefacts/Release/VST3/MOON MIC.vst3` and `.../Release/AU/MOON MIC.component`.
+Tests: `plugin/build/MoonMicTests_artefacts/Release/MoonMicTests` and `.../MoonMicProcessorTests_artefacts/Release/MoonMicProcessorTests`.
+Install for DAWs: copy to `~/Library/Audio/Plug-Ins/VST3/` and `~/Library/Audio/Plug-Ins/Components/`, then validate the AU with
+`auval -v aufx MnMc MnAE`. Unsigned builds: macOS asks once (System Settings -> Privacy & Security -> allow).
+JUCE_DIR defaults to `~/JUCE` on macOS and `C:/JUCE` on Windows.
 
 ## Tests
 ```

@@ -6,7 +6,12 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # JUCE is not vendored: point JUCE_DIR at a local JUCE checkout (tested with 9.0.4).
-set(JUCE_DIR "C:/JUCE" CACHE PATH "Path to the JUCE framework")
+if(APPLE)
+    set(MOONMIC_DEFAULT_JUCE "$ENV{HOME}/JUCE")
+else()
+    set(MOONMIC_DEFAULT_JUCE "C:/JUCE")
+endif()
+set(JUCE_DIR "${MOONMIC_DEFAULT_JUCE}" CACHE PATH "Path to the JUCE framework")
 add_subdirectory(${JUCE_DIR} ${CMAKE_BINARY_DIR}/JUCE)
 
 # AU can only be built on macOS.

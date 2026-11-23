@@ -31,6 +31,7 @@ public:
     MicSelector (const ModelLibrary&, juce::String title);
     void setSelectedSet (int setIndex);
     void setTitle (const juce::String&);
+    void setTip (const juce::String&);
     std::function<void (int setIndex)> onSelect;
     void resized() override;
 
@@ -65,6 +66,7 @@ private:
 
     MoonMicProcessor& processor;
     MoonLookAndFeel lnf;
+    juce::TooltipWindow tooltipWindow { this, 400 };
 
     juce::TextButton signatureButton { "SIGNATURE" }, transformButton { "TRANSFORM" };
     juce::TextButton slotA { "A" }, slotB { "B" }, copyButton, bypassButton { "BYPASS" };
