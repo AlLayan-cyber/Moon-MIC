@@ -13,6 +13,7 @@ __pycache__/
 # Build output
 build/
 plugin/build/
+plugin/build-mac/
 out/
 *.vst3
 *.component
