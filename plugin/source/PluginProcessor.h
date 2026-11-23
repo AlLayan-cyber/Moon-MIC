@@ -7,6 +7,7 @@
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_dsp/juce_dsp.h>
 
+#include <array>
 #include <atomic>
 
 namespace moonmic
@@ -24,6 +25,7 @@ namespace ParamIDs
     inline constexpr auto srcMic      = "srcMic";      // TRANSFORM source microphone
     inline constexpr auto srcDistance = "srcDistance"; // cm
     inline constexpr auto srcAngle    = "srcAngle";    // degrees
+    inline constexpr auto bypass      = "bypass";      // host bypass, 20 ms crossfade, level-matched by Auto gain
 }
 
 /** MOON MIC — SIGNATURE mode (deterministic, no AI; decision D-001) and TRANSFORM v1 (manual source,
@@ -43,6 +45,12 @@ public:
     using AudioProcessor::processBlock;
 
     juce::AudioProcessorEditor* createEditor() override;
+    juce::AudioProcessorParameter* getBypassParameter() const override;
+
+    /** A/B comparison (docs/architecture/13 §3): two full parameter states. Message thread only. */
+    void selectSlot (int slot);
+    void copyActiveToOther();
+    int activeSlot() const noexcept { return currentSlot; }
     bool hasEditor() const override                     { return true; }
 
     const juce::String getName() const override         { return "MOON MIC"; }
@@ -97,10 +105,16 @@ private:
     std::atomic<float>* srcMicParam = nullptr;
     std::atomic<float>* srcDistanceParam = nullptr;
     std::atomic<float>* srcAngleParam = nullptr;
+    std::atomic<float>* bypassParam = nullptr;
 
     juce::dsp::Convolution convolution;   // zero latency, uniform partitioned
     juce::SmoothedValue<float> gain;
     ElectronicsStage electronics;
+    juce::AudioBuffer<float> dryBuffer;              // bypass crossfade source (preallocated)
+    juce::SmoothedValue<float> wetMix;
+
+    std::array<juce::ValueTree, 2> slots;
+    int currentSlot = 0;
     std::vector<ElectronicsStage::Model> setElectronics;   // per model set, fixed after construction
     bool prepared = false;
 

@@ -39,7 +39,10 @@ source/dsp/CapsuleEngine.h         physical electronics core (6AU6A triode stage
 source/dsp/ElectronicsStage.*      C-800G tube stage after the linear model: 2x IIR oversampling,
                                    Level = dB SPL at the capsule for a full-scale sine (default 120)
 source/PluginProcessor.*           parameters, design thread, zero-latency convolution, gains
-source/PluginEditor.*, source/ui/  skeleton UI, response plot, MOON AUDIO logo, theme
+source/PluginEditor.*              editor: SIGNATURE/TRANSFORM, mic + pattern selectors, A/B, bypass
+source/ui/StageView.*              top-down stage, draggable singer/source, model polar pattern
+source/ui/PolarPlot.*              polar display, up to 4 frequencies (model, current distance)
+source/ui/ResponsePlot.*, MoonAudioLogo.*, Theme.h
 resources/branding/                logo source PNG + vector SVG
 tests/                             test runners + Python reference vectors
 ```

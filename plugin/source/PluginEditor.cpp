@@ -6,7 +6,29 @@ namespace moonmic
 
 namespace
 {
-    constexpr int headerH = 58, footerH = 30, margin = 18;
+    constexpr int headerH = 58, footerH = 30, margin = 16;
+    constexpr float kPolarHz[8] = { 125.0f, 250.0f, 500.0f, 1000.0f, 2000.0f, 4000.0f, 8000.0f, 16000.0f };
+    const char* const polarNames[8] = { "125", "250", "500", "1k", "2k", "4k", "8k", "16k" };
+    const juce::Colour polarColours[8] = { juce::Colour (0xffe0b25a), juce::Colour (0xffd98a5a), juce::Colour (0xffc76f8f),
+                                           juce::Colour (0xff8fb3ff), juce::Colour (0xff6fd0c0), juce::Colour (0xff9be07a),
+                                           juce::Colour (0xffd7e36a), juce::Colour (0xffb88cf0) };
+
+    juce::String patternLabel (const std::string& p)
+    {
+        if (p == "Bidirect") return "Figure-8";
+        if (p == "Hyper")    return "Hyper";
+        if (p == "Omni")     return "Omni";
+        if (p == "Cardioid") return "Cardioid";
+        return {};
+    }
+
+    void styleToggle (juce::TextButton& b)
+    {
+        b.setColour (juce::TextButton::buttonColourId, theme::panel);
+        b.setColour (juce::TextButton::buttonOnColourId, theme::accent.withAlpha (0.25f));
+        b.setColour (juce::TextButton::textColourOffId, theme::muted);
+        b.setColour (juce::TextButton::textColourOnId, theme::accent);
+    }
 }
 
 //==============================================================================
@@ -28,6 +50,8 @@ MoonLookAndFeel::MoonLookAndFeel()
     setColour (juce::ToggleButton::textColourId, theme::text);
     setColour (juce::ToggleButton::tickColourId, theme::accent);
     setColour (juce::ToggleButton::tickDisabledColourId, theme::muted);
+    setColour (juce::TextButton::buttonColourId, theme::panel);
+    setColour (juce::TextButton::textColourOffId, theme::muted);
 }
 
 void MoonLookAndFeel::drawRotarySlider (juce::Graphics& g, int x, int y, int w, int h, float pos,
@@ -58,65 +82,159 @@ void MoonLookAndFeel::drawRotarySlider (juce::Graphics& g, int x, int y, int w, 
 }
 
 //==============================================================================
+MicSelector::MicSelector (const ModelLibrary& lib, juce::String titleText)
+{
+    // group the model sets by microphone ("U87 Ai - Cardioid" -> model "U87 Ai", pattern "Cardioid")
+    const auto dash = juce::String::fromUTF8 (" \xe2\x80\x94 ");
+    for (int i = 0; i < lib.numSets(); ++i)
+    {
+        const auto& s = lib.set (i);
+        const auto name = juce::String::fromUTF8 (s.displayName.c_str());
+        const auto model = name.contains (dash) ? name.upToFirstOccurrenceOf (dash, false, false) : name;
+        auto it = std::find_if (groups.begin(), groups.end(), [&] (const Group& g) { return g.model == model; });
+        if (it == groups.end()) { groups.push_back ({ model, {} }); it = groups.end() - 1; }
+        it->patterns.push_back ({ patternLabel (s.pattern), i });
+    }
+    for (size_t g = 0; g < groups.size(); ++g)
+        modelBox.addItem (groups[g].model, (int) g + 1);
+
+    title.setText (titleText, juce::dontSendNotification);
+    title.setFont (juce::FontOptions (11.0f, juce::Font::bold));
+    title.setColour (juce::Label::textColourId, theme::muted);
+    addAndMakeVisible (title);
+    addAndMakeVisible (modelBox);
+    modelBox.onChange = [this]
+    {
+        const int g = modelBox.getSelectedId() - 1;
+        if (g < 0 || g >= (int) groups.size() || ! onSelect) return;
+        // keep the current pattern if the new microphone has it
+        juce::String want;
+        for (const auto& grp : groups)
+            for (const auto& [label, idx] : grp.patterns)
+                if (idx == currentSet) want = label;
+        int pick = groups[(size_t) g].patterns.front().second;
+        for (const auto& [label, idx] : groups[(size_t) g].patterns)
+            if (label == want) pick = idx;
+        onSelect (pick);
+    };
+    for (auto& b : patternButtons)
+    {
+        styleToggle (b);
+        b.setClickingTogglesState (false);
+        addChildComponent (b);
+    }
+}
+
+void MicSelector::setTitle (const juce::String& t)  { title.setText (t, juce::dontSendNotification); }
+
+void MicSelector::setSelectedSet (int setIndex)
+{
+    if (setIndex == currentSet)
+        return;
+    currentSet = setIndex;
+    for (size_t g = 0; g < groups.size(); ++g)
+        for (const auto& p : groups[g].patterns)
+            if (p.second == setIndex)
+            {
+                modelBox.setSelectedId ((int) g + 1, juce::dontSendNotification);
+                showGroup ((int) g, setIndex);
+                return;
+            }
+}
+
+void MicSelector::showGroup (int g, int setIndex)
+{
+    const auto& grp = groups[(size_t) g];
+    const bool fixed = grp.patterns.size() == 1;
+    for (size_t i = 0; i < patternButtons.size(); ++i)
+    {
+        auto& b = patternButtons[i];
+        if (fixed || i >= grp.patterns.size()) { b.setVisible (false); continue; }
+        const auto [label, idx] = grp.patterns[i];
+        b.setButtonText (label);
+        b.setToggleState (idx == setIndex, juce::dontSendNotification);
+        b.onClick = [this, idx = idx] { if (onSelect) onSelect (idx); };
+        b.setVisible (true);
+    }
+    resized();
+}
+
+void MicSelector::resized()
+{
+    auto r = getLocalBounds();
+    title.setBounds (r.removeFromTop (16));
+    modelBox.setBounds (r.removeFromTop (30));
+    r.removeFromTop (6);
+    auto row = r.removeFromTop (26);
+    int visible = 0;
+    for (auto& b : patternButtons) visible += b.isVisible() ? 1 : 0;
+    if (visible == 0) return;
+    const int w = row.getWidth() / visible;
+    for (auto& b : patternButtons)
+        if (b.isVisible())
+            b.setBounds (row.removeFromLeft (w).reduced (2, 0));
+}
+
+//==============================================================================
 MoonMicEditor::MoonMicEditor (MoonMicProcessor& p)
-    : AudioProcessorEditor (p), processor (p)
+    : AudioProcessorEditor (p), processor (p),
+      sourceSelector (p.getLibrary(), "SOURCE (RECORDED WITH)"),
+      targetSelector (p.getLibrary(), "MICROPHONE")
 {
     setLookAndFeel (&lnf);
-
     auto& state = processor.getState();
-    if (auto* choice = dynamic_cast<juce::AudioParameterChoice*> (state.getParameter (ParamIDs::mic)))
-        micBox.addItemList (choice->choices, 1);
-    addAndMakeVisible (micBox);
-    micAttachment = std::make_unique<APVTS::ComboBoxAttachment> (state, ParamIDs::mic, micBox);
 
-    if (auto* choice = dynamic_cast<juce::AudioParameterChoice*> (state.getParameter (ParamIDs::srcMic)))
-        srcBox.addItemList (choice->choices, 1);
-    addChildComponent (srcBox);
-    srcAttachment = std::make_unique<APVTS::ComboBoxAttachment> (state, ParamIDs::srcMic, srcBox);
-    srcLabel.setText ("SOURCE (RECORDED WITH)", juce::dontSendNotification);
-    srcLabel.setFont (juce::FontOptions (11.0f, juce::Font::bold));
-    srcLabel.setColour (juce::Label::textColourId, theme::muted);
-    addChildComponent (srcLabel);
-
-    for (auto* b : { &signatureButton, &transformButton })
+    // header: mode, A/B, bypass
+    for (auto* b : { &signatureButton, &transformButton, &slotA, &slotB })
     {
+        styleToggle (*b);
         b->setClickingTogglesState (false);
-        b->setColour (juce::TextButton::buttonColourId, theme::panel);
-        b->setColour (juce::TextButton::buttonOnColourId, theme::accent.withAlpha (0.25f));
-        b->setColour (juce::TextButton::textColourOffId, theme::muted);
-        b->setColour (juce::TextButton::textColourOnId, theme::accent);
         addAndMakeVisible (b);
     }
-    signatureButton.onClick = [this] { setMode (false); };
-    transformButton.onClick = [this] { setMode (true); };
+    signatureButton.onClick = [this] { setParam (ParamIDs::transform, 0.0f); };
+    transformButton.onClick = [this] { setParam (ParamIDs::transform, 1.0f); };
+    slotA.onClick = [this] { processor.selectSlot (0); };
+    slotB.onClick = [this] { processor.selectSlot (1); };
+    copyButton.setButtonText (juce::String::fromUTF8 ("COPY \xe2\x86\x92"));
+    copyButton.onClick = [this] { processor.copyActiveToOther(); };
+    styleToggle (copyButton);
+    addAndMakeVisible (copyButton);
+    styleToggle (bypassButton);
+    bypassButton.setColour (juce::TextButton::buttonOnColourId, theme::warning.withAlpha (0.3f));
+    bypassButton.setColour (juce::TextButton::textColourOnId, theme::warning);
+    bypassButton.setClickingTogglesState (true);
+    addAndMakeVisible (bypassButton);
+    bypassAttachment = std::make_unique<APVTS::ButtonAttachment> (state, ParamIDs::bypass, bypassButton);
 
-    micLabel.setText ("MICROPHONE", juce::dontSendNotification);
-    micLabel.setFont (juce::FontOptions (11.0f, juce::Font::bold));
-    micLabel.setColour (juce::Label::textColourId, theme::muted);
-    addAndMakeVisible (micLabel);
+    // microphones
+    addChildComponent (sourceSelector);
+    addAndMakeVisible (targetSelector);
+    sourceSelector.onSelect = [this] (int idx) { setParam (ParamIDs::srcMic, (float) idx); };
+    targetSelector.onSelect = [this] (int idx) { setParam (ParamIDs::mic, (float) idx); };
 
+    // knobs
     setupKnob (distanceKnob, distanceLabel, "DISTANCE");
     setupKnob (angleKnob, angleLabel, "ANGLE");
-    setupKnob (outputKnob, outputLabel, "OUTPUT");
-    distanceAttachment = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::distance, distanceKnob);
-    angleAttachment    = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::angle, angleKnob);
-    outputAttachment   = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::output, outputKnob);
-    distanceKnob.setTextValueSuffix (" cm");
-    angleKnob.setTextValueSuffix (juce::String::fromUTF8 ("\xc2\xb0"));
-    outputKnob.setTextValueSuffix (" dB");
-
-    // Level: SPL at the capsule for a full-scale sine. Drives the physical electronics model
-    // (C-800G tube stage); disabled for microphones without one.
     setupKnob (levelKnob, levelLabel, "LEVEL");
-    levelAttachment = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::level, levelKnob);
-    levelKnob.setTextValueSuffix (" dB SPL");
-
     setupKnob (srcDistanceKnob, srcDistanceLabel, "SRC DISTANCE");
     setupKnob (srcAngleKnob, srcAngleLabel, "SRC ANGLE");
+    setupKnob (outputKnob, outputLabel, "OUTPUT");
+    distanceAttachment    = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::distance, distanceKnob);
+    angleAttachment       = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::angle, angleKnob);
+    levelAttachment       = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::level, levelKnob);
     srcDistanceAttachment = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::srcDistance, srcDistanceKnob);
     srcAngleAttachment    = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::srcAngle, srcAngleKnob);
+    outputAttachment      = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::output, outputKnob);
+    const auto deg = juce::String::fromUTF8 ("\xc2\xb0");
+    distanceKnob.setTextValueSuffix (" cm");
     srcDistanceKnob.setTextValueSuffix (" cm");
-    srcAngleKnob.setTextValueSuffix (juce::String::fromUTF8 ("\xc2\xb0"));
+    angleKnob.setTextValueSuffix (deg);
+    srcAngleKnob.setTextValueSuffix (deg);
+    levelKnob.setTextValueSuffix (" dB SPL");
+    outputKnob.setTextValueSuffix (" dB");
+    for (auto* c : { (juce::Component*) &srcDistanceKnob, (juce::Component*) &srcDistanceLabel,
+                     (juce::Component*) &srcAngleKnob, (juce::Component*) &srcAngleLabel })
+        c->setVisible (false);
 
     addAndMakeVisible (autoGainButton);
     autoGainAttachment = std::make_unique<APVTS::ButtonAttachment> (state, ParamIDs::autoGain, autoGainButton);
@@ -125,11 +243,49 @@ MoonMicEditor::MoonMicEditor (MoonMicProcessor& p)
     statusLabel.setJustificationType (juce::Justification::topLeft);
     addAndMakeVisible (statusLabel);
 
+    // stage view: drag the singer (and the source position in TRANSFORM)
+    stage.onMove = [this] (int i, float cm, float ang)
+    {
+        setParam (i == 0 ? ParamIDs::distance : ParamIDs::srcDistance, cm);
+        setParam (i == 0 ? ParamIDs::angle : ParamIDs::srcAngle, ang);
+    };
+    stage.onGesture = [this] (int i, bool begin)
+    {
+        gesture (i == 0 ? ParamIDs::distance : ParamIDs::srcDistance, begin);
+        gesture (i == 0 ? ParamIDs::angle : ParamIDs::srcAngle, begin);
+    };
+    addAndMakeVisible (stage);
+
+    // polar display + frequency selection (up to 4 at once)
+    addAndMakeVisible (polarPlot);
+    for (size_t i = 0; i < freqButtons.size(); ++i)
+    {
+        auto& b = freqButtons[i];
+        b.setButtonText (polarNames[i]);
+        styleToggle (b);
+        b.setColour (juce::TextButton::textColourOnId, polarColours[i]);
+        b.setClickingTogglesState (false);
+        b.setToggleState (freqOn[i], juce::dontSendNotification);
+        b.onClick = [this, i]
+        {
+            int count = 0;
+            for (bool on : freqOn) count += on ? 1 : 0;
+            if (freqOn[i] && count == 1) return;           // keep at least one
+            if (! freqOn[i] && count >= 4) return;          // at most four
+            freqOn[i] = ! freqOn[i];
+            freqButtons[i].setToggleState (freqOn[i], juce::dontSendNotification);
+            updatePolar();
+        };
+        addAndMakeVisible (b);
+    }
+
     plot.setGrid (processor.getLibrary().frequencies());
     addAndMakeVisible (plot);
     addAndMakeVisible (logo);
 
-    setSize (860, 600);
+    setResizable (true, true);
+    setResizeLimits (980, 620, 1900, 1200);
+    setSize (1180, 720);
     startTimerHz (30);
 }
 
@@ -142,7 +298,7 @@ MoonMicEditor::~MoonMicEditor()
 void MoonMicEditor::setupKnob (juce::Slider& s, juce::Label& l, const juce::String& name)
 {
     s.setSliderStyle (juce::Slider::RotaryHorizontalVerticalDrag);
-    s.setTextBoxStyle (juce::Slider::TextBoxBelow, false, 80, 18);
+    s.setTextBoxStyle (juce::Slider::TextBoxBelow, false, 86, 18);
     s.setRotaryParameters (juce::MathConstants<float>::pi * 1.25f, juce::MathConstants<float>::pi * 2.75f, true);
     s.setColour (juce::Slider::textBoxOutlineColourId, juce::Colours::transparentBlack);
     s.setColour (juce::Slider::textBoxBackgroundColourId, theme::panel);
@@ -154,19 +310,53 @@ void MoonMicEditor::setupKnob (juce::Slider& s, juce::Label& l, const juce::Stri
     addAndMakeVisible (l);
 }
 
-bool MoonMicEditor::isTransform() const
+float MoonMicEditor::param (const char* id) const
 {
-    return processor.getState().getRawParameterValue (ParamIDs::transform)->load() >= 0.5f;
+    return processor.getState().getRawParameterValue (id)->load();
 }
 
-void MoonMicEditor::setMode (bool transform)
+void MoonMicEditor::setParam (const char* id, float plainValue)
 {
-    if (auto* p = processor.getState().getParameter (ParamIDs::transform))
+    if (auto* p = processor.getState().getParameter (id))
     {
-        p->beginChangeGesture();
-        p->setValueNotifyingHost (transform ? 1.0f : 0.0f);
-        p->endChangeGesture();
+        const float v = p->convertTo0to1 (plainValue);
+        if (std::abs (p->getValue() - v) < 1.0e-7f) return;
+        p->setValueNotifyingHost (v);
     }
+}
+
+void MoonMicEditor::gesture (const char* id, bool begin)
+{
+    if (auto* p = processor.getState().getParameter (id))
+    {
+        if (begin) p->beginChangeGesture(); else p->endChangeGesture();
+    }
+}
+
+void MoonMicEditor::updatePolar()
+{
+    const int set = juce::jlimit (0, processor.getLibrary().numSets() - 1, (int) param (ParamIDs::mic));
+    const float distM = param (ParamIDs::distance) / 100.0f;
+    if (set == polarSet && std::abs (distM - polarDist) < 1.0e-4f && freqOn == polarFreqs)
+        return;
+    polarSet = set; polarDist = distM; polarFreqs = freqOn;
+
+    std::vector<PolarPlot::Curve> curves;
+    std::vector<float> stagePolar;
+    juce::String stageLabel;
+    for (size_t i = 0; i < 8; ++i)
+        if (freqOn[i])
+        {
+            auto db = SignatureDesigner::polarDb (processor.getLibrary(), set, kPolarHz[i], distM);
+            if (stagePolar.empty() || kPolarHz[i] == 1000.0f)
+            {
+                stagePolar = db;
+                stageLabel = juce::String ("Pattern at ") + polarNames[i] + " Hz";
+            }
+            curves.push_back ({ std::move (db), polarColours[i], juce::String (polarNames[i]) });
+        }
+    polarPlot.setCurves (std::move (curves));
+    stage.setPolar (std::move (stagePolar), stageLabel);
 }
 
 void MoonMicEditor::timerCallback()
@@ -177,13 +367,37 @@ void MoonMicEditor::timerCallback()
         shownTransform = tf;
         signatureButton.setToggleState (! tf, juce::dontSendNotification);
         transformButton.setToggleState (tf, juce::dontSendNotification);
-        for (juce::Component* c : { (juce::Component*) &srcBox, (juce::Component*) &srcLabel,
+        for (juce::Component* c : { (juce::Component*) &sourceSelector,
                                     (juce::Component*) &srcDistanceKnob, (juce::Component*) &srcDistanceLabel,
                                     (juce::Component*) &srcAngleKnob, (juce::Component*) &srcAngleLabel })
             c->setVisible (tf);
-        micLabel.setText (tf ? "TARGET MICROPHONE" : "MICROPHONE", juce::dontSendNotification);
+        targetSelector.setTitle (tf ? "TARGET MICROPHONE" : "MICROPHONE");
         resized();
     }
+    slotA.setToggleState (processor.activeSlot() == 0, juce::dontSendNotification);
+    slotB.setToggleState (processor.activeSlot() == 1, juce::dontSendNotification);
+    copyButton.setButtonText (juce::String::fromUTF8 (processor.activeSlot() == 0 ? "COPY A \xe2\x86\x92 B" : "COPY B \xe2\x86\x92 A"));
+
+    const int mic = (int) param (ParamIDs::mic);
+    targetSelector.setSelectedSet (mic);
+    sourceSelector.setSelectedSet ((int) param (ParamIDs::srcMic));
+
+    StageView::Marker target;
+    target.distanceCm = param (ParamIDs::distance);
+    target.angleDeg = param (ParamIDs::angle);
+    target.visible = true;
+    target.colour = theme::accent;
+    target.label = tf ? "TARGET" : "SINGER";
+    stage.setMarker (0, target);
+    StageView::Marker src;
+    src.distanceCm = param (ParamIDs::srcDistance);
+    src.angleDeg = param (ParamIDs::srcAngle);
+    src.visible = tf;
+    src.hollow = true;
+    src.colour = theme::warning;
+    src.label = "SOURCE";
+    stage.setMarker (1, src);
+    updatePolar();
 
     auto curve = processor.getDisplayCurve();
     if (curve != lastCurve)
@@ -192,7 +406,7 @@ void MoonMicEditor::timerCallback()
         plot.setCurve (std::move (curve));
     }
 
-    const bool electronics = processor.hasElectronics (micBox.getSelectedItemIndex());
+    const bool electronics = processor.hasElectronics (mic);
     if (levelKnob.isEnabled() != electronics)
     {
         levelKnob.setEnabled (electronics);
@@ -200,8 +414,7 @@ void MoonMicEditor::timerCallback()
         levelLabel.setAlpha (electronics ? 1.0f : 0.35f);
     }
 
-    // Decision D-012: no explanatory texts about measurement limits in the UI (they live in the docs).
-    // Only a genuine failure is shown.
+    // Decision D-012: no explanatory texts about measurement limits in the UI. Only a genuine failure is shown.
     if (! processor.isLibraryValid())
     {
         statusLabel.setText ("Model data failed to load: " + processor.getLibraryError(), juce::dontSendNotification);
@@ -217,7 +430,6 @@ void MoonMicEditor::paint (juce::Graphics& g)
     g.setColour (theme::text);
     g.setFont (juce::FontOptions (24.0f, juce::Font::bold));
     g.drawText ("MOON MIC", header.removeFromLeft (170), juce::Justification::centredLeft);
-
 
     g.setColour (theme::grid);
     g.drawHorizontalLine (headerH, 0.0f, (float) getWidth());
@@ -235,60 +447,70 @@ void MoonMicEditor::paint (juce::Graphics& g)
 
 void MoonMicEditor::resized()
 {
+    // header
+    {
+        auto h = getLocalBounds().removeFromTop (headerH).reduced (margin, 0);
+        h.removeFromLeft (180);
+        signatureButton.setBounds (h.removeFromLeft (120).withSizeKeepingCentre (114, 30));
+        transformButton.setBounds (h.removeFromLeft (120).withSizeKeepingCentre (114, 30));
+        bypassButton.setBounds (h.removeFromRight (96).withSizeKeepingCentre (88, 28));
+        h.removeFromRight (18);
+        copyButton.setBounds (h.removeFromRight (120).withSizeKeepingCentre (112, 28));
+        slotB.setBounds (h.removeFromRight (40).withSizeKeepingCentre (34, 28));
+        slotA.setBounds (h.removeFromRight (40).withSizeKeepingCentre (34, 28));
+    }
+
     auto area = getLocalBounds();
     area.removeFromTop (headerH);
     auto footer = area.removeFromBottom (footerH).reduced (margin, 0);
     logo.setBounds (footer.removeFromLeft (16).withSizeKeepingCentre (16, 16));
-
     area.reduce (margin, margin);
-    auto left = area.removeFromLeft (320);
+
+    // left column: microphones and precise controls
+    auto left = area.removeFromLeft (300);
     area.removeFromLeft (margin);
-    plot.setBounds (area);
-
-    {
-        auto header = getLocalBounds().removeFromTop (headerH).reduced (margin, 0);
-        header.removeFromLeft (180);
-        signatureButton.setBounds (header.removeFromLeft (110).withSizeKeepingCentre (104, 26));
-        header.removeFromLeft (6);
-        transformButton.setBounds (header.removeFromLeft (110).withSizeKeepingCentre (104, 26));
-    }
-
     if (shownTransform)
     {
-        srcLabel.setBounds (left.removeFromTop (16));
-        srcBox.setBounds (left.removeFromTop (30));
+        sourceSelector.setBounds (left.removeFromTop (80));
         left.removeFromTop (10);
     }
-    micLabel.setBounds (left.removeFromTop (16));
-    micBox.setBounds (left.removeFromTop (30));
-    left.removeFromTop (18);
+    targetSelector.setBounds (left.removeFromTop (80));
+    left.removeFromTop (14);
 
-    auto knobs = left.removeFromTop (150);
-    const int kw = knobs.getWidth() / 3;
-    for (auto [knob, label] : { std::pair { &distanceKnob, &distanceLabel },
-                                std::pair { &angleKnob, &angleLabel },
-                                std::pair { &outputKnob, &outputLabel } })
+    const int kw = left.getWidth() / 3;
+    auto placeRow = [&] (std::initializer_list<std::pair<juce::Slider*, juce::Label*>> knobs, int h)
     {
-        auto col = knobs.removeFromLeft (kw);
-        label->setBounds (col.removeFromTop (16));
-        knob->setBounds (col);
-    }
-
-    left.removeFromTop (8);
-    auto row2 = left.removeFromTop (120);
-    for (auto [knob, label] : { std::pair { &levelKnob, &levelLabel },
-                                std::pair { &srcDistanceKnob, &srcDistanceLabel },
-                                std::pair { &srcAngleKnob, &srcAngleLabel } })
-    {
-        auto col = row2.removeFromLeft (kw);
-        label->setBounds (col.removeFromTop (16));
-        knob->setBounds (col);
-    }
-
-    left.removeFromTop (8);
+        auto row = left.removeFromTop (h);
+        for (auto [knob, label] : knobs)
+        {
+            auto col = row.removeFromLeft (kw);
+            label->setBounds (col.removeFromTop (16));
+            knob->setBounds (col);
+        }
+        left.removeFromTop (6);
+    };
+    placeRow ({ { &distanceKnob, &distanceLabel }, { &angleKnob, &angleLabel }, { &levelKnob, &levelLabel } }, 118);
+    if (shownTransform)
+        placeRow ({ { &srcDistanceKnob, &srcDistanceLabel }, { &srcAngleKnob, &srcAngleLabel } }, 118);
+    placeRow ({ { &outputKnob, &outputLabel } }, 118);
     autoGainButton.setBounds (left.removeFromTop (26));
-    left.removeFromTop (10);
     statusLabel.setBounds (left);
+
+    // right column: polar display and response
+    auto right = area.removeFromRight (juce::jmin (340, area.getWidth() / 3));
+    area.removeFromRight (margin);
+    const int ps = right.getWidth();
+    polarPlot.setBounds (right.removeFromTop (ps));
+    right.removeFromTop (6);
+    auto fb = right.removeFromTop (24);
+    const int bw = fb.getWidth() / (int) freqButtons.size();
+    for (auto& b : freqButtons)
+        b.setBounds (fb.removeFromLeft (bw).reduced (1, 0));
+    right.removeFromTop (10);
+    plot.setBounds (right);
+
+    // centre: stage view
+    stage.setBounds (area);
 }
 
 } // namespace moonmic

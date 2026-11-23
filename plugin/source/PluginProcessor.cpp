@@ -53,6 +53,7 @@ MoonMicProcessor::MoonMicProcessor()
     srcMicParam      = apvts.getRawParameterValue (ParamIDs::srcMic);
     srcDistanceParam = apvts.getRawParameterValue (ParamIDs::srcDistance);
     srcAngleParam    = apvts.getRawParameterValue (ParamIDs::srcAngle);
+    bypassParam      = apvts.getRawParameterValue (ParamIDs::bypass);
 
     for (int i = 0; i < library.numSets(); ++i)
         setElectronics.push_back (ElectronicsStage::modelForSet (library.set (i).id));
@@ -121,6 +122,9 @@ juce::AudioProcessorValueTreeState::ParameterLayout MoonMicProcessor::createLayo
         juce::NormalisableRange<float> (-180.0f, 180.0f, 0.5f), 0.0f,
         juce::AudioParameterFloatAttributes().withLabel (juce::String::fromUTF8 ("\xc2\xb0"))));
 
+    layout.add (std::make_unique<juce::AudioParameterBool> (
+        juce::ParameterID { ParamIDs::bypass, 1 }, "Bypass", false));
+
     return layout;
 }
 
@@ -180,6 +184,9 @@ void MoonMicProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
     gain.reset (sampleRate, 0.05);
     gain.setCurrentAndTargetValue (1.0f);
     electronics.prepare (sampleRate, samplesPerBlock, (int) spec.numChannels);
+    dryBuffer.setSize ((int) spec.numChannels, juce::jmax (1, samplesPerBlock), false, true, true);
+    wetMix.reset (sampleRate, 0.02);
+    wetMix.setCurrentAndTargetValue (bypassParam->load() >= 0.5f ? 0.0f : 1.0f);
     prepared = true;
     hostRate = sampleRate;
     forceRedesign = true;   // re-design at the new rate and re-deliver the IR after prepare()
@@ -224,6 +231,13 @@ void MoonMicProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::Mid
                                              juce::dsp::Convolution::Normalise::no);
     }
 
+    const int nIn = buffer.getNumSamples();
+    const bool canCrossfade = nIn <= dryBuffer.getNumSamples();
+    wetMix.setTargetValue (bypassParam->load() >= 0.5f ? 0.0f : 1.0f);
+    if (canCrossfade)
+        for (int ch = 0; ch < juce::jmin (buffer.getNumChannels(), dryBuffer.getNumChannels()); ++ch)
+            dryBuffer.copyFrom (ch, 0, buffer, ch, 0, nIn);
+
     juce::dsp::AudioBlock<float> block (buffer);
     convolution.process (juce::dsp::ProcessContextReplacing<float> (block));
 
@@ -251,6 +265,43 @@ void MoonMicProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::Mid
     {
         buffer.applyGain (gain.getTargetValue());
     }
+
+    // bypass: crossfade to the dry input (convolution and tube keep running, so returning is seamless)
+    if (canCrossfade && (wetMix.isSmoothing() || wetMix.getTargetValue() < 1.0f))
+    {
+        const int nch = juce::jmin (buffer.getNumChannels(), dryBuffer.getNumChannels());
+        for (int i = 0; i < n; ++i)
+        {
+            const float w = wetMix.getNextValue();
+            for (int ch = 0; ch < nch; ++ch)
+            {
+                float* d = buffer.getWritePointer (ch);
+                d[i] = w * d[i] + (1.0f - w) * dryBuffer.getSample (ch, i);
+            }
+        }
+    }
+}
+
+juce::AudioProcessorParameter* MoonMicProcessor::getBypassParameter() const
+{
+    return apvts.getParameter (ParamIDs::bypass);
+}
+
+void MoonMicProcessor::selectSlot (int slot)
+{
+    slot &= 1;
+    if (slot == currentSlot)
+        return;
+    slots[(size_t) currentSlot] = apvts.copyState();
+    if (slots[(size_t) slot].isValid())
+        apvts.replaceState (slots[(size_t) slot].createCopy());
+    currentSlot = slot;
+    forceRedesign = true;
+}
+
+void MoonMicProcessor::copyActiveToOther()
+{
+    slots[(size_t) (1 - currentSlot)] = apvts.copyState();
 }
 
 //==============================================================================

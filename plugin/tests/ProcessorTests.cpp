@@ -267,6 +267,47 @@ int main (int argc, char** argv)
                                  + juce::String (worst, 4) + " dB of 0 dB, 30 Hz-20 kHz");
     }
 
+    // 6. Bypass: after the 20 ms crossfade the output equals the input exactly
+    {
+        MoonMicProcessor p;
+        setParam (p, ParamIDs::mic, (float) p.getLibrary().indexOf ("c800_cardioid"));
+        setParam (p, ParamIDs::bypass, 1.0f);
+        p.setPlayConfigDetails (2, 2, 48000.0, 480);
+        p.prepareToPlay (48000.0, 480);
+        juce::AudioBuffer<float> buf (2, 480);
+        juce::MidiBuffer midi;
+        float worst = 0.0f;
+        for (int blk = 0; blk < 200; ++blk)
+        {
+            for (int i = 0; i < 480; ++i)
+            {
+                const float s = 0.5f * (float) std::sin (0.05 * (blk * 480 + i));
+                buf.setSample (0, i, s); buf.setSample (1, i, s);
+            }
+            juce::AudioBuffer<float> in (buf);
+            p.processBlock (buf, midi);
+            if (blk > 10)
+                for (int ch = 0; ch < 2; ++ch)
+                    for (int i = 0; i < 480; ++i)
+                        worst = std::max (worst, std::abs (buf.getSample (ch, i) - in.getSample (ch, i)));
+        }
+        check (worst == 0.0f, "bypass: output == input (max |diff| " + juce::String (worst) + ")");
+    }
+
+    // 7. A/B: slot B keeps its own microphone, switching back restores A
+    {
+        MoonMicProcessor p;
+        const int u87 = p.getLibrary().indexOf ("u87ai_cardioid"), r121 = p.getLibrary().indexOf ("r121");
+        setParam (p, ParamIDs::mic, (float) u87);
+        p.selectSlot (1);                                   // B starts as a copy of A
+        setParam (p, ParamIDs::mic, (float) r121);
+        p.selectSlot (0);
+        const int a = (int) p.getState().getRawParameterValue (ParamIDs::mic)->load();
+        p.selectSlot (1);
+        const int b = (int) p.getState().getRawParameterValue (ParamIDs::mic)->load();
+        check (a == u87 && b == r121, "A/B: A = u87ai_cardioid, B = r121 after switching");
+    }
+
     // 3. Microphones without an electronics model ignore Level (bit-identical output).
     {
         const auto a = sineResponse (48000.0, "u87ai_cardioid", 94.0f, 1.0f);

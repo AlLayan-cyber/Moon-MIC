@@ -65,6 +65,30 @@ std::vector<float> SignatureDesigner::targetMagnitudeDb (const ModelLibrary& lib
     return out;
 }
 
+std::vector<float> SignatureDesigner::polarDb (const ModelLibrary& lib, int setIndex, float freqHz, float distanceM)
+{
+    const auto& s = lib.set (setIndex);
+    const auto& f = lib.frequencies();
+    const size_t nF = f.size();
+    const int nA = lib.numAngles();
+    const auto it = std::lower_bound (f.begin(), f.end(), freqHz);
+    size_t k = (size_t) std::clamp<long long> ((long long) (it - f.begin()), 0, (long long) nF - 1);
+    if (k > 0 && std::abs (std::log (f[k - 1] / freqHz)) < std::abs (std::log (f[k] / freqHz)))
+        --k;
+    const double r0 = lib.referenceDistance(), c = lib.speedOfSound();
+    const cd prox = G (f[k], distanceM, c) / G (f[k], r0, c) - 1.0;
+    const cd b ((double) s.bRe[k], (double) s.bIm[k]);
+    std::vector<float> out ((size_t) nA);
+    for (int ai = 0; ai < nA; ++ai)
+    {
+        const size_t idx = (size_t) ai * nF + k;
+        cd h = std::polar (std::pow (10.0, s.magDb[idx] / 20.0), (double) s.phaseRad[idx]);
+        h += b * std::cos (ai * 5.0 * std::numbers::pi / 180.0) * prox;
+        out[(size_t) ai] = (float) (20.0 * std::log10 (std::abs (h) + 1e-12));
+    }
+    return out;
+}
+
 int SignatureDesigner::firLengthFor (double sampleRate)
 {
     int len = 256;

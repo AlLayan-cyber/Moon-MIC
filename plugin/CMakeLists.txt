@@ -56,7 +56,9 @@ target_sources(MoonMic PRIVATE
     source/PluginProcessor.cpp
     source/PluginEditor.cpp
     source/ui/ResponsePlot.cpp
-    source/ui/MoonAudioLogo.cpp)
+    source/ui/MoonAudioLogo.cpp
+    source/ui/StageView.cpp
+    source/ui/PolarPlot.cpp)
 
 target_include_directories(MoonMic PRIVATE source)
 target_compile_definitions(MoonMic PUBLIC ${MOONMIC_COMMON_DEFS})
@@ -103,6 +105,8 @@ target_sources(MoonMicProcessorTests PRIVATE
     source/PluginEditor.cpp
     source/ui/ResponsePlot.cpp
     source/ui/MoonAudioLogo.cpp
+    source/ui/StageView.cpp
+    source/ui/PolarPlot.cpp
     tests/ProcessorTests.cpp)
 
 target_include_directories(MoonMicProcessorTests PRIVATE source)

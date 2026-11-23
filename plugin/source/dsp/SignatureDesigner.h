@@ -22,6 +22,10 @@ public:
     static constexpr double designSampleRate = 48000.0; // reference rate (model data is 48 kHz)
     static constexpr double firSeconds = 4096.0 / 48000.0; // FIR span, ~85 ms at any sample rate
 
+    /** Polar response (dB) at one frequency (nearest model grid point) and distance, for all model
+        angles (0, 5, ..., 355 deg). Same spatial model as targetMagnitudeDb. UI use. */
+    static std::vector<float> polarDb (const ModelLibrary& lib, int setIndex, float freqHz, float distanceM);
+
     /** FIR length at a given sample rate (power of two, >= 85 ms). */
     static int firLengthFor (double sampleRate);
 

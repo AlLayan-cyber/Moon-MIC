@@ -1,0 +1,274 @@
+{
+ "by_pattern": {
+  "Bidirect": {
+   "n": 11200,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.044,
+   "coverage_68": 0.764,
+   "median_interval_oct": 3.59
+  },
+  "Cardioid": {
+   "n": 14000,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.593,
+   "within_30pct": 0.028,
+   "coverage_68": 0.797,
+   "median_interval_oct": 3.78
+  },
+  "Hyper": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.042,
+   "coverage_68": 0.769,
+   "median_interval_oct": 3.65
+  },
+  "Omni": {
+   "n": 14000,
+   "median_abs_err_oct": 2.751,
+   "p90_abs_err_oct": 4.727,
+   "within_30pct": 0.007,
+   "coverage_68": 0.807,
+   "median_interval_oct": 3.89
+  },
+  "fixed": {
+   "n": 8400,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.039,
+   "coverage_68": 0.777,
+   "median_interval_oct": 3.66
+  }
+ },
+ "by_register": {
+  "low <180 Hz": {
+   "n": 9828,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.056,
+   "coverage_68": 0.687,
+   "median_interval_oct": 3.47
+  },
+  "mid 180-330 Hz": {
+   "n": 17388,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.515,
+   "within_30pct": 0.022,
+   "coverage_68": 0.804,
+   "median_interval_oct": 3.74
+  },
+  "high >330 Hz": {
+   "n": 23184,
+   "median_abs_err_oct": 2.751,
+   "p90_abs_err_oct": 4.727,
+   "within_30pct": 0.019,
+   "coverage_68": 0.827,
+   "median_interval_oct": 3.88
+  }
+ },
+ "by_set": {
+  "c414bxls_cardioid": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.36,
+   "within_30pct": 0.029,
+   "coverage_68": 0.792,
+   "median_interval_oct": 3.76
+  },
+  "c414bxls_figure8": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.046,
+   "coverage_68": 0.762,
+   "median_interval_oct": 3.55
+  },
+  "c414bxls_hyper": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.042,
+   "coverage_68": 0.769,
+   "median_interval_oct": 3.65
+  },
+  "c414bxls_omni": {
+   "n": 2800,
+   "median_abs_err_oct": 2.751,
+   "p90_abs_err_oct": 4.727,
+   "within_30pct": 0.008,
+   "coverage_68": 0.806,
+   "median_interval_oct": 3.89
+  },
+  "c800_cardioid": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.727,
+   "within_30pct": 0.025,
+   "coverage_68": 0.804,
+   "median_interval_oct": 3.81
+  },
+  "c800_omni": {
+   "n": 2800,
+   "median_abs_err_oct": 2.751,
+   "p90_abs_err_oct": 4.727,
+   "within_30pct": 0.016,
+   "coverage_68": 0.819,
+   "median_interval_oct": 3.88
+  },
+  "k2_cardioid": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.508,
+   "within_30pct": 0.028,
+   "coverage_68": 0.799,
+   "median_interval_oct": 3.79
+  },
+  "k2_figure8": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.041,
+   "coverage_68": 0.768,
+   "median_interval_oct": 3.65
+  },
+  "k2_omni": {
+   "n": 2800,
+   "median_abs_err_oct": 2.751,
+   "p90_abs_err_oct": 4.727,
+   "within_30pct": 0.001,
+   "coverage_68": 0.803,
+   "median_interval_oct": 3.89
+  },
+  "nt2a_cardioid": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.367,
+   "within_30pct": 0.03,
+   "coverage_68": 0.794,
+   "median_interval_oct": 3.76
+  },
+  "nt2a_figure8": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.044,
+   "coverage_68": 0.762,
+   "median_interval_oct": 3.57
+  },
+  "nt2a_omni": {
+   "n": 2800,
+   "median_abs_err_oct": 2.751,
+   "p90_abs_err_oct": 4.727,
+   "within_30pct": 0.005,
+   "coverage_68": 0.803,
+   "median_interval_oct": 3.89
+  },
+  "r121": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.048,
+   "coverage_68": 0.756,
+   "median_interval_oct": 3.5
+  },
+  "sm58": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.035,
+   "coverage_68": 0.784,
+   "median_interval_oct": 3.71
+  },
+  "u47fet": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.033,
+   "coverage_68": 0.79,
+   "median_interval_oct": 3.74
+  },
+  "u87ai_cardioid": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.437,
+   "within_30pct": 0.028,
+   "coverage_68": 0.797,
+   "median_interval_oct": 3.78
+  },
+  "u87ai_figure8": {
+   "n": 2800,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.044,
+   "coverage_68": 0.762,
+   "median_interval_oct": 3.6
+  },
+  "u87ai_omni": {
+   "n": 2800,
+   "median_abs_err_oct": 2.751,
+   "p90_abs_err_oct": 4.727,
+   "within_30pct": 0.004,
+   "coverage_68": 0.805,
+   "median_interval_oct": 3.89
+  }
+ },
+ "by_distance": {
+  "0.05 m": {
+   "n": 7200,
+   "median_abs_err_oct": 0.705,
+   "p90_abs_err_oct": 4.938,
+   "within_30pct": 0.069,
+   "coverage_68": 0.381,
+   "median_interval_oct": 3.83
+  },
+  "0.1 m": {
+   "n": 7200,
+   "median_abs_err_oct": 1.764,
+   "p90_abs_err_oct": 3.88,
+   "within_30pct": 0.051,
+   "coverage_68": 0.877,
+   "median_interval_oct": 3.82
+  },
+  "0.15 m": {
+   "n": 7200,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 3.316,
+   "within_30pct": 0.033,
+   "coverage_68": 0.915,
+   "median_interval_oct": 3.81
+  },
+  "0.2 m": {
+   "n": 7200,
+   "median_abs_err_oct": 2.751,
+   "p90_abs_err_oct": 2.892,
+   "within_30pct": 0.022,
+   "coverage_68": 0.936,
+   "median_interval_oct": 3.81
+  },
+  "0.3 m": {
+   "n": 7200,
+   "median_abs_err_oct": 2.328,
+   "p90_abs_err_oct": 3.316,
+   "within_30pct": 0.013,
+   "coverage_68": 0.945,
+   "median_interval_oct": 3.81
+  },
+  "0.5 m": {
+   "n": 7200,
+   "median_abs_err_oct": 1.834,
+   "p90_abs_err_oct": 4.092,
+   "within_30pct": 0.006,
+   "coverage_68": 0.92,
+   "median_interval_oct": 3.8
+  },
+  "0.8 m": {
+   "n": 7200,
+   "median_abs_err_oct": 2.399,
+   "p90_abs_err_oct": 4.727,
+   "within_30pct": 0.004,
+   "coverage_68": 0.537,
+   "median_interval_oct": 3.8
+  }
+ }
+}
