@@ -48,6 +48,14 @@ MoonMicProcessor::MoonMicProcessor()
     angleParam    = apvts.getRawParameterValue (ParamIDs::angle);
     autoGainParam = apvts.getRawParameterValue (ParamIDs::autoGain);
     outputParam   = apvts.getRawParameterValue (ParamIDs::output);
+    levelParam    = apvts.getRawParameterValue (ParamIDs::level);
+    transformParam   = apvts.getRawParameterValue (ParamIDs::transform);
+    srcMicParam      = apvts.getRawParameterValue (ParamIDs::srcMic);
+    srcDistanceParam = apvts.getRawParameterValue (ParamIDs::srcDistance);
+    srcAngleParam    = apvts.getRawParameterValue (ParamIDs::srcAngle);
+
+    for (int i = 0; i < library.numSets(); ++i)
+        setElectronics.push_back (ElectronicsStage::modelForSet (library.set (i).id));
 
     designThread = std::make_unique<DesignThread> (*this);
     if (libraryOk)
@@ -91,6 +99,28 @@ juce::AudioProcessorValueTreeState::ParameterLayout MoonMicProcessor::createLayo
         juce::NormalisableRange<float> (-24.0f, 24.0f, 0.1f), 0.0f,
         juce::AudioParameterFloatAttributes().withLabel ("dB")));
 
+    // Level calibration for the physical electronics model (tube stage): which SPL at the capsule a
+    // full-scale sine corresponds to. Only affects microphones with an electronics model.
+    layout.add (std::make_unique<juce::AudioParameterFloat> (
+        juce::ParameterID { ParamIDs::level, 1 }, "Level",
+        juce::NormalisableRange<float> (94.0f, 140.0f, 0.5f), ElectronicsStage::defaultLevelDbSpl,
+        juce::AudioParameterFloatAttributes().withLabel ("dB SPL")));
+
+    // TRANSFORM v1: the source microphone and its position are chosen by the user (no AI analysis yet).
+    layout.add (std::make_unique<juce::AudioParameterBool> (
+        juce::ParameterID { ParamIDs::transform, 1 }, "Transform", false));
+    layout.add (std::make_unique<juce::AudioParameterChoice> (
+        juce::ParameterID { ParamIDs::srcMic, 1 }, "Source Microphone", names, 0));
+    juce::NormalisableRange<float> srcRange (5.0f, 125.0f, 0.5f);
+    srcRange.setSkewForCentre (30.0f);
+    layout.add (std::make_unique<juce::AudioParameterFloat> (
+        juce::ParameterID { ParamIDs::srcDistance, 1 }, "Source Distance", srcRange, 15.0f,
+        juce::AudioParameterFloatAttributes().withLabel ("cm")));
+    layout.add (std::make_unique<juce::AudioParameterFloat> (
+        juce::ParameterID { ParamIDs::srcAngle, 1 }, "Source Angle",
+        juce::NormalisableRange<float> (-180.0f, 180.0f, 0.5f), 0.0f,
+        juce::AudioParameterFloatAttributes().withLabel (juce::String::fromUTF8 ("\xc2\xb0"))));
+
     return layout;
 }
 
@@ -100,16 +130,24 @@ void MoonMicProcessor::designIfNeeded()
     const int mic = juce::jlimit (0, library.numSets() - 1, (int) micParam->load());
     const float distM = distanceParam->load() / 100.0f;
     const float ang = angleParam->load();
+    const bool tf = transformParam->load() >= 0.5f;
+    const int srcMic = juce::jlimit (0, library.numSets() - 1, (int) srcMicParam->load());
+    const float srcDistM = srcDistanceParam->load() / 100.0f;
+    const float srcAng = srcAngleParam->load();
 
-    if (! forceRedesign.exchange (false) && mic == lastMic
+    const bool srcSame = ! tf || (srcMic == lastSrcMic && std::abs (srcDistM - lastSrcDistance) < 1.0e-4f
+                                  && std::abs (srcAng - lastSrcAngle) < 1.0e-3f);
+    if (! forceRedesign.exchange (false) && mic == lastMic && tf == lastTransform && srcSame
         && std::abs (distM - lastDistance) < 1.0e-4f && std::abs (ang - lastAngle) < 1.0e-3f)
         return;
 
-    lastMic = mic; lastDistance = distM; lastAngle = ang;
+    lastMic = mic; lastDistance = distM; lastAngle = ang; lastTransform = tf;
+    lastSrcMic = srcMic; lastSrcDistance = srcDistM; lastSrcAngle = srcAng;
 
     // Designed at the host rate, so the convolution engine never resamples the IR.
     const double rate = hostRate.load();
-    auto result = SignatureDesigner::design (library, mic, ang, distM, rate);
+    auto result = tf ? SignatureDesigner::designTransform (library, srcMic, srcAng, srcDistM, mic, ang, distM, rate)
+                     : SignatureDesigner::design (library, mic, ang, distM, rate);
 
     juce::AudioBuffer<float> ir (1, (int) result.fir.size());
     ir.copyFrom (0, 0, result.fir.data(), (int) result.fir.size());
@@ -141,6 +179,7 @@ void MoonMicProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
     convolution.reset();
     gain.reset (sampleRate, 0.05);
     gain.setCurrentAndTargetValue (1.0f);
+    electronics.prepare (sampleRate, samplesPerBlock, (int) spec.numChannels);
     prepared = true;
     hostRate = sampleRate;
     forceRedesign = true;   // re-design at the new rate and re-deliver the IR after prepare()
@@ -187,6 +226,11 @@ void MoonMicProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::Mid
 
     juce::dsp::AudioBlock<float> block (buffer);
     convolution.process (juce::dsp::ProcessContextReplacing<float> (block));
+
+    // physical electronics model after the measured linear response (C-800G tube stage)
+    const int micIndex = juce::jlimit (0, (int) setElectronics.size() - 1, (int) micParam->load());
+    electronics.setModel (setElectronics.empty() ? ElectronicsStage::Model::none : setElectronics[(size_t) micIndex]);
+    electronics.process (block, levelParam->load());
 
     float targetDb = outputParam->load();
     if (autoGainParam->load() >= 0.5f)

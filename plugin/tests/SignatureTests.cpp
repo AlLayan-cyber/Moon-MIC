@@ -81,6 +81,37 @@ int main()
     check (worstRef < 0.01, "C++ target == Python reference over " + juce::String (cases->size())
                                 + " cases, max |diff| = " + juce::String (worstRef, 5) + " dB");
 
+    // TRANSFORM v1 correction == Python reference; null case exactly 0 dB; boost limit respected
+    {
+        const juce::File tfFile (MOONMIC_TRANSFORM_JSON);
+        const auto tf = juce::JSON::parse (tfFile);
+        const auto* tfCases = tf["cases"].getArray();
+        check (tfCases != nullptr && ! tfCases->isEmpty(), "transform reference file " + tfFile.getFullPathName());
+        double worstTf = 0.0, worstNull = 0.0, maxBoost = -1e9;
+        if (tfCases != nullptr)
+            for (const auto& c : *tfCases)
+            {
+                const int s = lib.indexOf (c["source"].toString().toStdString());
+                const int t = lib.indexOf (c["target"].toString().toStdString());
+                const auto mine = SignatureDesigner::transformCorrectionDb (
+                    lib, s, (float) (double) c["source_angle_deg"], (float) (double) c["source_distance_m"],
+                    t, (float) (double) c["target_angle_deg"], (float) (double) c["target_distance_m"]);
+                const auto* expected = c["correction_db"].getArray();
+                const bool isNull = s == t && (double) c["source_angle_deg"] == (double) c["target_angle_deg"]
+                                    && (double) c["source_distance_m"] == (double) c["target_distance_m"];
+                for (int k = 0; k < expected->size(); ++k)
+                {
+                    worstTf = std::max (worstTf, std::abs ((double) mine[(size_t) k] - (double) (*expected)[k]));
+                    maxBoost = std::max (maxBoost, (double) mine[(size_t) k]);
+                    if (isNull) worstNull = std::max (worstNull, std::abs ((double) mine[(size_t) k]));
+                }
+            }
+        check (worstTf < 0.01, "TRANSFORM correction C++ == Python reference, max |diff| = " + juce::String (worstTf, 5) + " dB");
+        check (worstNull == 0.0, "TRANSFORM null case (source == target, same position): correction exactly 0 dB");
+        check (maxBoost <= SignatureDesigner::transformMaxBoostDb,
+               "TRANSFORM boost limit respected (max " + juce::String (maxBoost, 2) + " dB)");
+    }
+
     // FIR accuracy, minimum phase, determinism
     const auto& f = lib.frequencies();
     struct Case { const char* id; float angle, dist; };

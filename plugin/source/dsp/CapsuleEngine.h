@@ -1,4 +1,4 @@
-// MOON MIC Physical Capsule Engine — realtime C++ core (Stage 5 test bench, not plugin code yet).
+// MOON MIC Physical Capsule Engine — realtime C++ core (used by the plugin and by research/capsule_engine_cpp).
 // Mirrors research/capsule_engine (Python reference) one to one; see that package for the physics notes.
 // Realtime rules: no allocation, no locks, bounded worst-case iteration count per sample.
 #pragma once
@@ -103,6 +103,16 @@ public:
         vc = vcHist + rc * ibNew;
         ib = ibNew;
         return ibNew * circ.rLoad / circ.turns;
+    }
+
+    /** Signed mid-band small-signal gain grid -> secondary (bypassed cathode, coupling capacitor short).
+        Negative: the common-cathode stage inverts. */
+    double smallSignalGain() const noexcept
+    {
+        double f, fg, fp;
+        tube.ipPartials (gridDcV - vk0, vp0 - vk0, f, fg, fp);
+        const double rAc = 1.0 / (1.0 / circ.ra + 1.0 / circ.rLoad);
+        return -fg / (fp + 1.0 / rAc) / circ.turns;
     }
 
     double plateCurrent0() const noexcept { return ip0; }

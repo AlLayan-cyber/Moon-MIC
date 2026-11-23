@@ -26,7 +26,8 @@ juce_add_binary_data(MoonMicData
 set(MOONMIC_CORE_SOURCES
     source/model/ModelLibrary.cpp
     source/dsp/SimpleFFT.cpp
-    source/dsp/SignatureDesigner.cpp)
+    source/dsp/SignatureDesigner.cpp
+    source/dsp/ElectronicsStage.cpp)
 
 set(MOONMIC_COMMON_DEFS
     JUCE_WEB_BROWSER=0
@@ -80,7 +81,8 @@ target_sources(MoonMicTests PRIVATE
 target_include_directories(MoonMicTests PRIVATE source)
 target_compile_definitions(MoonMicTests PRIVATE
     ${MOONMIC_COMMON_DEFS}
-    MOONMIC_REFERENCE_JSON="${CMAKE_CURRENT_SOURCE_DIR}/tests/reference/signature_reference_v1.json")
+    MOONMIC_REFERENCE_JSON="${CMAKE_CURRENT_SOURCE_DIR}/tests/reference/signature_reference_v1.json"
+    MOONMIC_TRANSFORM_JSON="${CMAKE_CURRENT_SOURCE_DIR}/tests/reference/transform_reference_v1.json")
 
 target_link_libraries(MoonMicTests
     PRIVATE

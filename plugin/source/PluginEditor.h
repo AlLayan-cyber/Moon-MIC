@@ -31,20 +31,25 @@ public:
 private:
     void timerCallback() override;
     void setupKnob (juce::Slider&, juce::Label&, const juce::String& name);
+    void setMode (bool transform);
+    bool isTransform() const;
 
     MoonMicProcessor& processor;
     MoonLookAndFeel lnf;
 
-    juce::ComboBox micBox;
-    juce::Slider distanceKnob, angleKnob, outputKnob;
-    juce::Label distanceLabel, angleLabel, outputLabel, micLabel, statusLabel;
+    juce::ComboBox micBox, srcBox;
+    juce::TextButton signatureButton { "SIGNATURE" }, transformButton { "TRANSFORM" };
+    bool shownTransform = false;
+    juce::Slider distanceKnob, angleKnob, outputKnob, levelKnob, srcDistanceKnob, srcAngleKnob;
+    juce::Label distanceLabel, angleLabel, outputLabel, levelLabel, micLabel, srcLabel, srcDistanceLabel, srcAngleLabel, statusLabel;
     juce::ToggleButton autoGainButton { "Auto gain" };
     ResponsePlot plot;
     MoonAudioLogo logo;
 
     using APVTS = juce::AudioProcessorValueTreeState;
-    std::unique_ptr<APVTS::ComboBoxAttachment> micAttachment;
-    std::unique_ptr<APVTS::SliderAttachment> distanceAttachment, angleAttachment, outputAttachment;
+    std::unique_ptr<APVTS::ComboBoxAttachment> micAttachment, srcAttachment;
+    std::unique_ptr<APVTS::SliderAttachment> distanceAttachment, angleAttachment, outputAttachment, levelAttachment,
+                                             srcDistanceAttachment, srcAngleAttachment;
     std::unique_ptr<APVTS::ButtonAttachment> autoGainAttachment;
 
     std::vector<float> lastCurve;

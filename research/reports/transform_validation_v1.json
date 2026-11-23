@@ -1,0 +1,6587 @@
+{
+ "method": "TRANSFORM v1 validation on independent Surrey measurements (docs/architecture/05 \u00a77, 10).",
+ "summary": {
+  "1.25 m": {
+   "pairs": 324,
+   "baseline_rms_db_median": 1.83,
+   "transform_rms_db_median": 0.56,
+   "transform_rms_db_p90": 1.0,
+   "transform_max_db_median": 1.93,
+   "improved_pairs": 321,
+   "same_mic_distance_only_rms_db_median": 0.49
+  },
+  "5 m": {
+   "pairs": 324,
+   "baseline_rms_db_median": 1.79,
+   "transform_rms_db_median": 0.75,
+   "transform_rms_db_p90": 1.26,
+   "transform_max_db_median": 2.58,
+   "improved_pairs": 312,
+   "same_mic_distance_only_rms_db_median": 0.7
+  }
+ },
+ "worst": [
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.58,
+   "baseline_max_db": 4.13,
+   "transform_rms_db": 1.44,
+   "transform_max_db": 4.7
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.13,
+   "baseline_max_db": 4.6,
+   "transform_rms_db": 1.43,
+   "transform_max_db": 4.57
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.84,
+   "baseline_max_db": 5.86,
+   "transform_rms_db": 1.43,
+   "transform_max_db": 4.5
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.18,
+   "baseline_max_db": 4.96,
+   "transform_rms_db": 1.43,
+   "transform_max_db": 4.52
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.44,
+   "baseline_max_db": 3.35,
+   "transform_rms_db": 1.42,
+   "transform_max_db": 4.41
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.44,
+   "baseline_max_db": 5.81,
+   "transform_rms_db": 1.42,
+   "transform_max_db": 4.65
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.68,
+   "baseline_max_db": 4.97,
+   "transform_rms_db": 1.42,
+   "transform_max_db": 4.43
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.26,
+   "baseline_max_db": 3.8,
+   "transform_rms_db": 1.42,
+   "transform_max_db": 4.62
+  }
+ ],
+ "pairs": [
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.92,
+   "baseline_max_db": 2.15,
+   "transform_rms_db": 0.46,
+   "transform_max_db": 0.93
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.7,
+   "baseline_max_db": 4.7,
+   "transform_rms_db": 0.48,
+   "transform_max_db": 1.08
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.25,
+   "baseline_max_db": 4.35,
+   "transform_rms_db": 0.47,
+   "transform_max_db": 1.16
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.0,
+   "baseline_max_db": 3.56,
+   "transform_rms_db": 0.49,
+   "transform_max_db": 1.29
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.96,
+   "baseline_max_db": 5.83,
+   "transform_rms_db": 0.55,
+   "transform_max_db": 1.9
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.9,
+   "baseline_max_db": 6.39,
+   "transform_rms_db": 0.55,
+   "transform_max_db": 2.57
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.6,
+   "baseline_max_db": 7.8,
+   "transform_rms_db": 0.55,
+   "transform_max_db": 2.42
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.81,
+   "baseline_max_db": 5.76,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.92
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.93,
+   "baseline_max_db": 6.0,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.43
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.69,
+   "baseline_max_db": 7.5,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.23
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.73,
+   "baseline_max_db": 6.13,
+   "transform_rms_db": 0.49,
+   "transform_max_db": 1.07
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.45,
+   "baseline_max_db": 6.4,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.42
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.46,
+   "baseline_max_db": 4.7,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.2
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.45,
+   "baseline_max_db": 4.93,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.13
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.83,
+   "baseline_max_db": 5.56,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 2.49
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.42,
+   "baseline_max_db": 5.98,
+   "transform_rms_db": 0.49,
+   "transform_max_db": 1.12
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.07,
+   "baseline_max_db": 6.55,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.46
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.28,
+   "baseline_max_db": 5.41,
+   "transform_rms_db": 0.49,
+   "transform_max_db": 1.14
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.28,
+   "baseline_max_db": 5.32,
+   "transform_rms_db": 0.34,
+   "transform_max_db": 1.63
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.35,
+   "baseline_max_db": 1.25,
+   "transform_rms_db": 0.32,
+   "transform_max_db": 1.26
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.3,
+   "baseline_max_db": 7.49,
+   "transform_rms_db": 0.36,
+   "transform_max_db": 1.4
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.87,
+   "baseline_max_db": 6.2,
+   "transform_rms_db": 0.39,
+   "transform_max_db": 1.55
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.83,
+   "baseline_max_db": 6.95,
+   "transform_rms_db": 0.45,
+   "transform_max_db": 2.13
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.04,
+   "baseline_max_db": 7.62,
+   "transform_rms_db": 0.45,
+   "transform_max_db": 2.79
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.35,
+   "baseline_max_db": 8.86,
+   "transform_rms_db": 0.46,
+   "transform_max_db": 2.79
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.06,
+   "baseline_max_db": 6.99,
+   "transform_rms_db": 0.48,
+   "transform_max_db": 3.15
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.37,
+   "baseline_max_db": 7.24,
+   "transform_rms_db": 0.4,
+   "transform_max_db": 1.74
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.75,
+   "baseline_max_db": 8.73,
+   "transform_rms_db": 0.38,
+   "transform_max_db": 1.48
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.9,
+   "baseline_max_db": 7.36,
+   "transform_rms_db": 0.38,
+   "transform_max_db": 1.56
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.93,
+   "baseline_max_db": 7.64,
+   "transform_rms_db": 0.41,
+   "transform_max_db": 1.94
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.3,
+   "baseline_max_db": 8.21,
+   "transform_rms_db": 0.4,
+   "transform_max_db": 1.71
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.48,
+   "baseline_max_db": 6.6,
+   "transform_rms_db": 0.4,
+   "transform_max_db": 1.48
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.05,
+   "baseline_max_db": 8.64,
+   "transform_rms_db": 0.44,
+   "transform_max_db": 2.5
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.75,
+   "baseline_max_db": 7.22,
+   "transform_rms_db": 0.38,
+   "transform_max_db": 1.54
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.67,
+   "baseline_max_db": 7.78,
+   "transform_rms_db": 0.4,
+   "transform_max_db": 1.5
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.24,
+   "baseline_max_db": 7.11,
+   "transform_rms_db": 0.38,
+   "transform_max_db": 1.44
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.52,
+   "baseline_max_db": 5.83,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 1.58
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.27,
+   "baseline_max_db": 6.65,
+   "transform_rms_db": 0.76,
+   "transform_max_db": 1.58
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.6,
+   "baseline_max_db": 4.18,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 1.58
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.23,
+   "baseline_max_db": 5.65,
+   "transform_rms_db": 0.77,
+   "transform_max_db": 1.63
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.42,
+   "baseline_max_db": 7.92,
+   "transform_rms_db": 0.8,
+   "transform_max_db": 1.82
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.21,
+   "baseline_max_db": 8.44,
+   "transform_rms_db": 0.8,
+   "transform_max_db": 2.48
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 4.13,
+   "baseline_max_db": 9.97,
+   "transform_rms_db": 0.8,
+   "transform_max_db": 2.14
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.96,
+   "baseline_max_db": 7.82,
+   "transform_rms_db": 0.81,
+   "transform_max_db": 2.83
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.44,
+   "baseline_max_db": 8.76,
+   "transform_rms_db": 0.77,
+   "transform_max_db": 1.72
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.2,
+   "baseline_max_db": 9.55,
+   "transform_rms_db": 0.78,
+   "transform_max_db": 1.57
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.31,
+   "baseline_max_db": 8.18,
+   "transform_rms_db": 0.76,
+   "transform_max_db": 1.78
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 4.13,
+   "baseline_max_db": 9.08,
+   "transform_rms_db": 0.77,
+   "transform_max_db": 1.82
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.59,
+   "baseline_max_db": 6.76,
+   "transform_rms_db": 0.77,
+   "transform_max_db": 1.7
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.49,
+   "baseline_max_db": 2.96,
+   "transform_rms_db": 0.77,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.83,
+   "baseline_max_db": 6.87,
+   "transform_rms_db": 0.81,
+   "transform_max_db": 2.4
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.97,
+   "baseline_max_db": 8.04,
+   "transform_rms_db": 0.76,
+   "transform_max_db": 1.7
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.78,
+   "baseline_max_db": 8.6,
+   "transform_rms_db": 0.78,
+   "transform_max_db": 1.8
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.27,
+   "baseline_max_db": 7.47,
+   "transform_rms_db": 0.76,
+   "transform_max_db": 1.73
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.6,
+   "baseline_max_db": 2.91,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 1.77
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.36,
+   "baseline_max_db": 5.53,
+   "transform_rms_db": 0.58,
+   "transform_max_db": 1.77
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.56,
+   "baseline_max_db": 4.57,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 1.75
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.94,
+   "baseline_max_db": 2.11,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 1.72
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.42,
+   "baseline_max_db": 4.74,
+   "transform_rms_db": 0.61,
+   "transform_max_db": 1.96
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.34,
+   "baseline_max_db": 4.26,
+   "transform_rms_db": 0.63,
+   "transform_max_db": 2.55
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.02,
+   "baseline_max_db": 7.44,
+   "transform_rms_db": 0.6,
+   "transform_max_db": 2.14
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.2,
+   "baseline_max_db": 4.08,
+   "transform_rms_db": 0.65,
+   "transform_max_db": 2.91
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.38,
+   "baseline_max_db": 5.64,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 2.01
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.93,
+   "baseline_max_db": 4.93,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.18
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.14,
+   "baseline_max_db": 4.65,
+   "transform_rms_db": 0.55,
+   "transform_max_db": 2.07
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.78,
+   "baseline_max_db": 6.17,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.1
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.89,
+   "baseline_max_db": 4.74,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 2.0
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.53,
+   "baseline_max_db": 4.41,
+   "transform_rms_db": 0.58,
+   "transform_max_db": 2.22
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.67,
+   "baseline_max_db": 5.42,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 2.58
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.8,
+   "baseline_max_db": 3.63,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 1.87
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.44,
+   "baseline_max_db": 5.89,
+   "transform_rms_db": 0.58,
+   "transform_max_db": 1.97
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.48,
+   "baseline_max_db": 3.56,
+   "transform_rms_db": 0.55,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.14,
+   "baseline_max_db": 4.16,
+   "transform_rms_db": 1.03,
+   "transform_max_db": 4.1
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.04,
+   "baseline_max_db": 5.76,
+   "transform_rms_db": 1.04,
+   "transform_max_db": 4.45
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.78,
+   "baseline_max_db": 6.37,
+   "transform_rms_db": 1.03,
+   "transform_max_db": 4.0
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.23,
+   "baseline_max_db": 4.79,
+   "transform_rms_db": 1.02,
+   "transform_max_db": 3.99
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.36,
+   "baseline_max_db": 2.85,
+   "transform_rms_db": 0.97,
+   "transform_max_db": 2.8
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.28,
+   "baseline_max_db": 2.41,
+   "transform_rms_db": 1.0,
+   "transform_max_db": 3.34
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.85,
+   "baseline_max_db": 4.59,
+   "transform_rms_db": 0.96,
+   "transform_max_db": 2.78
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.42,
+   "baseline_max_db": 4.73,
+   "transform_rms_db": 1.0,
+   "transform_max_db": 3.51
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.84,
+   "baseline_max_db": 3.95,
+   "transform_rms_db": 1.05,
+   "transform_max_db": 3.96
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.32,
+   "baseline_max_db": 3.32,
+   "transform_rms_db": 1.06,
+   "transform_max_db": 4.37
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.25,
+   "baseline_max_db": 3.28,
+   "transform_rms_db": 1.02,
+   "transform_max_db": 4.42
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.19,
+   "baseline_max_db": 5.8,
+   "transform_rms_db": 1.02,
+   "transform_max_db": 4.37
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.89,
+   "baseline_max_db": 2.46,
+   "transform_rms_db": 1.03,
+   "transform_max_db": 3.78
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.12,
+   "baseline_max_db": 8.19,
+   "transform_rms_db": 1.03,
+   "transform_max_db": 4.27
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.32,
+   "baseline_max_db": 6.71,
+   "transform_rms_db": 1.0,
+   "transform_max_db": 4.19
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.87,
+   "baseline_max_db": 2.25,
+   "transform_rms_db": 1.03,
+   "transform_max_db": 4.03
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.61,
+   "baseline_max_db": 4.27,
+   "transform_rms_db": 1.04,
+   "transform_max_db": 4.52
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.95,
+   "baseline_max_db": 3.97,
+   "transform_rms_db": 1.03,
+   "transform_max_db": 3.75
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.27,
+   "baseline_max_db": 5.36,
+   "transform_rms_db": 0.65,
+   "transform_max_db": 3.55
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.07,
+   "baseline_max_db": 6.95,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 3.44
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.54,
+   "baseline_max_db": 6.98,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 3.64
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.15,
+   "baseline_max_db": 3.46,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 3.76
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.48,
+   "baseline_max_db": 3.54,
+   "transform_rms_db": 0.62,
+   "transform_max_db": 2.39
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.23,
+   "baseline_max_db": 3.06,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 1.9
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.22,
+   "baseline_max_db": 4.89,
+   "transform_rms_db": 0.63,
+   "transform_max_db": 3.02
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.15,
+   "baseline_max_db": 2.66,
+   "transform_rms_db": 0.58,
+   "transform_max_db": 2.07
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.85,
+   "baseline_max_db": 4.44,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 3.7
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.65,
+   "baseline_max_db": 4.04,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 3.65
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.61,
+   "baseline_max_db": 5.34,
+   "transform_rms_db": 0.64,
+   "transform_max_db": 3.57
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.43,
+   "baseline_max_db": 7.58,
+   "transform_rms_db": 0.67,
+   "transform_max_db": 3.48
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.18,
+   "baseline_max_db": 3.18,
+   "transform_rms_db": 0.65,
+   "transform_max_db": 3.51
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.93,
+   "baseline_max_db": 7.29,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 3.45
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.41,
+   "baseline_max_db": 7.87,
+   "transform_rms_db": 0.69,
+   "transform_max_db": 3.57
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.27,
+   "baseline_max_db": 4.05,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 3.89
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.0,
+   "baseline_max_db": 6.02,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 3.73
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.07,
+   "baseline_max_db": 2.48,
+   "transform_rms_db": 0.65,
+   "transform_max_db": 3.81
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.64,
+   "baseline_max_db": 5.95,
+   "transform_rms_db": 0.86,
+   "transform_max_db": 4.25
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.11,
+   "baseline_max_db": 6.66,
+   "transform_rms_db": 0.87,
+   "transform_max_db": 4.39
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.63,
+   "baseline_max_db": 8.43,
+   "transform_rms_db": 0.85,
+   "transform_max_db": 3.95
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.01,
+   "baseline_max_db": 7.08,
+   "transform_rms_db": 0.85,
+   "transform_max_db": 3.96
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.02,
+   "baseline_max_db": 3.33,
+   "transform_rms_db": 0.81,
+   "transform_max_db": 3.33
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.39,
+   "baseline_max_db": 4.7,
+   "transform_rms_db": 0.86,
+   "transform_max_db": 3.79
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.79,
+   "baseline_max_db": 2.91,
+   "transform_rms_db": 0.76,
+   "transform_max_db": 2.89
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.82,
+   "baseline_max_db": 7.02,
+   "transform_rms_db": 0.88,
+   "transform_max_db": 3.68
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.62,
+   "baseline_max_db": 6.13,
+   "transform_rms_db": 0.88,
+   "transform_max_db": 3.99
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.29,
+   "baseline_max_db": 5.22,
+   "transform_rms_db": 0.9,
+   "transform_max_db": 4.13
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.06,
+   "baseline_max_db": 3.29,
+   "transform_rms_db": 0.84,
+   "transform_max_db": 3.99
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.63,
+   "baseline_max_db": 5.29,
+   "transform_rms_db": 0.84,
+   "transform_max_db": 4.22
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.56,
+   "baseline_max_db": 4.08,
+   "transform_rms_db": 0.85,
+   "transform_max_db": 4.26
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.08,
+   "baseline_max_db": 10.26,
+   "transform_rms_db": 0.85,
+   "transform_max_db": 4.09
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.24,
+   "baseline_max_db": 8.99,
+   "transform_rms_db": 0.81,
+   "transform_max_db": 3.8
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.05,
+   "baseline_max_db": 4.28,
+   "transform_rms_db": 0.85,
+   "transform_max_db": 3.88
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.09,
+   "baseline_max_db": 2.82,
+   "transform_rms_db": 0.87,
+   "transform_max_db": 4.24
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.77,
+   "baseline_max_db": 6.21,
+   "transform_rms_db": 0.85,
+   "transform_max_db": 3.64
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.59,
+   "baseline_max_db": 3.76,
+   "transform_rms_db": 1.21,
+   "transform_max_db": 3.99
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.45,
+   "baseline_max_db": 6.26,
+   "transform_rms_db": 1.21,
+   "transform_max_db": 3.88
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.53,
+   "baseline_max_db": 4.91,
+   "transform_rms_db": 1.21,
+   "transform_max_db": 4.08
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.39,
+   "baseline_max_db": 3.25,
+   "transform_rms_db": 1.2,
+   "transform_max_db": 4.2
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.28,
+   "baseline_max_db": 5.68,
+   "transform_rms_db": 1.17,
+   "transform_max_db": 3.2
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.05,
+   "baseline_max_db": 5.2,
+   "transform_rms_db": 1.13,
+   "transform_max_db": 2.84
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.94,
+   "baseline_max_db": 6.69,
+   "transform_rms_db": 1.2,
+   "transform_max_db": 3.46
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.9,
+   "baseline_max_db": 4.7,
+   "transform_rms_db": 1.13,
+   "transform_max_db": 2.82
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.54,
+   "baseline_max_db": 6.58,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 4.14
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.13,
+   "baseline_max_db": 5.87,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 4.09
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.15,
+   "baseline_max_db": 5.49,
+   "transform_rms_db": 1.2,
+   "transform_max_db": 4.01
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.01,
+   "baseline_max_db": 6.74,
+   "transform_rms_db": 1.19,
+   "transform_max_db": 3.92
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.54,
+   "baseline_max_db": 4.27,
+   "transform_rms_db": 1.2,
+   "transform_max_db": 3.95
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.56,
+   "baseline_max_db": 5.09,
+   "transform_rms_db": 1.2,
+   "transform_max_db": 3.89
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.77,
+   "baseline_max_db": 5.8,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 4.01
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.78,
+   "baseline_max_db": 4.57,
+   "transform_rms_db": 1.21,
+   "transform_max_db": 4.33
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.54,
+   "baseline_max_db": 5.69,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 4.17
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.34,
+   "baseline_max_db": 3.44,
+   "transform_rms_db": 1.21,
+   "transform_max_db": 4.25
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.16,
+   "baseline_max_db": 5.52,
+   "transform_rms_db": 0.49,
+   "transform_max_db": 1.64
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.21,
+   "baseline_max_db": 7.11,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.64
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.98,
+   "baseline_max_db": 7.14,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.63
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.44,
+   "baseline_max_db": 3.69,
+   "transform_rms_db": 0.49,
+   "transform_max_db": 1.63
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.33,
+   "baseline_max_db": 4.57,
+   "transform_rms_db": 0.54,
+   "transform_max_db": 1.83
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.47,
+   "baseline_max_db": 4.54,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.33
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.96,
+   "baseline_max_db": 7.1,
+   "transform_rms_db": 0.54,
+   "transform_max_db": 1.67
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.51,
+   "baseline_max_db": 4.92,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 2.79
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.62,
+   "baseline_max_db": 1.27,
+   "transform_rms_db": 0.46,
+   "transform_max_db": 1.22
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.14,
+   "baseline_max_db": 2.51,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.35
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.4,
+   "baseline_max_db": 3.89,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.48
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.73,
+   "baseline_max_db": 5.16,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.59
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.74,
+   "baseline_max_db": 5.14,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.75
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.43,
+   "baseline_max_db": 6.41,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.54
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.96,
+   "baseline_max_db": 8.03,
+   "transform_rms_db": 0.55,
+   "transform_max_db": 2.42
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.27,
+   "baseline_max_db": 3.55,
+   "transform_rms_db": 0.46,
+   "transform_max_db": 1.26
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.52,
+   "baseline_max_db": 5.01,
+   "transform_rms_db": 0.48,
+   "transform_max_db": 1.29
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.69,
+   "baseline_max_db": 4.45,
+   "transform_rms_db": 0.46,
+   "transform_max_db": 1.21
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.23,
+   "baseline_max_db": 6.94,
+   "transform_rms_db": 0.42,
+   "transform_max_db": 1.93
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.72,
+   "baseline_max_db": 8.54,
+   "transform_rms_db": 0.44,
+   "transform_max_db": 1.81
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.13,
+   "baseline_max_db": 8.57,
+   "transform_rms_db": 0.43,
+   "transform_max_db": 2.17
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.31,
+   "baseline_max_db": 3.49,
+   "transform_rms_db": 0.39,
+   "transform_max_db": 1.77
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.43,
+   "baseline_max_db": 3.87,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.9
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.56,
+   "baseline_max_db": 3.57,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 2.56
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.83,
+   "baseline_max_db": 6.4,
+   "transform_rms_db": 0.49,
+   "transform_max_db": 2.48
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.68,
+   "baseline_max_db": 4.09,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 2.91
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.3,
+   "baseline_max_db": 2.87,
+   "transform_rms_db": 0.43,
+   "transform_max_db": 1.97
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.4,
+   "baseline_max_db": 1.17,
+   "transform_rms_db": 0.39,
+   "transform_max_db": 1.18
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.19,
+   "baseline_max_db": 3.14,
+   "transform_rms_db": 0.42,
+   "transform_max_db": 1.85
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.72,
+   "baseline_max_db": 4.89,
+   "transform_rms_db": 0.43,
+   "transform_max_db": 1.9
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.48,
+   "baseline_max_db": 3.62,
+   "transform_rms_db": 0.44,
+   "transform_max_db": 2.44
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.41,
+   "baseline_max_db": 7.28,
+   "transform_rms_db": 0.44,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.66,
+   "baseline_max_db": 9.46,
+   "transform_rms_db": 0.47,
+   "transform_max_db": 2.29
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.92,
+   "baseline_max_db": 2.85,
+   "transform_rms_db": 0.4,
+   "transform_max_db": 1.53
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.23,
+   "baseline_max_db": 4.31,
+   "transform_rms_db": 0.43,
+   "transform_max_db": 1.69
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.38,
+   "baseline_max_db": 3.09,
+   "transform_rms_db": 0.41,
+   "transform_max_db": 2.08
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.1,
+   "baseline_max_db": 5.82,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.7
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.9,
+   "baseline_max_db": 7.42,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.74
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.94,
+   "baseline_max_db": 7.45,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.74
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.07,
+   "baseline_max_db": 4.6,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.78
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.41,
+   "baseline_max_db": 3.12,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 2.16
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.51,
+   "baseline_max_db": 3.82,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.49
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.75,
+   "baseline_max_db": 4.26,
+   "transform_rms_db": 0.55,
+   "transform_max_db": 2.62
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.68,
+   "baseline_max_db": 4.67,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 2.84
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.55,
+   "baseline_max_db": 2.98,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 1.74
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.05,
+   "baseline_max_db": 2.35,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 1.93
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.79,
+   "baseline_max_db": 1.7,
+   "transform_rms_db": 0.46,
+   "transform_max_db": 1.47
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.65,
+   "baseline_max_db": 4.02,
+   "transform_rms_db": 0.48,
+   "transform_max_db": 1.5
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.15,
+   "baseline_max_db": 3.63,
+   "transform_rms_db": 0.49,
+   "transform_max_db": 1.49
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.28,
+   "baseline_max_db": 6.65,
+   "transform_rms_db": 0.52,
+   "transform_max_db": 1.58
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.38,
+   "baseline_max_db": 8.34,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 2.08
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.61,
+   "baseline_max_db": 1.71,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.76
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.25,
+   "baseline_max_db": 2.63,
+   "transform_rms_db": 0.52,
+   "transform_max_db": 1.71
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.15,
+   "baseline_max_db": 3.72,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.73
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.91,
+   "baseline_max_db": 7.32,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.91
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.95,
+   "baseline_max_db": 8.92,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.77
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.1,
+   "baseline_max_db": 8.95,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.93
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.1,
+   "baseline_max_db": 6.64,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.77
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.7,
+   "baseline_max_db": 5.48,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.05,
+   "baseline_max_db": 6.11,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.75
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.52,
+   "baseline_max_db": 4.42,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 2.6
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.34,
+   "baseline_max_db": 6.89,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 3.08
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.53,
+   "baseline_max_db": 4.51,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.68
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.47,
+   "baseline_max_db": 4.97,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.91
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.23,
+   "baseline_max_db": 3.56,
+   "transform_rms_db": 0.47,
+   "transform_max_db": 1.44
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.45,
+   "baseline_max_db": 1.45,
+   "transform_rms_db": 0.44,
+   "transform_max_db": 1.43
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.36,
+   "baseline_max_db": 6.65,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.47
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.4,
+   "baseline_max_db": 7.93,
+   "transform_rms_db": 0.52,
+   "transform_max_db": 1.62
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.54,
+   "baseline_max_db": 9.84,
+   "transform_rms_db": 0.54,
+   "transform_max_db": 1.77
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.5,
+   "baseline_max_db": 4.77,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.72
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.81,
+   "baseline_max_db": 4.48,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.64
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.43,
+   "baseline_max_db": 6.04,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.68
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.84,
+   "baseline_max_db": 4.47,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 1.77
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.77,
+   "baseline_max_db": 7.16,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 1.86
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.63,
+   "baseline_max_db": 6.09,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 1.81
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.55,
+   "baseline_max_db": 5.12,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 1.9
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.45,
+   "baseline_max_db": 5.08,
+   "transform_rms_db": 0.69,
+   "transform_max_db": 1.82
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.25,
+   "baseline_max_db": 4.6,
+   "transform_rms_db": 0.71,
+   "transform_max_db": 2.32
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.99,
+   "baseline_max_db": 6.09,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 1.66
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.18,
+   "baseline_max_db": 4.1,
+   "transform_rms_db": 0.73,
+   "transform_max_db": 2.78
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.69,
+   "baseline_max_db": 5.98,
+   "transform_rms_db": 0.67,
+   "transform_max_db": 1.9
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.16,
+   "baseline_max_db": 5.27,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 2.04
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.18,
+   "baseline_max_db": 4.89,
+   "transform_rms_db": 0.64,
+   "transform_max_db": 1.65
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.16,
+   "baseline_max_db": 6.71,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 1.74
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.4,
+   "baseline_max_db": 3.67,
+   "transform_rms_db": 0.62,
+   "transform_max_db": 1.64
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.76,
+   "baseline_max_db": 5.97,
+   "transform_rms_db": 0.67,
+   "transform_max_db": 1.74
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.96,
+   "baseline_max_db": 6.99,
+   "transform_rms_db": 0.7,
+   "transform_max_db": 2.78
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.83,
+   "baseline_max_db": 3.97,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 1.93
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.67,
+   "baseline_max_db": 6.12,
+   "transform_rms_db": 0.67,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.26,
+   "baseline_max_db": 2.85,
+   "transform_rms_db": 0.65,
+   "transform_max_db": 1.9
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.08,
+   "baseline_max_db": 9.08,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 1.41
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.64,
+   "baseline_max_db": 9.62,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 1.41
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.49,
+   "baseline_max_db": 7.43,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 1.41
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.78,
+   "baseline_max_db": 8.49,
+   "transform_rms_db": 0.67,
+   "transform_max_db": 1.42
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 4.01,
+   "baseline_max_db": 11.11,
+   "transform_rms_db": 0.69,
+   "transform_max_db": 1.72
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.82,
+   "baseline_max_db": 10.63,
+   "transform_rms_db": 0.7,
+   "transform_max_db": 2.38
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 4.64,
+   "baseline_max_db": 12.12,
+   "transform_rms_db": 0.72,
+   "transform_max_db": 2.29
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.59,
+   "baseline_max_db": 10.13,
+   "transform_rms_db": 0.71,
+   "transform_max_db": 2.73
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.98,
+   "baseline_max_db": 12.01,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 1.4
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.66,
+   "baseline_max_db": 11.3,
+   "transform_rms_db": 0.7,
+   "transform_max_db": 1.56
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.82,
+   "baseline_max_db": 10.92,
+   "transform_rms_db": 0.67,
+   "transform_max_db": 1.56
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 4.52,
+   "baseline_max_db": 12.17,
+   "transform_rms_db": 0.71,
+   "transform_max_db": 1.62
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.26,
+   "baseline_max_db": 9.7,
+   "transform_rms_db": 0.67,
+   "transform_max_db": 1.41
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.6,
+   "baseline_max_db": 4.33,
+   "transform_rms_db": 0.62,
+   "transform_max_db": 1.4
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.17,
+   "baseline_max_db": 4.88,
+   "transform_rms_db": 0.71,
+   "transform_max_db": 2.75
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.47,
+   "baseline_max_db": 10.0,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 1.4
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 4.11,
+   "baseline_max_db": 10.96,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 1.4
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.93,
+   "baseline_max_db": 8.87,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 1.4
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.5,
+   "baseline_max_db": 5.76,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 3.53
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.33,
+   "baseline_max_db": 7.67,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 3.52
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.88,
+   "baseline_max_db": 5.88,
+   "transform_rms_db": 0.67,
+   "transform_max_db": 3.83
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.18,
+   "baseline_max_db": 6.76,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 3.56
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.51,
+   "baseline_max_db": 9.24,
+   "transform_rms_db": 0.73,
+   "transform_max_db": 3.72
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.36,
+   "baseline_max_db": 9.16,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 3.73
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 4.09,
+   "baseline_max_db": 11.32,
+   "transform_rms_db": 0.72,
+   "transform_max_db": 3.71
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.17,
+   "baseline_max_db": 8.47,
+   "transform_rms_db": 0.76,
+   "transform_max_db": 3.77
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.53,
+   "baseline_max_db": 8.69,
+   "transform_rms_db": 0.72,
+   "transform_max_db": 4.14
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.03,
+   "baseline_max_db": 9.73,
+   "transform_rms_db": 0.71,
+   "transform_max_db": 3.67
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.2,
+   "baseline_max_db": 8.92,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 3.34
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.99,
+   "baseline_max_db": 9.12,
+   "transform_rms_db": 0.67,
+   "transform_max_db": 3.47
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.66,
+   "baseline_max_db": 7.25,
+   "transform_rms_db": 0.69,
+   "transform_max_db": 4.12
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.54,
+   "baseline_max_db": 4.45,
+   "transform_rms_db": 0.7,
+   "transform_max_db": 3.55
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.74,
+   "baseline_max_db": 2.7,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 2.7
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.89,
+   "baseline_max_db": 8.52,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 3.93
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.63,
+   "baseline_max_db": 9.53,
+   "transform_rms_db": 0.7,
+   "transform_max_db": 3.88
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.3,
+   "baseline_max_db": 7.65,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 3.53
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.15,
+   "baseline_max_db": 6.25,
+   "transform_rms_db": 0.31,
+   "transform_max_db": 1.04
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.96,
+   "baseline_max_db": 7.84,
+   "transform_rms_db": 0.31,
+   "transform_max_db": 1.18
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.82,
+   "baseline_max_db": 7.87,
+   "transform_rms_db": 0.32,
+   "transform_max_db": 1.21
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.05,
+   "baseline_max_db": 4.12,
+   "transform_rms_db": 0.3,
+   "transform_max_db": 1.13
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.45,
+   "baseline_max_db": 2.81,
+   "transform_rms_db": 0.4,
+   "transform_max_db": 2.16
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.46,
+   "baseline_max_db": 3.23,
+   "transform_rms_db": 0.42,
+   "transform_max_db": 2.52
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.89,
+   "baseline_max_db": 3.93,
+   "transform_rms_db": 0.38,
+   "transform_max_db": 2.1
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.58,
+   "baseline_max_db": 4.17,
+   "transform_rms_db": 0.45,
+   "transform_max_db": 2.88
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.69,
+   "baseline_max_db": 3.71,
+   "transform_rms_db": 0.31,
+   "transform_max_db": 1.76
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.15,
+   "baseline_max_db": 3.0,
+   "transform_rms_db": 0.32,
+   "transform_max_db": 1.47
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.06,
+   "baseline_max_db": 2.62,
+   "transform_rms_db": 0.32,
+   "transform_max_db": 1.38
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.99,
+   "baseline_max_db": 5.29,
+   "transform_rms_db": 0.34,
+   "transform_max_db": 1.27
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.0,
+   "baseline_max_db": 2.56,
+   "transform_rms_db": 0.34,
+   "transform_max_db": 1.55
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.1,
+   "baseline_max_db": 7.37,
+   "transform_rms_db": 0.34,
+   "transform_max_db": 1.1
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.29,
+   "baseline_max_db": 8.76,
+   "transform_rms_db": 0.4,
+   "transform_max_db": 2.58
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.69,
+   "baseline_max_db": 1.7,
+   "transform_rms_db": 0.27,
+   "transform_max_db": 0.89
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.44,
+   "baseline_max_db": 3.31,
+   "transform_rms_db": 0.31,
+   "transform_max_db": 1.32
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.95,
+   "baseline_max_db": 3.28,
+   "transform_rms_db": 0.28,
+   "transform_max_db": 1.21
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.63,
+   "baseline_max_db": 7.1,
+   "transform_rms_db": 0.36,
+   "transform_max_db": 1.86
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.78,
+   "baseline_max_db": 8.7,
+   "transform_rms_db": 0.35,
+   "transform_max_db": 1.9
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.82,
+   "baseline_max_db": 8.73,
+   "transform_rms_db": 0.37,
+   "transform_max_db": 2.15
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.89,
+   "baseline_max_db": 6.69,
+   "transform_rms_db": 0.35,
+   "transform_max_db": 1.66
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.39,
+   "baseline_max_db": 4.99,
+   "transform_rms_db": 0.44,
+   "transform_max_db": 2.62
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.73,
+   "baseline_max_db": 5.85,
+   "transform_rms_db": 0.47,
+   "transform_max_db": 2.45
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.28,
+   "baseline_max_db": 3.54,
+   "transform_rms_db": 0.45,
+   "transform_max_db": 3.44
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.05,
+   "baseline_max_db": 6.78,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 2.72
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.47,
+   "baseline_max_db": 4.74,
+   "transform_rms_db": 0.35,
+   "transform_max_db": 1.82
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.16,
+   "baseline_max_db": 3.9,
+   "transform_rms_db": 0.36,
+   "transform_max_db": 1.62
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.96,
+   "baseline_max_db": 3.03,
+   "transform_rms_db": 0.37,
+   "transform_max_db": 1.75
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.05,
+   "baseline_max_db": 4.39,
+   "transform_rms_db": 0.38,
+   "transform_max_db": 1.5
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.89,
+   "baseline_max_db": 5.18,
+   "transform_rms_db": 0.39,
+   "transform_max_db": 1.73
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.07,
+   "baseline_max_db": 8.88,
+   "transform_rms_db": 0.38,
+   "transform_max_db": 1.31
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.25,
+   "baseline_max_db": 9.62,
+   "transform_rms_db": 0.45,
+   "transform_max_db": 2.69
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.04,
+   "baseline_max_db": 2.88,
+   "transform_rms_db": 0.33,
+   "transform_max_db": 1.49
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 0.31,
+   "baseline_max_db": 1.05,
+   "transform_rms_db": 0.3,
+   "transform_max_db": 1.06
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.01,
+   "baseline_max_db": 5.86,
+   "transform_rms_db": 0.35,
+   "transform_max_db": 1.67
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.89,
+   "baseline_max_db": 5.51,
+   "transform_rms_db": 0.41,
+   "transform_max_db": 1.73
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "u87ai_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.83,
+   "baseline_max_db": 7.11,
+   "transform_rms_db": 0.41,
+   "transform_max_db": 1.85
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.55,
+   "baseline_max_db": 7.14,
+   "transform_rms_db": 0.41,
+   "transform_max_db": 1.67
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "u47fet",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.47,
+   "baseline_max_db": 4.16,
+   "transform_rms_db": 0.4,
+   "transform_max_db": 1.7
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.44,
+   "baseline_max_db": 5.67,
+   "transform_rms_db": 0.46,
+   "transform_max_db": 1.87
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.22,
+   "baseline_max_db": 5.19,
+   "transform_rms_db": 0.48,
+   "transform_max_db": 2.51
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.04,
+   "baseline_max_db": 6.68,
+   "transform_rms_db": 0.44,
+   "transform_max_db": 1.9
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.1,
+   "baseline_max_db": 4.69,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 2.86
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "c800_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.69,
+   "baseline_max_db": 6.57,
+   "transform_rms_db": 0.39,
+   "transform_max_db": 2.07
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "c800_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.19,
+   "baseline_max_db": 5.86,
+   "transform_rms_db": 0.41,
+   "transform_max_db": 1.81
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "k2_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.27,
+   "baseline_max_db": 5.48,
+   "transform_rms_db": 0.41,
+   "transform_max_db": 1.73
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "k2_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 3.24,
+   "baseline_max_db": 7.58,
+   "transform_rms_db": 0.42,
+   "transform_max_db": 1.6
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "k2_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.49,
+   "baseline_max_db": 4.26,
+   "transform_rms_db": 0.42,
+   "transform_max_db": 1.66
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "r121",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.62,
+   "baseline_max_db": 6.16,
+   "transform_rms_db": 0.43,
+   "transform_max_db": 1.97
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "sm58",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.86,
+   "baseline_max_db": 8.03,
+   "transform_rms_db": 0.46,
+   "transform_max_db": 2.38
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.88,
+   "baseline_max_db": 4.56,
+   "transform_rms_db": 0.38,
+   "transform_max_db": 1.91
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "nt2a_omni",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 2.74,
+   "baseline_max_db": 5.91,
+   "transform_rms_db": 0.41,
+   "transform_max_db": 2.19
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 1.25,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 68.0,
+   "baseline_rms_db": 1.2,
+   "baseline_max_db": 3.43,
+   "transform_rms_db": 0.36,
+   "transform_max_db": 1.6
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.86,
+   "baseline_max_db": 2.49,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.2
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.71,
+   "baseline_max_db": 4.52,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 1.23
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.43,
+   "baseline_max_db": 4.9,
+   "transform_rms_db": 0.52,
+   "transform_max_db": 1.21
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.03,
+   "baseline_max_db": 3.52,
+   "transform_rms_db": 0.54,
+   "transform_max_db": 1.68
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.74,
+   "baseline_max_db": 5.79,
+   "transform_rms_db": 0.6,
+   "transform_max_db": 2.49
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.77,
+   "baseline_max_db": 6.28,
+   "transform_rms_db": 0.6,
+   "transform_max_db": 3.16
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.31,
+   "baseline_max_db": 7.76,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 1.88
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.76,
+   "baseline_max_db": 5.65,
+   "transform_rms_db": 0.62,
+   "transform_max_db": 3.51
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.55,
+   "baseline_max_db": 5.87,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 1.56
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.34,
+   "baseline_max_db": 7.37,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 1.61
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.49,
+   "baseline_max_db": 6.0,
+   "transform_rms_db": 0.54,
+   "transform_max_db": 1.46
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.16,
+   "baseline_max_db": 6.27,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 1.64
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.38,
+   "baseline_max_db": 4.57,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 1.4
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.52,
+   "baseline_max_db": 5.17,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 1.51
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.86,
+   "baseline_max_db": 5.97,
+   "transform_rms_db": 0.6,
+   "transform_max_db": 2.56
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.25,
+   "baseline_max_db": 5.85,
+   "transform_rms_db": 0.54,
+   "transform_max_db": 1.52
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.86,
+   "baseline_max_db": 6.42,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 1.57
+  },
+  {
+   "source": "u87ai_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.27,
+   "baseline_max_db": 5.29,
+   "transform_rms_db": 0.54,
+   "transform_max_db": 1.54
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.37,
+   "baseline_max_db": 5.27,
+   "transform_rms_db": 0.44,
+   "transform_max_db": 2.06
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.45,
+   "baseline_max_db": 1.63,
+   "transform_rms_db": 0.41,
+   "transform_max_db": 1.63
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.37,
+   "baseline_max_db": 7.44,
+   "transform_rms_db": 0.45,
+   "transform_max_db": 1.77
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.98,
+   "baseline_max_db": 6.2,
+   "transform_rms_db": 0.47,
+   "transform_max_db": 1.66
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.91,
+   "baseline_max_db": 7.19,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 2.7
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.16,
+   "baseline_max_db": 7.79,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 3.36
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.4,
+   "baseline_max_db": 9.09,
+   "transform_rms_db": 0.52,
+   "transform_max_db": 2.43
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.19,
+   "baseline_max_db": 7.16,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 3.71
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.3,
+   "baseline_max_db": 7.41,
+   "transform_rms_db": 0.49,
+   "transform_max_db": 2.02
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.85,
+   "baseline_max_db": 8.9,
+   "transform_rms_db": 0.47,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.0,
+   "baseline_max_db": 7.53,
+   "transform_rms_db": 0.46,
+   "transform_max_db": 1.85
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.93,
+   "baseline_max_db": 7.81,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 2.05
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.45,
+   "baseline_max_db": 8.17,
+   "transform_rms_db": 0.49,
+   "transform_max_db": 2.0
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.25,
+   "baseline_max_db": 6.55,
+   "transform_rms_db": 0.48,
+   "transform_max_db": 1.79
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.95,
+   "baseline_max_db": 8.56,
+   "transform_rms_db": 0.52,
+   "transform_max_db": 2.92
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.89,
+   "baseline_max_db": 7.39,
+   "transform_rms_db": 0.46,
+   "transform_max_db": 1.83
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.76,
+   "baseline_max_db": 7.95,
+   "transform_rms_db": 0.48,
+   "transform_max_db": 1.99
+  },
+  {
+   "source": "u87ai_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.4,
+   "baseline_max_db": 7.06,
+   "transform_rms_db": 0.46,
+   "transform_max_db": 1.79
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.12,
+   "baseline_max_db": 5.19,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.97,
+   "baseline_max_db": 6.38,
+   "transform_rms_db": 0.77,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.3,
+   "baseline_max_db": 4.12,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.89,
+   "baseline_max_db": 5.79,
+   "transform_rms_db": 0.77,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.85,
+   "baseline_max_db": 8.06,
+   "transform_rms_db": 0.81,
+   "transform_max_db": 2.46
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.68,
+   "baseline_max_db": 8.55,
+   "transform_rms_db": 0.81,
+   "transform_max_db": 3.12
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 3.55,
+   "baseline_max_db": 10.04,
+   "transform_rms_db": 0.81,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.47,
+   "baseline_max_db": 7.92,
+   "transform_rms_db": 0.82,
+   "transform_max_db": 3.47
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.72,
+   "baseline_max_db": 8.14,
+   "transform_rms_db": 0.78,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.55,
+   "baseline_max_db": 9.64,
+   "transform_rms_db": 0.79,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.8,
+   "baseline_max_db": 8.27,
+   "transform_rms_db": 0.76,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 3.61,
+   "baseline_max_db": 9.12,
+   "transform_rms_db": 0.77,
+   "transform_max_db": 1.94
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.11,
+   "baseline_max_db": 6.85,
+   "transform_rms_db": 0.78,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.67,
+   "baseline_max_db": 3.64,
+   "transform_rms_db": 0.78,
+   "transform_max_db": 2.01
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.93,
+   "baseline_max_db": 6.52,
+   "transform_rms_db": 0.8,
+   "transform_max_db": 2.1
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.52,
+   "baseline_max_db": 8.12,
+   "transform_rms_db": 0.77,
+   "transform_max_db": 1.89
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 3.37,
+   "baseline_max_db": 8.69,
+   "transform_rms_db": 0.78,
+   "transform_max_db": 1.92
+  },
+  {
+   "source": "u87ai_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.84,
+   "baseline_max_db": 7.56,
+   "transform_rms_db": 0.76,
+   "transform_max_db": 1.88
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.53,
+   "baseline_max_db": 3.38,
+   "transform_rms_db": 0.58,
+   "transform_max_db": 1.64
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.37,
+   "baseline_max_db": 5.74,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 1.9
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.66,
+   "baseline_max_db": 4.36,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 1.55
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.86,
+   "baseline_max_db": 2.55,
+   "transform_rms_db": 0.54,
+   "transform_max_db": 1.45
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.21,
+   "baseline_max_db": 4.77,
+   "transform_rms_db": 0.63,
+   "transform_max_db": 2.36
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.18,
+   "baseline_max_db": 4.43,
+   "transform_rms_db": 0.65,
+   "transform_max_db": 3.02
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.75,
+   "baseline_max_db": 7.57,
+   "transform_rms_db": 0.61,
+   "transform_max_db": 1.82
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.09,
+   "baseline_max_db": 4.29,
+   "transform_rms_db": 0.67,
+   "transform_max_db": 3.38
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.01,
+   "baseline_max_db": 4.78,
+   "transform_rms_db": 0.61,
+   "transform_max_db": 2.22
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.57,
+   "baseline_max_db": 4.97,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 2.28
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.89,
+   "baseline_max_db": 4.62,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 1.78
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.45,
+   "baseline_max_db": 5.92,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 1.81
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.81,
+   "baseline_max_db": 4.75,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 1.78
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.64,
+   "baseline_max_db": 4.33,
+   "transform_rms_db": 0.6,
+   "transform_max_db": 2.04
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.7,
+   "baseline_max_db": 5.1,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 2.57
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.65,
+   "baseline_max_db": 3.7,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 1.59
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.27,
+   "baseline_max_db": 5.66,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 1.65
+  },
+  {
+   "source": "u47fet",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.45,
+   "baseline_max_db": 3.83,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 1.77
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.3,
+   "baseline_max_db": 4.16,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 5.88
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.24,
+   "baseline_max_db": 5.97,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 6.23
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.99,
+   "baseline_max_db": 6.44,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 5.77
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.39,
+   "baseline_max_db": 5.26,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 5.76
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.39,
+   "baseline_max_db": 4.49,
+   "transform_rms_db": 1.16,
+   "transform_max_db": 4.42
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.36,
+   "baseline_max_db": 3.43,
+   "transform_rms_db": 1.19,
+   "transform_max_db": 5.11
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.72,
+   "baseline_max_db": 5.77,
+   "transform_rms_db": 1.14,
+   "transform_max_db": 3.66
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.59,
+   "baseline_max_db": 5.04,
+   "transform_rms_db": 1.19,
+   "transform_max_db": 5.28
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.83,
+   "baseline_max_db": 4.06,
+   "transform_rms_db": 1.25,
+   "transform_max_db": 5.73
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.24,
+   "baseline_max_db": 3.68,
+   "transform_rms_db": 1.26,
+   "transform_max_db": 6.14
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.21,
+   "baseline_max_db": 4.21,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 6.2
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.07,
+   "baseline_max_db": 6.21,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 6.14
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.01,
+   "baseline_max_db": 3.54,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 5.48
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.06,
+   "baseline_max_db": 8.27,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 6.04
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.25,
+   "baseline_max_db": 7.44,
+   "transform_rms_db": 1.18,
+   "transform_max_db": 5.96
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.95,
+   "baseline_max_db": 3.42,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 5.8
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.56,
+   "baseline_max_db": 3.96,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 6.3
+  },
+  {
+   "source": "c414bxls_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.15,
+   "baseline_max_db": 4.22,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 5.53
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.35,
+   "baseline_max_db": 3.87,
+   "transform_rms_db": 1.26,
+   "transform_max_db": 4.42
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.33,
+   "baseline_max_db": 5.87,
+   "transform_rms_db": 1.26,
+   "transform_max_db": 4.78
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.86,
+   "baseline_max_db": 5.49,
+   "transform_rms_db": 1.26,
+   "transform_max_db": 4.41
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.28,
+   "baseline_max_db": 4.17,
+   "transform_rms_db": 1.27,
+   "transform_max_db": 4.66
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.63,
+   "baseline_max_db": 4.96,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 4.46
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.5,
+   "baseline_max_db": 3.96,
+   "transform_rms_db": 1.18,
+   "transform_max_db": 3.9
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.07,
+   "baseline_max_db": 6.04,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 4.16
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.6,
+   "baseline_max_db": 3.9,
+   "transform_rms_db": 1.19,
+   "transform_max_db": 4.15
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.95,
+   "baseline_max_db": 4.11,
+   "transform_rms_db": 1.28,
+   "transform_max_db": 4.43
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.35,
+   "baseline_max_db": 3.61,
+   "transform_rms_db": 1.29,
+   "transform_max_db": 4.69
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.42,
+   "baseline_max_db": 4.35,
+   "transform_rms_db": 1.26,
+   "transform_max_db": 4.75
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.28,
+   "baseline_max_db": 6.55,
+   "transform_rms_db": 1.25,
+   "transform_max_db": 4.69
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.06,
+   "baseline_max_db": 4.08,
+   "transform_rms_db": 1.26,
+   "transform_max_db": 4.62
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.92,
+   "baseline_max_db": 7.13,
+   "transform_rms_db": 1.26,
+   "transform_max_db": 4.59
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.07,
+   "baseline_max_db": 6.48,
+   "transform_rms_db": 1.26,
+   "transform_max_db": 4.51
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.14,
+   "baseline_max_db": 3.7,
+   "transform_rms_db": 1.26,
+   "transform_max_db": 4.35
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.81,
+   "baseline_max_db": 4.39,
+   "transform_rms_db": 1.28,
+   "transform_max_db": 4.84
+  },
+  {
+   "source": "c414bxls_hyper",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.1,
+   "baseline_max_db": 4.01,
+   "transform_rms_db": 1.26,
+   "transform_max_db": 4.45
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.78,
+   "baseline_max_db": 6.51,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 7.79
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.41,
+   "baseline_max_db": 7.39,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 7.93
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.65,
+   "baseline_max_db": 8.97,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 7.49
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.05,
+   "baseline_max_db": 7.6,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 7.49
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.35,
+   "baseline_max_db": 4.26,
+   "transform_rms_db": 1.18,
+   "transform_max_db": 6.87
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.56,
+   "baseline_max_db": 5.22,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 6.95
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.13,
+   "baseline_max_db": 5.85,
+   "transform_rms_db": 1.11,
+   "transform_max_db": 5.81
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.99,
+   "baseline_max_db": 7.53,
+   "transform_rms_db": 1.24,
+   "transform_max_db": 7.16
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.95,
+   "baseline_max_db": 6.62,
+   "transform_rms_db": 1.25,
+   "transform_max_db": 7.47
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.53,
+   "baseline_max_db": 5.71,
+   "transform_rms_db": 1.26,
+   "transform_max_db": 7.66
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.29,
+   "baseline_max_db": 4.3,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 7.39
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.88,
+   "baseline_max_db": 5.46,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 7.75
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.57,
+   "baseline_max_db": 4.61,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 7.2
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.68,
+   "baseline_max_db": 10.8,
+   "transform_rms_db": 1.23,
+   "transform_max_db": 7.63
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.94,
+   "baseline_max_db": 9.54,
+   "transform_rms_db": 1.15,
+   "transform_max_db": 7.33
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.24,
+   "baseline_max_db": 4.76,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 7.02
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.34,
+   "baseline_max_db": 3.43,
+   "transform_rms_db": 1.24,
+   "transform_max_db": 7.78
+  },
+  {
+   "source": "c414bxls_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.81,
+   "baseline_max_db": 6.7,
+   "transform_rms_db": 1.22,
+   "transform_max_db": 7.17
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.44,
+   "baseline_max_db": 3.35,
+   "transform_rms_db": 1.42,
+   "transform_max_db": 4.41
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.44,
+   "baseline_max_db": 5.81,
+   "transform_rms_db": 1.42,
+   "transform_max_db": 4.65
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.68,
+   "baseline_max_db": 4.97,
+   "transform_rms_db": 1.42,
+   "transform_max_db": 4.43
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.26,
+   "baseline_max_db": 3.8,
+   "transform_rms_db": 1.42,
+   "transform_max_db": 4.62
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.93,
+   "baseline_max_db": 5.26,
+   "transform_rms_db": 1.37,
+   "transform_max_db": 4.32
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.72,
+   "baseline_max_db": 4.37,
+   "transform_rms_db": 1.33,
+   "transform_max_db": 4.0
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.49,
+   "baseline_max_db": 6.15,
+   "transform_rms_db": 1.39,
+   "transform_max_db": 4.62
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.67,
+   "baseline_max_db": 4.04,
+   "transform_rms_db": 1.33,
+   "transform_max_db": 4.01
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.13,
+   "baseline_max_db": 4.6,
+   "transform_rms_db": 1.43,
+   "transform_max_db": 4.57
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.58,
+   "baseline_max_db": 4.13,
+   "transform_rms_db": 1.44,
+   "transform_max_db": 4.7
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.75,
+   "baseline_max_db": 4.3,
+   "transform_rms_db": 1.41,
+   "transform_max_db": 4.71
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.58,
+   "baseline_max_db": 6.87,
+   "transform_rms_db": 1.41,
+   "transform_max_db": 4.48
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.26,
+   "baseline_max_db": 4.52,
+   "transform_rms_db": 1.41,
+   "transform_max_db": 4.69
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.74,
+   "baseline_max_db": 5.17,
+   "transform_rms_db": 1.41,
+   "transform_max_db": 4.3
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.84,
+   "baseline_max_db": 5.86,
+   "transform_rms_db": 1.43,
+   "transform_max_db": 4.5
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.46,
+   "baseline_max_db": 3.86,
+   "transform_rms_db": 1.42,
+   "transform_max_db": 4.49
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.18,
+   "baseline_max_db": 4.96,
+   "transform_rms_db": 1.43,
+   "transform_max_db": 4.52
+  },
+  {
+   "source": "c414bxls_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.16,
+   "baseline_max_db": 4.3,
+   "transform_rms_db": 1.42,
+   "transform_max_db": 4.41
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.2,
+   "baseline_max_db": 5.0,
+   "transform_rms_db": 0.63,
+   "transform_max_db": 2.11
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.21,
+   "baseline_max_db": 6.6,
+   "transform_rms_db": 0.64,
+   "transform_max_db": 2.07
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.93,
+   "baseline_max_db": 6.63,
+   "transform_rms_db": 0.62,
+   "transform_max_db": 2.35
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.42,
+   "baseline_max_db": 3.71,
+   "transform_rms_db": 0.62,
+   "transform_max_db": 2.4
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.49,
+   "baseline_max_db": 4.67,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 2.55
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.64,
+   "baseline_max_db": 4.34,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 2.3
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.11,
+   "baseline_max_db": 7.22,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 2.5
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.67,
+   "baseline_max_db": 4.72,
+   "transform_rms_db": 0.7,
+   "transform_max_db": 2.69
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.68,
+   "baseline_max_db": 1.95,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 2.03
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.42,
+   "baseline_max_db": 3.08,
+   "transform_rms_db": 0.63,
+   "transform_max_db": 2.02
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.6,
+   "baseline_max_db": 4.27,
+   "transform_rms_db": 0.62,
+   "transform_max_db": 2.31
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.82,
+   "baseline_max_db": 6.22,
+   "transform_rms_db": 0.63,
+   "transform_max_db": 2.15
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.93,
+   "baseline_max_db": 5.57,
+   "transform_rms_db": 0.63,
+   "transform_max_db": 2.52
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.98,
+   "baseline_max_db": 5.34,
+   "transform_rms_db": 0.61,
+   "transform_max_db": 2.38
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.75,
+   "baseline_max_db": 7.52,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 2.95
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.48,
+   "baseline_max_db": 3.66,
+   "transform_rms_db": 0.58,
+   "transform_max_db": 2.21
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.69,
+   "baseline_max_db": 5.12,
+   "transform_rms_db": 0.6,
+   "transform_max_db": 2.22
+  },
+  {
+   "source": "c800_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.84,
+   "baseline_max_db": 4.59,
+   "transform_rms_db": 0.59,
+   "transform_max_db": 2.26
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.13,
+   "baseline_max_db": 6.93,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 2.75
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.77,
+   "baseline_max_db": 8.53,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.64
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.01,
+   "baseline_max_db": 8.55,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 3.0
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.1,
+   "baseline_max_db": 3.7,
+   "transform_rms_db": 0.54,
+   "transform_max_db": 2.59
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.49,
+   "baseline_max_db": 4.45,
+   "transform_rms_db": 0.61,
+   "transform_max_db": 2.66
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.61,
+   "baseline_max_db": 3.85,
+   "transform_rms_db": 0.61,
+   "transform_max_db": 3.29
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.87,
+   "baseline_max_db": 6.41,
+   "transform_rms_db": 0.6,
+   "transform_max_db": 3.3
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.74,
+   "baseline_max_db": 4.22,
+   "transform_rms_db": 0.63,
+   "transform_max_db": 3.64
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.37,
+   "baseline_max_db": 3.43,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.74
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.53,
+   "baseline_max_db": 1.46,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 1.77
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.24,
+   "baseline_max_db": 3.38,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 2.68
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.75,
+   "baseline_max_db": 4.66,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.72
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.49,
+   "baseline_max_db": 4.06,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 3.26
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.79,
+   "baseline_max_db": 7.26,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 3.03
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.17,
+   "baseline_max_db": 9.45,
+   "transform_rms_db": 0.58,
+   "transform_max_db": 3.12
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.9,
+   "baseline_max_db": 2.98,
+   "transform_rms_db": 0.54,
+   "transform_max_db": 2.35
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.26,
+   "baseline_max_db": 4.32,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 2.51
+  },
+  {
+   "source": "c800_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.3,
+   "baseline_max_db": 3.49,
+   "transform_rms_db": 0.55,
+   "transform_max_db": 2.9
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.08,
+   "baseline_max_db": 4.98,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 1.87
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.97,
+   "baseline_max_db": 6.58,
+   "transform_rms_db": 0.76,
+   "transform_max_db": 1.92
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.78,
+   "baseline_max_db": 6.61,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 1.97
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.93,
+   "baseline_max_db": 3.65,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 2.01
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.43,
+   "baseline_max_db": 2.94,
+   "transform_rms_db": 0.79,
+   "transform_max_db": 2.16
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.52,
+   "baseline_max_db": 3.01,
+   "transform_rms_db": 0.8,
+   "transform_max_db": 2.68
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.83,
+   "baseline_max_db": 4.91,
+   "transform_rms_db": 0.78,
+   "transform_max_db": 2.5
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.66,
+   "baseline_max_db": 3.84,
+   "transform_rms_db": 0.82,
+   "transform_max_db": 3.04
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.4,
+   "baseline_max_db": 2.94,
+   "transform_rms_db": 0.77,
+   "transform_max_db": 2.36
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.97,
+   "baseline_max_db": 2.5,
+   "transform_rms_db": 0.77,
+   "transform_max_db": 2.37
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.93,
+   "baseline_max_db": 2.16,
+   "transform_rms_db": 0.7,
+   "transform_max_db": 1.59
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.75,
+   "baseline_max_db": 3.71,
+   "transform_rms_db": 0.72,
+   "transform_max_db": 1.77
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.16,
+   "baseline_max_db": 3.19,
+   "transform_rms_db": 0.73,
+   "transform_max_db": 2.25
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.9,
+   "baseline_max_db": 5.99,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 2.18
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.04,
+   "baseline_max_db": 7.5,
+   "transform_rms_db": 0.78,
+   "transform_max_db": 2.83
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.75,
+   "baseline_max_db": 1.87,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 2.06
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.46,
+   "baseline_max_db": 2.97,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 2.45
+  },
+  {
+   "source": "k2_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.08,
+   "baseline_max_db": 2.95,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 1.91
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.63,
+   "baseline_max_db": 6.58,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 2.26
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.71,
+   "baseline_max_db": 8.17,
+   "transform_rms_db": 0.69,
+   "transform_max_db": 2.19
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.79,
+   "baseline_max_db": 8.2,
+   "transform_rms_db": 0.69,
+   "transform_max_db": 2.32
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.78,
+   "baseline_max_db": 5.82,
+   "transform_rms_db": 0.67,
+   "transform_max_db": 2.24
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.59,
+   "baseline_max_db": 4.79,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 2.9
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.95,
+   "baseline_max_db": 5.85,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 3.4
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.54,
+   "baseline_max_db": 3.85,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 3.17
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.21,
+   "baseline_max_db": 6.22,
+   "transform_rms_db": 0.76,
+   "transform_max_db": 3.86
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.36,
+   "baseline_max_db": 4.01,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 2.21
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.36,
+   "baseline_max_db": 3.56,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 2.14
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.14,
+   "baseline_max_db": 3.36,
+   "transform_rms_db": 0.65,
+   "transform_max_db": 2.24
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.61,
+   "baseline_max_db": 1.9,
+   "transform_rms_db": 0.6,
+   "transform_max_db": 1.92
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.23,
+   "baseline_max_db": 6.23,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 2.39
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.72,
+   "baseline_max_db": 7.28,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 2.44
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.96,
+   "baseline_max_db": 9.09,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 2.27
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.32,
+   "baseline_max_db": 3.66,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 2.36
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.74,
+   "baseline_max_db": 3.07,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 2.55
+  },
+  {
+   "source": "k2_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.23,
+   "baseline_max_db": 5.82,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 2.3
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.72,
+   "baseline_max_db": 3.97,
+   "transform_rms_db": 0.84,
+   "transform_max_db": 2.13
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.72,
+   "baseline_max_db": 6.35,
+   "transform_rms_db": 0.86,
+   "transform_max_db": 2.08
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.55,
+   "baseline_max_db": 5.48,
+   "transform_rms_db": 0.83,
+   "transform_max_db": 2.04
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.45,
+   "baseline_max_db": 5.0,
+   "transform_rms_db": 0.84,
+   "transform_max_db": 2.36
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.17,
+   "baseline_max_db": 5.36,
+   "transform_rms_db": 0.86,
+   "transform_max_db": 2.1
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.99,
+   "baseline_max_db": 5.01,
+   "transform_rms_db": 0.88,
+   "transform_max_db": 2.67
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.72,
+   "baseline_max_db": 6.1,
+   "transform_rms_db": 0.85,
+   "transform_max_db": 2.02
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.95,
+   "baseline_max_db": 4.65,
+   "transform_rms_db": 0.9,
+   "transform_max_db": 3.02
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.26,
+   "baseline_max_db": 5.36,
+   "transform_rms_db": 0.85,
+   "transform_max_db": 2.42
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.79,
+   "baseline_max_db": 4.77,
+   "transform_rms_db": 0.86,
+   "transform_max_db": 2.85
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.97,
+   "baseline_max_db": 4.58,
+   "transform_rms_db": 0.82,
+   "transform_max_db": 2.11
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.92,
+   "baseline_max_db": 6.79,
+   "transform_rms_db": 0.84,
+   "transform_max_db": 2.16
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.22,
+   "baseline_max_db": 3.61,
+   "transform_rms_db": 0.8,
+   "transform_max_db": 1.88
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.79,
+   "baseline_max_db": 5.05,
+   "transform_rms_db": 0.85,
+   "transform_max_db": 2.24
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.98,
+   "baseline_max_db": 6.62,
+   "transform_rms_db": 0.88,
+   "transform_max_db": 2.99
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.67,
+   "baseline_max_db": 4.28,
+   "transform_rms_db": 0.83,
+   "transform_max_db": 2.27
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.54,
+   "baseline_max_db": 6.15,
+   "transform_rms_db": 0.84,
+   "transform_max_db": 2.35
+  },
+  {
+   "source": "k2_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.09,
+   "baseline_max_db": 3.46,
+   "transform_rms_db": 0.83,
+   "transform_max_db": 1.97
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.06,
+   "baseline_max_db": 5.97,
+   "transform_rms_db": 0.98,
+   "transform_max_db": 2.21
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.69,
+   "baseline_max_db": 6.51,
+   "transform_rms_db": 0.98,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.56,
+   "baseline_max_db": 4.9,
+   "transform_rms_db": 0.98,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.81,
+   "baseline_max_db": 5.18,
+   "transform_rms_db": 0.99,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.85,
+   "baseline_max_db": 8.0,
+   "transform_rms_db": 1.0,
+   "transform_max_db": 2.39
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.71,
+   "baseline_max_db": 7.05,
+   "transform_rms_db": 1.01,
+   "transform_max_db": 2.58
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 3.54,
+   "baseline_max_db": 10.82,
+   "transform_rms_db": 1.01,
+   "transform_max_db": 2.75
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.49,
+   "baseline_max_db": 6.66,
+   "transform_rms_db": 1.03,
+   "transform_max_db": 2.93
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.49,
+   "baseline_max_db": 7.37,
+   "transform_rms_db": 0.98,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.39,
+   "baseline_max_db": 7.51,
+   "transform_rms_db": 0.98,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.77,
+   "baseline_max_db": 7.14,
+   "transform_rms_db": 0.98,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 3.41,
+   "baseline_max_db": 8.05,
+   "transform_rms_db": 1.0,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.28,
+   "baseline_max_db": 6.41,
+   "transform_rms_db": 0.99,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.39,
+   "baseline_max_db": 3.59,
+   "transform_rms_db": 0.93,
+   "transform_max_db": 2.19
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.1,
+   "baseline_max_db": 5.5,
+   "transform_rms_db": 1.04,
+   "transform_max_db": 3.56
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.47,
+   "baseline_max_db": 6.95,
+   "transform_rms_db": 0.98,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 3.16,
+   "baseline_max_db": 8.58,
+   "transform_rms_db": 0.99,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "r121",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.97,
+   "baseline_max_db": 5.47,
+   "transform_rms_db": 0.98,
+   "transform_max_db": 2.2
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.01,
+   "baseline_max_db": 4.38,
+   "transform_rms_db": 1.0,
+   "transform_max_db": 5.11
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.95,
+   "baseline_max_db": 7.4,
+   "transform_rms_db": 1.01,
+   "transform_max_db": 5.08
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.64,
+   "baseline_max_db": 4.69,
+   "transform_rms_db": 0.99,
+   "transform_max_db": 4.54
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.84,
+   "baseline_max_db": 7.78,
+   "transform_rms_db": 0.98,
+   "transform_max_db": 5.02
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.95,
+   "baseline_max_db": 9.78,
+   "transform_rms_db": 1.03,
+   "transform_max_db": 5.2
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.88,
+   "baseline_max_db": 10.69,
+   "transform_rms_db": 1.04,
+   "transform_max_db": 4.97
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 3.45,
+   "baseline_max_db": 11.57,
+   "transform_rms_db": 1.01,
+   "transform_max_db": 4.95
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.76,
+   "baseline_max_db": 10.06,
+   "transform_rms_db": 1.06,
+   "transform_max_db": 4.93
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.81,
+   "baseline_max_db": 10.3,
+   "transform_rms_db": 1.02,
+   "transform_max_db": 4.64
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.34,
+   "baseline_max_db": 11.8,
+   "transform_rms_db": 1.02,
+   "transform_max_db": 5.27
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.58,
+   "baseline_max_db": 10.43,
+   "transform_rms_db": 0.99,
+   "transform_max_db": 5.18
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 3.33,
+   "baseline_max_db": 10.71,
+   "transform_rms_db": 1.0,
+   "transform_max_db": 4.84
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.16,
+   "baseline_max_db": 9.01,
+   "transform_rms_db": 1.01,
+   "transform_max_db": 4.96
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.66,
+   "baseline_max_db": 4.01,
+   "transform_rms_db": 1.0,
+   "transform_max_db": 4.87
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.1,
+   "baseline_max_db": 3.6,
+   "transform_rms_db": 0.87,
+   "transform_max_db": 3.6
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.37,
+   "baseline_max_db": 10.28,
+   "transform_rms_db": 1.0,
+   "transform_max_db": 4.93
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 3.11,
+   "baseline_max_db": 10.85,
+   "transform_rms_db": 1.02,
+   "transform_max_db": 5.27
+  },
+  {
+   "source": "sm58",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.9,
+   "baseline_max_db": 9.72,
+   "transform_rms_db": 1.0,
+   "transform_max_db": 4.63
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.21,
+   "baseline_max_db": 5.66,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 1.61
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.07,
+   "baseline_max_db": 7.26,
+   "transform_rms_db": 0.54,
+   "transform_max_db": 1.78
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.78,
+   "baseline_max_db": 7.29,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 1.8
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.12,
+   "baseline_max_db": 3.79,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 1.82
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.38,
+   "baseline_max_db": 3.41,
+   "transform_rms_db": 0.6,
+   "transform_max_db": 2.85
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.4,
+   "baseline_max_db": 3.07,
+   "transform_rms_db": 0.61,
+   "transform_max_db": 3.0
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.84,
+   "baseline_max_db": 4.29,
+   "transform_rms_db": 0.58,
+   "transform_max_db": 2.71
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.54,
+   "baseline_max_db": 3.78,
+   "transform_rms_db": 0.64,
+   "transform_max_db": 3.35
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.51,
+   "baseline_max_db": 3.41,
+   "transform_rms_db": 0.52,
+   "transform_max_db": 2.45
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.06,
+   "baseline_max_db": 2.83,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 2.16
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.11,
+   "baseline_max_db": 2.98,
+   "transform_rms_db": 0.52,
+   "transform_max_db": 2.15
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.04,
+   "baseline_max_db": 5.33,
+   "transform_rms_db": 0.53,
+   "transform_max_db": 2.04
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.95,
+   "baseline_max_db": 2.92,
+   "transform_rms_db": 0.55,
+   "transform_max_db": 2.32
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.9,
+   "baseline_max_db": 6.81,
+   "transform_rms_db": 0.54,
+   "transform_max_db": 1.79
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.2,
+   "baseline_max_db": 8.18,
+   "transform_rms_db": 0.58,
+   "transform_max_db": 2.4
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.79,
+   "baseline_max_db": 2.33,
+   "transform_rms_db": 0.49,
+   "transform_max_db": 1.61
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.57,
+   "baseline_max_db": 4.07,
+   "transform_rms_db": 0.51,
+   "transform_max_db": 2.19
+  },
+  {
+   "source": "nt2a_cardioid",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.93,
+   "baseline_max_db": 2.91,
+   "transform_rms_db": 0.5,
+   "transform_max_db": 1.91
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.45,
+   "baseline_max_db": 6.34,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.49
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.65,
+   "baseline_max_db": 7.94,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.56
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.6,
+   "baseline_max_db": 8.09,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.36
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.75,
+   "baseline_max_db": 6.35,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 2.44
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.28,
+   "baseline_max_db": 4.38,
+   "transform_rms_db": 0.65,
+   "transform_max_db": 3.47
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.64,
+   "baseline_max_db": 5.38,
+   "transform_rms_db": 0.68,
+   "transform_max_db": 2.72
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.24,
+   "baseline_max_db": 3.03,
+   "transform_rms_db": 0.67,
+   "transform_max_db": 4.23
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.96,
+   "baseline_max_db": 6.38,
+   "transform_rms_db": 0.7,
+   "transform_max_db": 3.06
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.29,
+   "baseline_max_db": 4.55,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 3.06
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.12,
+   "baseline_max_db": 3.73,
+   "transform_rms_db": 0.58,
+   "transform_max_db": 2.77
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.92,
+   "baseline_max_db": 3.86,
+   "transform_rms_db": 0.58,
+   "transform_max_db": 2.6
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.15,
+   "baseline_max_db": 4.13,
+   "transform_rms_db": 0.58,
+   "transform_max_db": 2.46
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.78,
+   "baseline_max_db": 5.09,
+   "transform_rms_db": 0.6,
+   "transform_max_db": 2.7
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.54,
+   "baseline_max_db": 7.97,
+   "transform_rms_db": 0.57,
+   "transform_max_db": 2.4
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.86,
+   "baseline_max_db": 9.01,
+   "transform_rms_db": 0.66,
+   "transform_max_db": 2.95
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.93,
+   "baseline_max_db": 3.05,
+   "transform_rms_db": 0.55,
+   "transform_max_db": 2.46
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 0.53,
+   "baseline_max_db": 2.24,
+   "transform_rms_db": 0.52,
+   "transform_max_db": 2.25
+  },
+  {
+   "source": "nt2a_omni",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.87,
+   "baseline_max_db": 5.5,
+   "transform_rms_db": 0.56,
+   "transform_max_db": 2.51
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.94,
+   "baseline_max_db": 5.09,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 3.2
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.9,
+   "baseline_max_db": 6.68,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 3.29
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "u87ai_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.63,
+   "baseline_max_db": 6.71,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 3.47
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "u47fet",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.51,
+   "baseline_max_db": 4.77,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 3.31
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.23,
+   "baseline_max_db": 5.59,
+   "transform_rms_db": 0.78,
+   "transform_max_db": 3.67
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_hyper",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.03,
+   "baseline_max_db": 5.25,
+   "transform_rms_db": 0.8,
+   "transform_max_db": 3.5
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.82,
+   "baseline_max_db": 6.34,
+   "transform_rms_db": 0.77,
+   "transform_max_db": 3.62
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "c414bxls_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.94,
+   "baseline_max_db": 4.89,
+   "transform_rms_db": 0.81,
+   "transform_max_db": 3.31
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "c800_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.38,
+   "baseline_max_db": 5.6,
+   "transform_rms_db": 0.73,
+   "transform_max_db": 3.68
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "c800_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.92,
+   "baseline_max_db": 5.65,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 3.42
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "k2_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.18,
+   "baseline_max_db": 6.95,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 3.34
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "k2_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 3.13,
+   "baseline_max_db": 9.19,
+   "transform_rms_db": 0.74,
+   "transform_max_db": 3.22
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "k2_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.4,
+   "baseline_max_db": 3.84,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 3.27
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "r121",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.86,
+   "baseline_max_db": 5.91,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 3.15
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "sm58",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.14,
+   "baseline_max_db": 7.6,
+   "transform_rms_db": 0.78,
+   "transform_max_db": 3.43
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_cardioid",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.83,
+   "baseline_max_db": 5.62,
+   "transform_rms_db": 0.72,
+   "transform_max_db": 3.46
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_omni",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 2.71,
+   "baseline_max_db": 7.62,
+   "transform_rms_db": 0.75,
+   "transform_max_db": 3.83
+  },
+  {
+   "source": "nt2a_figure8",
+   "source_distance_m": 5.0,
+   "target": "nt2a_figure8",
+   "band_lo_hz": 125.0,
+   "baseline_rms_db": 1.15,
+   "baseline_max_db": 3.7,
+   "transform_rms_db": 0.71,
+   "transform_max_db": 3.25
+  }
+ ]
+}

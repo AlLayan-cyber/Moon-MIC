@@ -41,6 +41,26 @@ public:
         end) the magnitude is held at its last value; the true response there is UNKNOWN. */
     static Result design (const ModelLibrary& lib, int setIndex, float angleDeg, float distanceM,
                           double sampleRate = designSampleRate);
+
+    /** Minimum-phase FIR + auto gain from any magnitude curve on the model grid. */
+    static Result designFromMagnitude (const ModelLibrary& lib, std::vector<float> magDb, double sampleRate);
+
+    // ---- TRANSFORM v1 (docs/architecture/05): source mic/position -> target mic/position --------------
+    // Provisional limits, identical to tools/export/export_signature_models.py (INFERRED, set after a pilot).
+    static constexpr double transformMaxBoostDb = 12.0;
+    static constexpr double transformFloorBelowDb = 30.0;
+    static constexpr double transformFloorRampDb = 10.0;
+
+    /** Correction (dB) = target - source with the boost limited where the source has little energy;
+        cuts are never limited; source == target gives exactly 0 dB. Same algorithm as the Python reference. */
+    static std::vector<float> transformCorrectionDb (const ModelLibrary& lib,
+                                                     int sourceSet, float sourceAngleDeg, float sourceDistanceM,
+                                                     int targetSet, float targetAngleDeg, float targetDistanceM);
+
+    static Result designTransform (const ModelLibrary& lib,
+                                   int sourceSet, float sourceAngleDeg, float sourceDistanceM,
+                                   int targetSet, float targetAngleDeg, float targetDistanceM,
+                                   double sampleRate = designSampleRate);
 };
 
 } // namespace moonmic

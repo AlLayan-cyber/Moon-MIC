@@ -76,8 +76,70 @@ int SignatureDesigner::firLengthFor (double sampleRate)
 SignatureDesigner::Result SignatureDesigner::design (const ModelLibrary& lib, int setIndex,
                                                      float angleDeg, float distanceM, double sampleRate)
 {
+    return designFromMagnitude (lib, targetMagnitudeDb (lib, setIndex, angleDeg, distanceM), sampleRate);
+}
+
+namespace
+{
+    double pinkLevelDb (const std::vector<float>& f, const std::vector<float>& db)
+    {
+        double acc = 0.0;
+        int cnt = 0;
+        for (size_t k = 0; k < f.size(); ++k)
+            if (f[k] >= 100.0f && f[k] <= 10000.0f)
+            {
+                acc += std::pow (10.0, db[k] / 10.0);
+                ++cnt;
+            }
+        return cnt > 0 ? 10.0 * std::log10 (acc / cnt) : 0.0;
+    }
+}
+
+std::vector<float> SignatureDesigner::transformCorrectionDb (const ModelLibrary& lib,
+                                                             int sourceSet, float sourceAngleDeg, float sourceDistanceM,
+                                                             int targetSet, float targetAngleDeg, float targetDistanceM)
+{
+    const auto S = targetMagnitudeDb (lib, sourceSet, sourceAngleDeg, sourceDistanceM);
+    const auto T = targetMagnitudeDb (lib, targetSet, targetAngleDeg, targetDistanceM);
+    const auto& f = lib.frequencies();
+    const double floorDb = pinkLevelDb (f, S) - transformFloorBelowDb;
+    std::vector<float> out (S.size());
+    for (size_t k = 0; k < S.size(); ++k)
+    {
+        const double corr = (double) T[k] - (double) S[k];
+        double v = corr;
+        if (corr > 0.0)
+        {
+            const double w = std::clamp (((double) S[k] - floorDb) / transformFloorRampDb, 0.0, 1.0);
+            const double bm = transformMaxBoostDb * w;
+            if (bm <= 0.0)
+                v = 0.0;
+            else
+            {
+                const double kn = std::min (3.0, bm);           // soft knee: identity below bm - kn, then -> bm
+                if (corr > bm - kn)
+                    v = bm - kn * std::exp (-(corr - (bm - kn)) / kn);
+            }
+        }
+        out[k] = (float) v;
+    }
+    return out;
+}
+
+SignatureDesigner::Result SignatureDesigner::designTransform (const ModelLibrary& lib,
+                                                              int sourceSet, float sourceAngleDeg, float sourceDistanceM,
+                                                              int targetSet, float targetAngleDeg, float targetDistanceM,
+                                                              double sampleRate)
+{
+    return designFromMagnitude (lib, transformCorrectionDb (lib, sourceSet, sourceAngleDeg, sourceDistanceM,
+                                                            targetSet, targetAngleDeg, targetDistanceM), sampleRate);
+}
+
+SignatureDesigner::Result SignatureDesigner::designFromMagnitude (const ModelLibrary& lib, std::vector<float> magDb,
+                                                                  double sampleRate)
+{
     Result res;
-    res.targetMagDb = targetMagnitudeDb (lib, setIndex, angleDeg, distanceM);
+    res.targetMagDb = std::move (magDb);
     const auto& f = lib.frequencies();
 
     // Pink-weighted level (equal weight per log-frequency point) between 100 Hz and 10 kHz.

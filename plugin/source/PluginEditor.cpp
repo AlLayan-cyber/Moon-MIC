@@ -69,6 +69,27 @@ MoonMicEditor::MoonMicEditor (MoonMicProcessor& p)
     addAndMakeVisible (micBox);
     micAttachment = std::make_unique<APVTS::ComboBoxAttachment> (state, ParamIDs::mic, micBox);
 
+    if (auto* choice = dynamic_cast<juce::AudioParameterChoice*> (state.getParameter (ParamIDs::srcMic)))
+        srcBox.addItemList (choice->choices, 1);
+    addChildComponent (srcBox);
+    srcAttachment = std::make_unique<APVTS::ComboBoxAttachment> (state, ParamIDs::srcMic, srcBox);
+    srcLabel.setText ("SOURCE (RECORDED WITH)", juce::dontSendNotification);
+    srcLabel.setFont (juce::FontOptions (11.0f, juce::Font::bold));
+    srcLabel.setColour (juce::Label::textColourId, theme::muted);
+    addChildComponent (srcLabel);
+
+    for (auto* b : { &signatureButton, &transformButton })
+    {
+        b->setClickingTogglesState (false);
+        b->setColour (juce::TextButton::buttonColourId, theme::panel);
+        b->setColour (juce::TextButton::buttonOnColourId, theme::accent.withAlpha (0.25f));
+        b->setColour (juce::TextButton::textColourOffId, theme::muted);
+        b->setColour (juce::TextButton::textColourOnId, theme::accent);
+        addAndMakeVisible (b);
+    }
+    signatureButton.onClick = [this] { setMode (false); };
+    transformButton.onClick = [this] { setMode (true); };
+
     micLabel.setText ("MICROPHONE", juce::dontSendNotification);
     micLabel.setFont (juce::FontOptions (11.0f, juce::Font::bold));
     micLabel.setColour (juce::Label::textColourId, theme::muted);
@@ -84,6 +105,19 @@ MoonMicEditor::MoonMicEditor (MoonMicProcessor& p)
     angleKnob.setTextValueSuffix (juce::String::fromUTF8 ("\xc2\xb0"));
     outputKnob.setTextValueSuffix (" dB");
 
+    // Level: SPL at the capsule for a full-scale sine. Drives the physical electronics model
+    // (C-800G tube stage); disabled for microphones without one.
+    setupKnob (levelKnob, levelLabel, "LEVEL");
+    levelAttachment = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::level, levelKnob);
+    levelKnob.setTextValueSuffix (" dB SPL");
+
+    setupKnob (srcDistanceKnob, srcDistanceLabel, "SRC DISTANCE");
+    setupKnob (srcAngleKnob, srcAngleLabel, "SRC ANGLE");
+    srcDistanceAttachment = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::srcDistance, srcDistanceKnob);
+    srcAngleAttachment    = std::make_unique<APVTS::SliderAttachment> (state, ParamIDs::srcAngle, srcAngleKnob);
+    srcDistanceKnob.setTextValueSuffix (" cm");
+    srcAngleKnob.setTextValueSuffix (juce::String::fromUTF8 ("\xc2\xb0"));
+
     addAndMakeVisible (autoGainButton);
     autoGainAttachment = std::make_unique<APVTS::ButtonAttachment> (state, ParamIDs::autoGain, autoGainButton);
 
@@ -95,7 +129,7 @@ MoonMicEditor::MoonMicEditor (MoonMicProcessor& p)
     addAndMakeVisible (plot);
     addAndMakeVisible (logo);
 
-    setSize (860, 500);
+    setSize (860, 600);
     startTimerHz (30);
 }
 
@@ -120,13 +154,50 @@ void MoonMicEditor::setupKnob (juce::Slider& s, juce::Label& l, const juce::Stri
     addAndMakeVisible (l);
 }
 
+bool MoonMicEditor::isTransform() const
+{
+    return processor.getState().getRawParameterValue (ParamIDs::transform)->load() >= 0.5f;
+}
+
+void MoonMicEditor::setMode (bool transform)
+{
+    if (auto* p = processor.getState().getParameter (ParamIDs::transform))
+    {
+        p->beginChangeGesture();
+        p->setValueNotifyingHost (transform ? 1.0f : 0.0f);
+        p->endChangeGesture();
+    }
+}
+
 void MoonMicEditor::timerCallback()
 {
+    const bool tf = isTransform();
+    if (tf != shownTransform || signatureButton.getToggleState() == transformButton.getToggleState())
+    {
+        shownTransform = tf;
+        signatureButton.setToggleState (! tf, juce::dontSendNotification);
+        transformButton.setToggleState (tf, juce::dontSendNotification);
+        for (juce::Component* c : { (juce::Component*) &srcBox, (juce::Component*) &srcLabel,
+                                    (juce::Component*) &srcDistanceKnob, (juce::Component*) &srcDistanceLabel,
+                                    (juce::Component*) &srcAngleKnob, (juce::Component*) &srcAngleLabel })
+            c->setVisible (tf);
+        micLabel.setText (tf ? "TARGET MICROPHONE" : "MICROPHONE", juce::dontSendNotification);
+        resized();
+    }
+
     auto curve = processor.getDisplayCurve();
     if (curve != lastCurve)
     {
         lastCurve = curve;
         plot.setCurve (std::move (curve));
+    }
+
+    const bool electronics = processor.hasElectronics (micBox.getSelectedItemIndex());
+    if (levelKnob.isEnabled() != electronics)
+    {
+        levelKnob.setEnabled (electronics);
+        levelKnob.setAlpha (electronics ? 1.0f : 0.35f);
+        levelLabel.setAlpha (electronics ? 1.0f : 0.35f);
     }
 
     // Decision D-012: no explanatory texts about measurement limits in the UI (they live in the docs).
@@ -147,12 +218,6 @@ void MoonMicEditor::paint (juce::Graphics& g)
     g.setFont (juce::FontOptions (24.0f, juce::Font::bold));
     g.drawText ("MOON MIC", header.removeFromLeft (170), juce::Justification::centredLeft);
 
-    const auto badge = header.removeFromLeft (100).withSizeKeepingCentre (96, 22).toFloat();
-    g.setColour (theme::accent.withAlpha (0.15f));
-    g.fillRoundedRectangle (badge, 11.0f);
-    g.setColour (theme::accent);
-    g.setFont (juce::FontOptions (11.0f, juce::Font::bold));
-    g.drawText ("SIGNATURE", badge, juce::Justification::centred);
 
     g.setColour (theme::grid);
     g.drawHorizontalLine (headerH, 0.0f, (float) getWidth());
@@ -180,6 +245,20 @@ void MoonMicEditor::resized()
     area.removeFromLeft (margin);
     plot.setBounds (area);
 
+    {
+        auto header = getLocalBounds().removeFromTop (headerH).reduced (margin, 0);
+        header.removeFromLeft (180);
+        signatureButton.setBounds (header.removeFromLeft (110).withSizeKeepingCentre (104, 26));
+        header.removeFromLeft (6);
+        transformButton.setBounds (header.removeFromLeft (110).withSizeKeepingCentre (104, 26));
+    }
+
+    if (shownTransform)
+    {
+        srcLabel.setBounds (left.removeFromTop (16));
+        srcBox.setBounds (left.removeFromTop (30));
+        left.removeFromTop (10);
+    }
     micLabel.setBounds (left.removeFromTop (16));
     micBox.setBounds (left.removeFromTop (30));
     left.removeFromTop (18);
@@ -195,7 +274,18 @@ void MoonMicEditor::resized()
         knob->setBounds (col);
     }
 
-    left.removeFromTop (12);
+    left.removeFromTop (8);
+    auto row2 = left.removeFromTop (120);
+    for (auto [knob, label] : { std::pair { &levelKnob, &levelLabel },
+                                std::pair { &srcDistanceKnob, &srcDistanceLabel },
+                                std::pair { &srcAngleKnob, &srcAngleLabel } })
+    {
+        auto col = row2.removeFromLeft (kw);
+        label->setBounds (col.removeFromTop (16));
+        knob->setBounds (col);
+    }
+
+    left.removeFromTop (8);
     autoGainButton.setBounds (left.removeFromTop (26));
     left.removeFromTop (10);
     statusLabel.setBounds (left);

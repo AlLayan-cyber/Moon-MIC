@@ -180,32 +180,80 @@ def model_response(mag_db, ph, b, fg, angle_deg, r):
     return 20 * np.log10(np.abs(Ht) + 1e-12)
 
 
+# ---- TRANSFORM v1 (docs/architecture/05): regularised source -> target correction -------------------
+# Provisional limits (05 §4: final values after a listening pilot). Status: INFERRED engineering choice.
+TF_MAX_BOOST_DB = 12.0      # largest boost the correction may apply anywhere
+TF_FLOOR_BELOW_DB = 30.0    # source more than this below its own pink level -> no boost at all
+TF_FLOOR_RAMP_DB = 10.0     # ... ramping to the full limit over this range
+
+
+def pink_level_db(mag_db: np.ndarray, fg: np.ndarray) -> float:
+    m = (fg >= 100.0) & (fg <= 10000.0)
+    return float(10 * np.log10(np.mean(10 ** (mag_db[m] / 10))))
+
+
+def transform_correction(src_db: np.ndarray, tgt_db: np.ndarray, fg: np.ndarray) -> np.ndarray:
+    """Correction (dB) = target - source, with the boost limited where the source has little energy.
+    Cuts are never limited. Null property: source == target -> exactly 0 dB."""
+    corr = tgt_db - src_db
+    w = np.clip((src_db - (pink_level_db(src_db, fg) - TF_FLOOR_BELOW_DB)) / TF_FLOOR_RAMP_DB, 0.0, 1.0)
+    bmax = TF_MAX_BOOST_DB * w
+    out = corr.copy()
+    for k in range(corr.size):
+        c, bm = corr[k], bmax[k]
+        if c <= 0.0:
+            continue
+        if bm <= 0.0:
+            out[k] = 0.0
+            continue
+        kn = min(3.0, bm)                     # soft knee: identity below bm - kn, then -> bm
+        if c > bm - kn:
+            out[k] = bm - kn * np.exp(-(c - (bm - kn)) / kn)
+    return out
+
+
+TF_CASES = [  # (source id, src angle, src distance, target id, tgt angle, tgt distance)
+    ("sm58", 0.0, 0.1, "u87ai_cardioid", 0.0, 0.1),
+    ("nt2a_cardioid", 0.0, 0.3, "c800_cardioid", 0.0, 0.3),
+    ("r121", 0.0, 0.5, "u47fet", 30.0, 0.5),
+    ("k2_omni", 0.0, 1.25, "c414bxls_hyper", 37.5, 0.25),
+    ("u87ai_cardioid", 15.0, 0.5, "u87ai_cardioid", 15.0, 0.5),   # null case
+]
+
+
+def build_set(model: str, pattern: str, sid: str, curves: dict, fg: np.ndarray):
+    """Model arrays of one set on the grid: (source npz, lf limit, mag dB, phase, b, band-edge info)."""
+    X = np.stack([np.ones_like(THETA), np.cos(THETA)], axis=1)
+    src = FR / f"{model}_{pattern}_0.5m.npz"
+    d = np.load(src)
+    f, H, lf = d["f"], d["H_comp"], float(d["lf_limit"])
+    coef, *_ = np.linalg.lstsq(X, H, rcond=None)
+    b = coef[1]
+    mag, ph = to_grid(f, H, fg, lf)
+    fq = np.clip(fg, lf, F_HOLD_HI)
+    b_g = np.interp(fq, f, b.real) + 1j * np.interp(fq, f, b.imag)
+    mfr_id = MFR_MAP.get(sid)
+    if mfr_id and mfr_id in curves:
+        mag, ph, b_g = anchor_to_manufacturer(mag, ph, b_g, fg, lf, curves[mfr_id])
+        edge = {"method": "manufacturer-anchored (D-013)", "curve": mfr_id, "source": curves[mfr_id]["source"],
+                "bands": curves[mfr_id].get("bands", ["lf", "hf"])}
+    else:
+        edge = {"method": "hold (no manufacturer data yet)"}
+    return src, lf, mag, ph, b_g, edge
+
+
 def main() -> int:
     OUT_MODELS.mkdir(parents=True, exist_ok=True)
     OUT_TESTS.mkdir(parents=True, exist_ok=True)
     fg = log_grid()
-    X = np.stack([np.ones_like(THETA), np.cos(THETA)], axis=1)
     blob = bytearray()
     blob += b"MMIC" + struct.pack("<IIIIff", 1, len(SETS), len(fg), 72, R0, C_SOUND)
     blob += fg.astype("<f4").tobytes() + np.arange(0, 360, 5).astype("<f4").tobytes()
     meta, refs = [], []
+    models32 = {}
     curves = load_mfr_curves()
     for model, pattern, sid, disp in SETS:
-        src = FR / f"{model}_{pattern}_0.5m.npz"
-        d = np.load(src)
-        f, H, lf = d["f"], d["H_comp"], float(d["lf_limit"])
-        coef, *_ = np.linalg.lstsq(X, H, rcond=None)
-        b = coef[1]
-        mag, ph = to_grid(f, H, fg, lf)
-        fq = np.clip(fg, lf, F_HOLD_HI)
-        b_g = np.interp(fq, f, b.real) + 1j * np.interp(fq, f, b.imag)
-        mfr_id = MFR_MAP.get(sid)
-        if mfr_id and mfr_id in curves:
-            mag, ph, b_g = anchor_to_manufacturer(mag, ph, b_g, fg, lf, curves[mfr_id])
-            edge = {"method": "manufacturer-anchored (D-013)", "curve": mfr_id, "source": curves[mfr_id]["source"],
-                    "bands": curves[mfr_id].get("bands", ["lf", "hf"])}
-        else:
-            edge = {"method": "hold (no manufacturer data yet)"}
+        src, lf, mag, ph, b_g, edge = build_set(model, pattern, sid, curves, fg)
         for s in (sid, disp, pattern):
             e = s.encode("utf-8")
             blob += struct.pack("<I", len(e)) + e
@@ -219,6 +267,7 @@ def main() -> int:
         # reference vectors (float32-rounded inputs, same as the plugin will see)
         m32, p32 = mag.astype(np.float32).astype(float), ph.astype(np.float32).astype(float)
         b32 = b_g.real.astype(np.float32) + 1j * b_g.imag.astype(np.float32)
+        models32[sid] = (m32, p32, b32)
         for ang, r in [(0, 0.5), (0, 0.1), (0, 1.25), (37.5, 0.25), (90, 0.5), (180, 0.3)]:
             refs.append({"id": sid, "angle_deg": ang, "distance_m": r,
                          "mag_db": [round(float(v), 4) for v in model_response(m32, p32, b32, fg, ang, r)]})
@@ -234,6 +283,17 @@ def main() -> int:
                                                           encoding="utf-8")
     (OUT_TESTS / "signature_reference_v1.json").write_text(
         json.dumps({"freq": [float(v) for v in fg], "r0_m": R0, "cases": refs}), encoding="utf-8")
+    tf_refs = []
+    for sid_s, a_s, r_s, sid_t, a_t, r_t in TF_CASES:
+        S = model_response(*models32[sid_s], fg, a_s, r_s)
+        T = model_response(*models32[sid_t], fg, a_t, r_t)
+        tf_refs.append({"source": sid_s, "source_angle_deg": a_s, "source_distance_m": r_s,
+                        "target": sid_t, "target_angle_deg": a_t, "target_distance_m": r_t,
+                        "correction_db": [round(float(v), 4) for v in transform_correction(S, T, fg)]})
+    (OUT_TESTS / "transform_reference_v1.json").write_text(
+        json.dumps({"freq": [float(v) for v in fg], "max_boost_db": TF_MAX_BOOST_DB,
+                    "floor_below_db": TF_FLOOR_BELOW_DB, "floor_ramp_db": TF_FLOOR_RAMP_DB, "cases": tf_refs}),
+        encoding="utf-8")
     print(f"{len(SETS)} sets, {len(fg)} freqs, {len(blob)/1e6:.2f} MB -> {out_bin.relative_to(ROOT)}")
     return 0
 
